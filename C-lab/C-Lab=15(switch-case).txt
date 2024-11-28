@@ -1,0 +1,223 @@
+Ques-1
+----------
+Write a C to take the value from the user as input the month number and print number of days in that month. Using switch statement.
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int month;
+    start:
+    printf("Enter month:");
+    scanf("%d",&month);
+    switch(month)
+    {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        printf("31 days");
+        break;
+        case 4: case 6: case 9: case 11:
+        printf("30 days");
+        break;
+        case 2:printf("28 or 29 days");
+        break;
+        default:printf("Invalid input,\nEnter valid month:");
+        goto start;
+        
+    }
+
+    return 0;
+}
+
+Ques-2
+-----------
+Write a C program to check wheather a Alphbet is vowel or consonant using Switch Case.
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter the character:");
+    scanf("%c",&ch);
+    switch(ch)
+    {
+        case 'a': case 'A': case 'e': case 'E': case 'I': case 'i': case 'O': case 'o': case 'U': case 'u':
+        printf("Vowels");
+        break;
+        default:printf("Consonants");
+    }
+
+    return 0;
+}
+
+Ques-3
+-----------
+Write a C program to find the maximum between two numbers using Switch statement.
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b;
+    printf("Enter first number:");
+    scanf("%d",&a);
+    printf("Enter second number:");
+    scanf("%d",&b);
+    switch((a>b)-(a<b))
+    {
+        case -1:printf("b is big");
+        break;
+        case 0: printf("both are equal ");
+        break;
+        case 1: printf("a is big");
+        break;
+    }
+    return 0;
+}
+
+Ques-4
+-----------
+Write a C program to check the number is even or odd by using Switch Case.
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter number:");
+    scanf("%d",&n);
+    switch(n%2)
+    {
+        case 0:printf("Even");
+        break;
+        case 1:printf("Odd");
+        break;
+    }
+
+    return 0;
+}
+
+Ques-5
+-----------
+Write a C program to do a arithmetic operation on two numbers by using Switch Case. Take the operators(+,-,*,/,%) as cases and take the input from the user that what kind of operation user want to do on two number.
+
+Input as: 
+------------
+Enter num1 :10
+Enter num2 :20
+Enter operation : *
+
+O/P as :
+---------
+Multiplication is :200
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b;
+    char ch;
+    main:
+    printf("Enter num1:");
+    scanf("%d",&a);
+    printf("Enter num2:");
+    scanf("%d",&b);
+    printf("Enter operation:");
+    scanf(" %c",&ch);
+    switch(ch)
+    {
+        case '+':printf("Addition:%d",a+b);
+        break;
+        case '-':printf("Substraction=%d",a-b);
+        break;
+        case '*':printf("Multiplication=%d",a*b);
+        break;
+        case '/':printf("division=%d",a/b);
+        break;
+        default:printf("Invalid operator\nplease enter valid operator\n");
+        goto main;
+    }
+
+    return 0;
+}
+
+Ques-6
+---------
+Using switch statement write a C Program to take the value from the user as input marks of five subjects Physics, Chemistry, Biology, Mathematics, and Computer. Calculate percentage and grade according to the following: Percentage >= 90% : Grade A, Percentage >= 80% : Grade B, Percentage >= 70% : Grade C, Percentage >= 60% : Grade D, Percentage >= 40% : Grade E, Percentage < 40% : Grade F, Using switch statement.
+
+[Note:-Take All the values as Integer]
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int s1,s2,s3,s4,s5,tot;
+    float per;
+    printf("Enter Physics marks:");
+    scanf("%d",&s1);
+    printf("Enter Chemistry marks:");
+    scanf("%d",&s2);
+    printf("Enter Biology marks:");
+    scanf("%d",&s3);
+    printf("Enter Mathematics marks:");
+    scanf("%d",&s4);
+    printf("Enter Computer marks:");
+    scanf("%d",&s5);
+    tot=s1+s2+s3+s4+s5;
+    printf("Total marks of 5 subjects:%d\n",tot);
+    per=(float)tot/500*100;
+    printf("Total percentage of 5 subjects:%.2f%%\n",per);
+    int grade;
+    if(per>=90)
+    {
+        grade=1;
+    }
+    else if(per>=80)
+    {
+        grade=2;
+    }
+    else if(per>=70)
+    {
+        grade=3;
+    }
+    else if(per>=60)
+    {
+        grade=4;
+    }
+    else if(per>=40)
+    {
+        grade=5;
+    }
+    else
+    {
+        grade=6;
+    }
+    switch(grade)
+    {
+        case 1:printf("Grade A");
+        break;
+        case 2:printf("Grade B");
+        break;
+        case 3:printf("Grade C");
+        break;
+        case 4:printf("Grade D");
+        break;
+        case 5:printf("Grade E");
+        break;
+        default:printf("Grade F");
+        break;
+    }
+    
+
+    return 0;
+}

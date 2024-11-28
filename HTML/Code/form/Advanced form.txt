@@ -1,0 +1,7 @@
+Radio Buttons: we will use when we have to take any one single choice
+              We can insert them using input typr 'radio',every radio button must have name and label connected.
+              All radio buttons of similar use must same have
+    <input type="radio" name="gender" id="m">
+    <label for="m">Male</label><br>
+    <input type="radio" name="gender" id="f">
+    <lable for="f">Female</lable>

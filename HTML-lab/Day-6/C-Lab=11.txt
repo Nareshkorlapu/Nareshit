@@ -1,0 +1,389 @@
+Program-1 :- [ok]
+------------------
+[Title: Determine the Type of Triangle Based on Side Lengths]
+-------------------------------------------------------------
+Write a C program to check whether a triangle is equilateral, isosceles, or scalene.
+
+Validity Check :-
+------------------
+-> If all three sides are equal, the triangle is equilateral.
+-> If exactly two sides are equal, the triangle is isosceles.
+-> If all sides are different, the triangle is scalene.
+
+Sample Input :-
+----------------
+Enter the lengths of the three sides of the triangle:
+    Side 1: 3
+    Side 2: 3
+    Side 3: 3
+
+Sample Output :-
+-----------------
+    The triangle is equilateral.
+
+Sample Input :-
+----------------
+Enter the lengths of the three sides of the triangle:
+    Side 1: 5
+    Side 2: 5
+    Side 3: 8
+
+Sample Output :-
+----------------
+    The triangle is isosceles.
+
+Sample Input :-
+----------------
+Enter the lengths of the three sides of the triangle:
+    Side 1: 3
+    Side 2: 4
+    Side 3: 5
+
+Sample Output :-
+----------------
+    The triangle is scalene.
+
+Sol:
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int s1,s2,s3;
+    printf("Enter side 1:");
+    scanf("%d",&s1);
+    printf("Enter side 2:");
+    scanf("%d",&s2);
+    printf("Enter side 3:");
+    scanf("%d",&s3);
+    if(s1==s2 && s2==s3)
+    {
+        printf("The triangle is equilateral");
+    }
+    else if(s1==s2 || s2==s3 || s3==s1)
+    {
+        printf("The triangle is isosceles");
+    }
+    else
+    {
+        printf("The triangle is scalene");
+    }
+
+    return 0;
+}
+
+Program-2 :- [ok]
+-----------------
+[Title: Profit or Loss Calculator for Bulk Item Sales]
+--------------------------------------------------------
+
+Imagine you are running a small shop selling various items, such as groceries, stationery, and household products. One day, you decide to sell 100 units of a particular item that you bought in bulk.
+
+Here is the information you have :-
+------------------------------------
+-> Cost Price (CP) per unit: ₹50
+-> Selling Price (SP) per unit: ₹60
+
+Using the C program provided, calculate the total profit or loss you made from selling all 100 units of the item. Additionally, determine the outcome if you had to reduce the selling price to ₹45 per unit due to a sudden market drop.
+
+Sample Input-1 :-
+-----------------
+Enter Cost Price (CP): ₹50
+Enter Selling Price (SP): ₹60
+
+Sample Output :-
+----------------
+Profit per unit = ₹10
+Total Profit on 100 units = ₹1000
+
+Sample Input-2 :-
+-----------------
+Enter Cost Price (CP): ₹50
+Enter Selling Price (SP): ₹45
+
+Sample Output :-
+----------------
+Loss per unit = ₹5
+Total Loss on 100 units = ₹500
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int c,s,tu=100,p,l;
+    printf("Enter Cost Price(CP):");
+    scanf("%d",&c);
+    printf("Enter Selling Price(SP):");
+    scanf("%d",&s);
+    p=s-c;
+    l=c-s;
+    if(p>l)
+    {
+    printf("Profit per unit=%d\n",p);
+    printf("Total Profit on 100 units=%d\n",p*tu);
+    }
+    else if(l>p)
+    {
+    printf("Loss per unit=%d\n",l);
+    printf("Total Loss on 100 units=%d\n",l*tu);
+    }
+    else
+    printf("No loss & No proffit");
+
+    return 0;
+}
+
+Program-3 :- [ok] 
+-----------------
+[Title: Calculate Percentage and Grade Based on Marks in Five Subjects]
+------------------------------------------------------------------------
+Write a C program to input marks for five subjects: Physics, Chemistry, Biology, Mathematics, and Computer Science.
+Calculate the percentage and assign a grade according to the following criteria:
+
+-> Percentage >= 90%: Grade A
+-> Percentage >= 80%: Grade B
+-> Percentage >= 70%: Grade C
+-> Percentage >= 60%: Grade D
+-> Percentage >= 40%: Grade E
+-> Percentage < 40%: Grade F
+
+Sample input :-
+---------------
+Enter marks for Physics: 85
+Enter marks for Chemistry: 78
+Enter marks for Biology: 92
+Enter marks for Mathematics: 88
+Enter marks for Computer Science: 95
+
+Sample output :-
+-----------------
+
+Total Marks = 438.00/500
+Percentage = 87.60%
+Grade = B
+
+Sol:
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int s1,s2,s3,s4,s5;
+    float tm,per;
+    printf("Enter marks for Physics:");
+    scanf("%d",&s1);
+    printf("Enter marks for Chemistry:");
+    scanf("%d",&s2);
+    printf("Enter marks for Biology:");
+    scanf("%d",&s3);
+    printf("Enter marks for Mathematics:");
+    scanf("%d",&s4);
+    printf("Enter marks for Computer Science:");
+    scanf("%d",&s5);
+    tm=s1+s2+s3+s4+s5;
+    printf("Total Marks=%.2f/500\n",tm);
+    per=tm*100/500;
+    printf("Percentage=%.2f%%\n",per);
+    if(per>=90)
+    {
+        printf("Grade A");
+    }
+    else if(per>=80)
+    {
+        printf("Grade B");
+    }
+    else if(per>=70)
+    {
+        printf("Grade C");
+    }
+    else if(per>=60)
+    {
+        printf("Grade D");
+    }
+    else if(per>=40)
+    {
+        printf("Grade E");
+    }
+    else
+    {
+        printf("Grade F");
+    }
+
+
+    return 0;
+}
+
+Program-4 :- [ok]
+-----------------
+[Title: Electricity Bill Calculator]
+--------------------------------------
+Write a C program to input electricity unit charges and calculate the total electricity bill according to the following conditions:
+
+-> For the first 50 units: Rs. 0.50 per unit
+-> For the next 100 units: Rs. 0.75 per unit
+-> For the next 100 units: Rs. 1.20 per unit
+-> For units above 250: Rs. 1.50 per unit
+
+Additionally, a surcharge of 20% is added to the bill.
+
+Sample Input :-
+---------------
+Enter the number of units: 280
+
+Sample Output :-
+-----------------
+Total electricity bill: Rs. 318.00
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int u;
+    float bill=0,tb;
+    printf("Enter the number of units:");
+    scanf("%d",&u);
+    if(u<=50)
+    {
+        bill=(50*0.50);
+    }
+    else if(u>=50 && u<=150)
+    {
+        bill=(50*0.50)+(100*0.75);
+    }
+    else if(u>=150 && u<=250)
+    {
+        bill=(50*0.50)+(100*0.75)+(100*1.20);
+    }
+    else 
+    {
+        bill=(50*0.50)+(100*0.75)+(100*1.20)+((u-250)*1.50);
+    }
+    tb=bill+bill*0.20;
+    printf("Total electricity bill:Rs.%.2f",tb);
+
+    return 0;
+}
+
+Program-5 :- [ok]
+-----------------
+[Title: Vehicle Service Center Management System]
+--------------------------------------------------
+Write a C program for a service center by following the given rules and guidelines.
+
+This service center only accepts 2-wheelers, 3-wheelers, and 4-wheelers. If any other vehicle comes to you, you must display a message: "This service center does not accept vehicles other than 2-wheelers, 3-wheelers, and 4-wheelers."
+
+If the vehicle is a 2-wheeler, 3-wheeler, or 4-wheeler, you should ask the user what the age of the vehicle is.
+
+If the age of the vehicle is above 8 months, only then will you accept the service; otherwise, you must show a message: "Your vehicle service will be done after a while."
+
+If the vehicle's age is greater than 8 months, display options to the user on the console.
+
+Options :-
+----------
+-> Enter 1 for a tire problem
+-> Enter 2 for a fuel problem
+-> Enter 3 for an engine issue
+-> Enter 4 for general services
+
+If the user enters 1 as input for a tire problem, you should display the message: "How many tires are you facing issues with?" Based on the number of tires, generate the bill.
+
+For example, if the tire cost is Rs. 400, and the user provides 3 tires, the bill should be generated as Rs. 1200 in the format below.
+
+Bill Format :-
+---------------
+-> Name of the owner
+
+-> Name of the bike
+
+-> Issue
+
+-> Bill
+--------
+For fuel problems, the cost is Rs. 1500.
+
+For engine issues, the cost is Rs. 5000.
+
+For general servicing, the cost is Rs. 1000.
+
+Please generate the bill in the above format.
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int veh,age,tire,fuel,engine,general,tirec=400,tb,option,fb=1500,ei=5000,gs=1000;
+    char name,bike,iss;
+    printf("Enter the vehicle with no of wheels:");
+    scanf("%d",&veh);
+    if(veh>=2 && veh<=4)
+    {
+        printf("Enter age of vehicle:");
+        scanf("%d",&age);
+        if(age>=8)
+        {
+           printf("Enter 1 for tire problem\n");
+           printf("Enter 2 for fuel problem\n");
+           printf("Enter 3 for engine problem\n");
+           printf("Enter 4 for general purpose\n");
+           scanf("%d",&option);
+           if(option==1)
+           {
+               printf("Name of the owner:");
+            scanf("%s",&name);
+            printf("Name of the bike:");
+            scanf("%s",&bike);
+            printf("Issue:");
+             scanf("%s",&iss);
+           printf("How many tires are you facing issues with?:\n");
+           scanf("%d",&tire);
+           tb=tire*tirec;
+           printf("Total bill for tyre:%d\n",tb);
+           }
+           else if(option==2)
+           {
+               printf("Name of the owner:");
+            scanf("%s",&name);
+            printf("Name of the bike:");
+            scanf("%s",&bike);
+            printf("Issue:Fuel problem\n");
+              printf("Total bill for fuel:%d\n",fb); 
+           }
+           else if(option==3)
+           {
+               printf("Name of the owner:");
+            scanf("%s",&name);
+            printf("Name of the bike:");
+            scanf("%s",&bike);
+            printf("Issue:Engine issue\n");
+               printf("Total bill for engine issues:%d\n",ei);
+           }
+           else if(option==4)
+           {
+               printf("Name of the owner:");
+            scanf("%s",&name);
+            printf("Name of the bike:");
+            scanf("%s",&bike);
+            printf("Issue:General Service\n");
+            printf("Total bill for general service:%d\n",gs);
+           }
+        }
+        else
+        {
+            printf("Your vehicle service will be done after a while");
+        }
+    }
+    else
+    {
+        printf("This service center does not accept vehicles other than 2-wheeler,3-wheeler and 4-wheelers.");
+    }
+    
+
+
+    return 0;
+}

@@ -1,0 +1,379 @@
+Q-1 :- [ok]
+-----------
+What will be the output of the following code?
+-----------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int x = 2;
+    switch (x) {
+        case 1:
+            printf("One\n");
+        case 2:
+            printf("Two\n");
+        case 3:
+            printf("Three\n");
+            break;
+        default:
+            printf("Default\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). Two
+b). Two Three Default
+c). Two Three
+d). Two Default
+
+answer :-  c) Two Three
+----------
+
+Explanation :-
+---------------
+There is no break statement after case 2, so it "falls through" to case 3, printing both "Two" and "Three".
+The break after case 3 prevents execution of the default case.
+
+Q-2 :- [ok]
+-----------
+What will be the output of the following code?
+----------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int a = 1, b = 2;
+    switch (a + b) {
+        case 1:
+            printf("Case 1\n");
+            break;
+        case 2:
+            printf("Case 2\n");
+            break;
+        case 3:
+            printf("Case 3\n");
+        default:
+            printf("Default\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). Case 1
+b). Case 2
+c). Case 3 Default
+d). Case 3
+
+answer :-  c). Case 3 Default
+----------
+
+Explanation :-
+---------------
+The value of a + b is 3, so case 3 is executed.
+There is no break after case 3, so the default case is also executed.
+
+Q-3 :- [ok]
+-----------
+What will be the output of the following code ?
+-------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    char ch = 'B';
+    switch (ch) {
+        case 'A':
+            printf("Character A\n");
+            break;
+        case 'B':
+            printf("Character B\n");
+        case 'C':
+            printf("Character C\n");
+            break;
+        default:
+            printf("Unknown Character\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). Character B
+b). Character B Character C
+c). Character B Character C Unknown Character
+d). Character C
+
+answer :- b). Character B Character C
+---------
+
+Explanation :-
+---------------
+There is no break after case 'B', so it falls through to case 'C', printing both "Character B" and "Character C".
+
+Q-4 :- [ok]
+-----------
+What will be the output of the following code?
+------------------------------------------------
+
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    switch (x > 10) {
+        case 0:
+            printf("Less than or equal to 10\n");
+            break;
+        case 1:
+            printf("Greater than 10\n");
+            break;
+        default:
+            printf("Default case\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). Less than or equal to 10
+b). Greater than 10
+c). Default case
+d). Compilation Error
+
+answer :- a). Less than or equal to 10
+---------
+
+Explanation:
+
+x > 10 evaluates to 0 (false) since x is equal to 10.
+Hence, case 0 is executed, printing "Less than or equal to 10".
+
+Q-5 :-  [ok]
+------------
+What will be the output of the following code?
+----------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i = 0;
+    switch (i) {
+        i++;
+        case 0:
+            printf("Zero\n");
+            break;
+        case 1:
+            printf("One\n");
+            break;
+        default:
+            printf("Default\n");
+    }
+    return 0;
+}
+
+Options :-
+----------
+a). Zero
+b). One
+c). Default
+d). Compilation error
+
+answer :-  a). Zero
+----------
+
+Explanation :-
+---------------
+The statement i++ is inside the switch, but it is not executed before evaluating the switch condition.[i++ statement will never be executed]
+The switch checks the value of i (which is 0 initially), so case 0 is executed.
+
+Q-6 :- [ok] 
+-----------
+What will be the output of the following code?
+------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int x = 1;
+    switch (x) {
+        case 1:
+            printf("First\n");
+        case 2:
+            printf("Second\n");
+        default:
+            printf("Default\n");
+        case 3:
+            printf("Third\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). First Second Default
+b). First Default Third
+c). First Default
+d). First Second Default Third
+
+answer :- d). First Second Default Third
+---------
+
+Explanation :-
+---------------
+There are no break statements, so after case 1, it falls through all cases until the end.
+All cases (case 1, case 2, default, case 3) are executed sequentially.
+
+Q-7 :- [ok] 
+-----------
+What will be the output of the following code?
+----------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int x = 5;
+    switch (x) {
+        case 1:
+        case 2:
+            printf("Low\n");
+            break;
+        case 3:
+        case 4:
+            printf("Medium\n");
+            break;
+        case 5:
+        case 6:
+            printf("High\n");
+            break;
+        default:
+            printf("Invalid\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). Low
+b). Medium
+c). High
+d). Invalid
+
+answer :- c). High
+---------
+
+Explanation :-
+---------------
+x is 5, which matches case 5. Hence, it prints "High".
+
+Q-8 :- [ok]
+-----------
+What will be the output of the following code?
+----------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int num = 1;
+    switch (num << 1) {
+        case 1:
+            printf("One\n");
+            break;
+        case 2:
+            printf("Two\n");
+            break;
+        case 3:
+            printf("Three\n");
+            break;
+        case 4:
+            printf("Four\n");
+            break;
+        default:
+            printf("Default\n");
+    }
+    return 0;
+}
+
+Options :-
+-----------
+a). One
+b). Two
+c). Four
+d). Default
+
+answer :- b). Two
+----------
+Explanation:
+
+num << 1 is a left shift operation. 1 << 1 results in 2. [ 1 * 2 pow 1 = 2]
+Hence, case 2 is executed, printing "Two".
+
+Q-9 :- [ok]
+-----------
+What will be the output of the following C program?
+---------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int x = 1, y = 0;
+    switch (x) {
+        case 0:
+            y = 0;
+            break;
+        case 1:
+            y = 1;
+        case 2:
+            y += 2;
+        default:
+            y += 3;
+    }
+    printf("y = %d\n", y);
+    return 0;
+}
+
+Options :-
+-----------
+a). y = 0
+b). y = 5
+c). y = 6
+d). Compilation error
+
+answer :- c). y = 5
+---------
+Explanation :-
+--------------
+The case 1 matches, and y is set to 1.
+There is no break after case 1, so execution falls through to case 2, and y is incremented by 2 (y = 3).
+Execution falls through to the default case, adding 3 to y (y = 6).
+
+Q-10 :- [ok]
+------------
+What will be the output of the following C program?
+---------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int a = 2;
+    switch (a * 2) {
+        case 2:
+            printf("Case 2\n");
+            break;
+        case 4:
+            printf("Case 4\n");
+        case 6 - 2:
+            printf("Case 6 - 2\n");
+            break;
+        default:
+            printf("Default case\n");
+    }
+    return 0;
+}
+
+Options :-
+----------
+a). Case 4\nCase 6 - 2
+b). Case 2
+c). Case 4
+d). Compilation error
+
+answer :-  d). Compilation error
+----------
+
+Explanation :-
+---------------
+The expression 6 - 2 evaluates to 4, making case 6 - 2 equivalent to case 4.
+Having two case 4 labels in the same switch statement results in a duplicate case value error, causing a compilation error.

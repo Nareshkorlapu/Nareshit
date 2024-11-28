@@ -1,0 +1,60 @@
+/* tag selector */
+/* div{
+    background-color: red;
+} */
+/* .parent{
+    border: 3px dotted black;
+} */
+ /* #box{
+    border: 1px solid black;
+    box-shadow: 2px 3px black;
+ } */
+/* immediate child */
+ /* .parent>h1{
+    background-color: red;
+ } */
+ /* descendant child*/
+ /* .parent h1{
+    background-color: red;
+ } */
+  /* sibling selector */
+/*div+h1{
+background-color: red;
+}*/
+/*.myDiv h1 /*Descendent */
+/*{
+background-color:red;
+}*/
+
+/* pseudo selectors*/
+/*pseudo selectors select an element based on state of the element or based on position of the element */
+.myDiv3{
+   background-color: red;
+   height: 100px;
+   width: 100px;
+}
+.myDiv3:hover{
+   background-color: green;
+   border-radius: 100px;
+}
+a:link{
+   color: brown;
+}
+a:active{
+   color: yellow;
+}
+a:visited{
+   color: bisque;
+}
+/*input:required{
+   background-color: red;
+}*/
+input:optional{
+   background-color:red;
+}
+input[type="text"]{
+   background-color: green;
+}
+p:not(.para){
+   background-color: pink;
+}

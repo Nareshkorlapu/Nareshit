@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup Form</title>
+</head>
+<body>
+    <h1>Student Signup Form</h1>
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fname">First Name:</label><br>
+            <input type="text" name="fname" id="fname" required>
+            <br><br>
+            <label for="lname">Last Name:</label><br>
+            <input type="text" name="lname" id="lname" required>
+            <br><br>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" name="gend" id="gend">
+            <label for="gend">Male</label>
+            <br>
+            <input type="radio" name="gend" id="gend">
+            <label for="gend">Female</label>
+            <br><br>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" name="dob" id="dob">
+            <br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" name="em" id="email" required>
+            <br><br>
+            <label for="phno">Phone Number:</label><br>
+            <input type="tel" name="phno" id="phno" required>
+            <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Academic Information</legend>
+            <label for="grade">Grade/Year:</label><br>
+            <input type="grade" name="grade" id="grade">
+            <br><br>
+            <label for="drpdwn">Course:</label>
+            <select name="options" id="option">
+                <option value="opt1">Science</option>
+                <option value="opt2">Technical</option>
+                <option value="opt3">Pharma</option>
+                <option value="opt4">Agricultural</option>
+            </select>
+            <br><br>
+            <label for="interest">Interests:</label><br>
+            <input type="checkbox" name="hobbies" id="interest">
+            <label for="interest">Sports</label><br>
+            <input type="checkbox" name="hobbies" id="interest">
+            <label for="interest">Music</label><br>
+            <input type="checkbox" name="hobbies" id="interest">
+            <label for="interest">Reading</label>
+            <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Account Setup</legend>
+            <label for="uname">Username:</label><br>
+            <input type="text" name="uname" id="uname" required>
+            <br><br>
+            <label for="pass">Password</label><br>
+            <input type="password" name="pass" id="pass" required>
+            <br><br>
+            <label for="cpass">Confirm Password:</label><br>
+            <input type="password" name="cpass" id="cpass" checked>
+        </fieldset>
+        <input type="button" value="Sign Up">
+    </form>
+</body>
+</html>

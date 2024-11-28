@@ -1,0 +1,105 @@
+Program :-
+----------
+[Interactive Menu Program with User Choice for Continuation in C]
+------------------------------------------------------------------
+
+You are tasked with writing a menu-driven program using an infinite while loop and a switch statement. The program should offer the following menu options:
+
+Addition: Ask the user to input two numbers and display their sum.
+Subtraction: Ask the user to input two numbers and display the result of subtracting the second number from the first.
+Multiplication: Ask the user to input two numbers and display their product.
+Exit: Exit the program.
+After executing an operation, the program should ask the user:
+"Do you want to continue? (y/n): "
+
+If the user enters 'y', the menu should be displayed again. If the user enters 'n', the program should terminate. Any invalid input for menu options or the continue prompt should display an appropriate error message and allow the user to try again.
+
+Write a complete program in C to implement this functionality.
+
+Sample-run :-
+-------------
+
+===== MENU =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Exit
+Enter your choice: 1
+Enter two numbers: 10 20
+The sum is: 30
+Do you want to continue? (y/n): y
+
+===== MENU =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Exit
+Enter your choice: 2
+Enter two numbers: 50 15
+The difference is: 35
+Do you want to continue? (y/n): y
+
+===== MENU =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Exit
+Enter your choice: 3
+Enter two numbers: 6 7
+The product is: 42
+Do you want to continue? (y/n): n
+
+Program terminated. Thank you!
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int add,sub,mul,choice,a,b;
+    char input;
+    menu:
+    printf("=====MENU=====\n");
+    printf("1.Addition\n");
+    printf("2.Subtraction\n");
+    printf("3.Multiplication\n");
+    printf("4.Exit\n");
+    printf("Enter your choice:");
+    scanf("%d",&choice);
+    
+        switch(choice){
+            case 1:
+            printf("Enter two numbers:");
+    	    scanf("%d %d",&a,&b);
+            printf("The sum is:%d\n",a+b);
+            break;
+            case 2:
+            printf("Enter two numbers:");
+    	    scanf("%d %d",&a,&b);
+            printf("The difference is:%d\n",a-b);
+            break;
+            case 3:
+            printf("Enter two numbers:");
+    	    scanf("%d %d",&a,&b);
+            printf("The multiplication is:%d\n",a*b);
+            break;
+            case 4:
+            printf("Exit the program\n");
+            break;
+        }
+        printf("Do you want to continue?(y/n):");
+        scanf(" %c",&input);
+        while(input=='y'){
+            goto menu;
+        }
+        while(input=='n'){
+            printf("Program terminated.Thank you!");
+            break;
+        }
+    
+
+    return 0;
+}
+
+

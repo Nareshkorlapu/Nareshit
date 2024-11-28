@@ -1,0 +1,143 @@
+Que 1 :  A shopkeeper buys a TV set for Rs. 3500 and sells it at a profit of 27%. Apart from this a VAT of 12.7% and Service Charge is 3.87% is charged. 
+-------  Write a C program to Display total selling price, profit along with vat and service charge.
+         To calculate the selling price, profit, VAT, and service charge, follow these steps:
+
+         1) Calculate the selling price:
+
+            Selling Price = Cost Price + Profit
+
+            Selling Price = Rs. 3500 + (27% of Rs. 3500)
+
+
+         2) Calculate the profit:
+
+            Profit = Selling Price - Cost Price
+
+
+         3) Calculate VAT:
+
+            VAT = 12.7% of Selling Price
+
+
+         4) Calculate Service Charge:
+
+            Service Charge = 3.87% of Selling Price
+
+========================================================================================================
+
+Que 2 : Using ternary operator write a C program for a bookstore named "BookWorld" that calculates the discounted amount based on the total purchase amount. 
+------  
+
+The store provides three types of discounts to its customers:
+-> If the total purchase amount is less than Rs. 1000, there is no discount.
+-> If the total purchase amount is between Rs. 1000 and Rs. 5000 (inclusive), customers get a 5% discount on the total purchase amount.
+-> If the total purchase amount is greater than Rs. 5000, customers get a 10% discount on the total purchase amount.
+
+Sample input  : purchase amount = 999
+Sample output : total amount = 999
+
+Sample input  : purchase amount = 2000
+Sample output : total amount including 5% discount = 1900
+
+Sample input  : purchase amount = 10000
+Sample output : total amount including 10% discount = 9000
+
+
+#include <stdio.h>
+
+int main() {
+    float purchaseAmount, discount, totalAmount;
+
+    // Input the purchase amount
+    printf("Enter the total purchase amount: ");
+    scanf("%f", &purchaseAmount);
+
+    // Initialize discount
+    discount = 0;
+
+    // Calculate discount using logical operators
+    (purchaseAmount < 1000 && (discount = 0)) ||
+    (purchaseAmount >= 1000 && purchaseAmount <= 5000 && (discount = 0.05 * purchaseAmount)) ||
+    (purchaseAmount > 5000 && (discount = 0.10 * purchaseAmount));
+
+    // Calculate total amount after discount
+    totalAmount = purchaseAmount - discount;
+
+    // Output the results
+    if (discount > 0) {
+        printf("Total amount including discount: %.2f\n", totalAmount);
+    } else {
+        printf("Total amount: %.2f\n", totalAmount);
+    }
+
+    return 0;
+}
+
+
+========================================================================================================       
+
+Que 3 : You are developing a program for an online bus ticket booking platform called "BusTicketBooker." 
+------  The platform offers tickets for a fixed price of Rs. 300 per seat. However, there are discounts available for senior citizens. 
+        If a passenger's age is between 60 and 100 (inclusive), they will receive a 20% discount on the total booking cost.
+
+        Write a C program for "BusTicketBooker" that takes the number of tickets and the age of the passenger as inputs and calculates the total booking cost after applying any applicable discount using the ternary operator. 
+        The program should then display the bill with a suitable message, including the total cost and the discount amount (if applicable).
+
+        Your task is to implement the program logic inside the main function by using only Ternary Operator.
+
+
+Example 1: Passenger is not a senior citizen
+Sample Input: 
+              number of tickets: 3
+              age of the passenger: 45
+
+Sample Output:
+              Total cost before discount: Rs. 900.00
+              Discount amount: Rs. 0.00
+              Total cost after discount: Rs. 900.00
+
+
+Example 2: Passenger is a senior citizen
+Sample Input:
+              number of tickets: 2
+              age of the passenger: 65
+
+Sample Output:
+              Total cost before discount: Rs. 600.00
+              Discount amount: Rs. 120.00
+             Total cost after discount: Rs. 480.00
+
+
+
+#include <stdio.h>
+
+int main() {
+    int numberOfTickets;
+    int age;
+    const float ticketPrice = 300.0;
+    
+    // Input number of tickets and age
+    printf("Enter number of tickets: ");
+    scanf("%d", &numberOfTickets);
+    printf("Enter age of the passenger: ");
+    scanf("%d", &age);
+
+    // Calculate total cost before discount
+    float totalCost = numberOfTickets * ticketPrice;
+
+    // Calculate discount and final total using ternary operator
+    float discount = (age >= 60 && age <= 100) ? (0.20 * totalCost) : 0.0;
+    float totalCostAfterDiscount = totalCost - discount;
+
+    // Output the results
+    printf("Total cost before discount: Rs. %.2f\n", totalCost);
+    printf("Discount amount: Rs. %.2f\n", discount);
+    printf("Total cost after discount: Rs. %.2f\n", totalCostAfterDiscount);
+
+    return 0;
+}
+
+
+
+========================================================================================================       
+       

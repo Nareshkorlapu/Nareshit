@@ -1,0 +1,38 @@
+.ball{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 50%;
+    animation-name: moving-ball;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: absolute;
+}
+@keyframes moving-ball {
+    0%{
+        top:0;
+        left: 0;
+    }
+    10%{
+        top: 20%;
+        left:30%;
+    }
+    20%{
+        top: 30%;
+        left:20%;
+    }
+    40%{
+        top: 20%;
+        left:30%;
+    }
+    55%{
+        top: 30%;
+        left:20%;
+    }
+    100%{
+        top: 50%;
+        left:50%;
+    }
+}

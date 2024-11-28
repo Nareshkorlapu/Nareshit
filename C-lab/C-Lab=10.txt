@@ -1,0 +1,268 @@
+Program-1 :- [ok]
+-----------------
+[Title: Time of Day Classifier]
+--------------------------------
+
+Write a C Program to Identify the Time of Day :-
+-------------------------------------------------
+Develop a C program that accepts an hour (in 24-hour format) as input and classifies the time of day as "Morning," "Afternoon," "Evening," or "Night." Implement this using a series of if statements. The program should also validate the input and display an error message if the entered hour is outside the valid range (0-23).
+
+Sample Input :-
+---------------
+Enter the hour (24-hour format): 13
+
+Sample Output :-
+----------------
+It's Afternoon.
+
+Sol:
+____
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int hr=24;
+    printf("Enter the hour(24-hour format):");
+    scanf("%d",&hr);
+    if(hr>=0 && hr<=10)
+    {
+        printf("It's Morning");
+    }
+    else if(hr>=11 && hr<=15)
+    {
+        printf("It's Afternoon");
+    }
+    else if(hr>=16 && hr<=20)
+    {
+        printf("It's evening");
+    }
+    else if(hr>=21 && hr<=23)
+    {
+        printf("It's night");
+    }
+    else
+    {
+        printf("Error:Invalid input");
+    }
+
+    return 0;
+}
+Program-2 :- [ok]
+-----------------
+
+Title: Finding the Maximum of Three Numbers 
+--------------------------------------------
+
+Write a C program to find the maximum among three numbers.
+
+Sample Input :- 
+---------------
+Enter First Number -> 100
+Enter Second Number -> 200
+Enter Third Number -> 300
+
+Sample Output :- 
+-----------------
+Biggest Number is 300
+
+Sol:
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("Enter First Number:");
+    scanf("%d",&a);
+    printf("Enter Second Number:");
+    scanf("%d",&b);
+    printf("Enter Third Number:");
+    scanf("%d",&c);
+    if(a>b && a>c)
+    {
+        printf("Biggest number is:%d",a);
+    }
+    else if (b>a && b>c)
+    {
+        printf("Biggest number is:%d",b);
+    }
+    else
+    {
+        printf("Biggest number is:%d",c);
+    }
+
+    return 0;
+}
+Program-3 :- [ok]
+-----------------
+Title: Check if a Number is Positive, Negative, or Zero
+--------------------------------------------------------
+Write a C program to check whether a number is negative, positive, or zero.
+
+Sample input :-  
+---------------
+Enter a number -> 10
+
+Sample output :- 
+----------------
+10 is Positive number
+
+Sample input :-  
+---------------
+Enter a number -> 0
+
+Sample output :- 
+----------------
+The number you have entered is - zero
+
+Sample input :-  
+---------------
+Enter a number -> -2
+
+Sample output :- 
+----------------
+negative number
+
+Sol:
+___
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    if(a>0)
+    {
+        printf("%d is positive number",a);
+    }
+    else if(a<0)
+    {
+        printf("%d is negative number",a);
+    }
+    else
+    {
+        printf("The number you have entered is -zero");
+    }
+
+    return 0;
+}
+
+Program-4 :- [ok]
+-----------------
+[Title: Character Type Checker in C]
+------------------------------------
+Write a C program to input any character and check whether it is an alphabet, a digit, or a special character.
+
+Sample Input :- 
+----------------
+Enter a Character -> 'A';
+
+Sample Output :-
+----------------
+Entered Character is Alphabet
+
+Sample Input :- 
+----------------
+Enter a Character -> '9';
+
+Sample Output :-
+----------------
+Entered Character is - Digit
+
+Sample Input :- 
+----------------
+Enter a Character -> '@';
+
+Sample Output :-
+----------------
+@ is Special character
+
+Sol:
+___
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a Character:");
+    scanf("%c",&ch);
+    if(ch>=65 && ch<=90 || ch>=97 && ch<=122)
+    {
+        printf("Entered Character is Alphabet");
+    }
+    else if(ch>=48 && ch<=57)
+    {
+        printf("Entered Character is-Digit");
+        
+    }
+    else if(ch>=33 && ch<=64 || ch>=123 && ch<=127 )
+    {
+        printf("%c is a Special character",ch);
+    }
+
+    return 0;
+}
+
+Program-5 :- [ok]
+-----------------
+[Title: Triangle Validity Check Using Side Lengths]
+---------------------------------------------------
+
+Write a C program to input the lengths of all sides of a triangle and check whether the triangle is valid.
+
+Validity Check :-
+------------------
+	-> The sum of side1 and side2 must be greater than side3.
+	-> The sum of side1 and side3 must be greater than side2.
+	-> The sum of side2 and side3 must be greater than side1.
+
+If all three conditions are true, the program should print "The triangle is valid." If any of the conditions are false, the program should print "The triangle is not valid."
+
+Sample Input :-
+---------------
+Enter the lengths of the three sides of the triangle:
+-> Side 1: 3
+-> Side 2: 4
+-> Side 3: 5
+
+Sample Output :-
+-----------------
+The triangle is valid.
+
+Sample Input :-
+---------------
+Enter the lengths of the three sides of the triangle:
+-> Side 1: 1
+-> Side 2: 2
+-> Side 3: 3
+
+Sample Output :-
+----------------
+The triangle is not valid.
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int s1,s2,s3;
+    printf("Enter side1:");
+    scanf("%d",&s1);
+    printf("Enter side2:");
+    scanf("%d",&s2);
+    printf("Enter side3:");
+    scanf("%d",&s3);
+    if((s1+s2>s3) && (s1+s3>s2) && (s2+s3>s1))
+    {
+        printf("The triangle is valid");
+    }
+    else
+    {
+        printf("This in not valid");
+    }
+
+    return 0;
+}

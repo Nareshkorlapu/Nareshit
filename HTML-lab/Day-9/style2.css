@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    margin: 20px 5px;
+}
+p{
+    margin:10px 5px;
+}
+.p1{
+    border: 2px dotted black;
+    margin: 10px 5px;
+}
+.p2{
+    border: 2px dashed black;
+    margin: 10px 5px;
+}
+.p3{
+    border: 2px solid black;
+    margin: 10px 5px;
+}
+.p4{
+    border: 3px double black;
+    margin: 10px 5px;
+}
+.p5{
+    border: 2px groove black;
+    margin: 10px 5px;
+}
+.p6{
+    border: 2px ridge black;
+    margin: 10px 5px;
+}
+.p7{
+    border: 3px inset black;
+    margin: 10px 5px;
+}
+.p8{
+    border: 3px outset black;
+    margin: 10px 5px;
+}
+.p9{
+    border:  black;
+    margin: 10px 5px;
+}
+.p10{
+    border: 2px hidden black;
+    margin: 10px 5px;
+}
+.p11{
+    border-width: 3px;
+    border-style: dotted dashed solid;
+    border-color: black;
+    margin: 10px 5px;
+}
+.p12{
+    border: 5px solid black;
+    margin: 10px 5px;
+}
+.p13{
+    border: 2px solid black;
+    margin: 10px 5px;
+}
+.p14{
+    border: 2px dotted black;
+    margin: 10px 5px;
+}
+.p15{
+    border: 5px dotted black;
+    margin: 10px 5px;
+}
+.p16{
+    border: 7px double black;
+    margin: 10px 5px;
+}
+.p17{
+    border: 3px double black;
+    margin: 10px 5px;
+}
+.p18{
+    border: 2px solid red;
+    border-radius: 0px;
+    margin: 10px 5px;
+}
+.p19{
+    border: 2px solid red;
+    border-radius: 4px;
+    margin: 10px 5px;
+}
+.p20{
+    border: 2px solid red;
+    border-radius: 7px;
+    margin: 10px 5px;
+}
+.p21{
+    border: 2px solid red;
+    border-radius: 10px;
+    margin: 10px 5px;
+}

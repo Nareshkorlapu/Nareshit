@@ -1,0 +1,384 @@
+Que 1 : 
+=======
+
+Write a C program to read name and age of person and by age check the person is eligible for vote or not using simple (if) only.
+
+Sample input  : Enter your name: Kishor
+                Enter your age: 20
+Sample output : Hi kishor you are eligible to vote.
+
+Sample input  : Enter your age: 16
+Sample output : Sorry Kishor you are not eligible to vote.
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char name[10];
+    int age;
+    printf("Enter your name:");
+    scanf("%s",&name);
+    printf("Enter your age:");
+    scanf("%d",&age);
+    if(age>=18)
+    {
+        printf("Hi %s you are eligible to vote.\n",name);
+        return 0;
+    }
+        printf("Sorry %s you are not eligible to vote.",name);
+
+    return 0;
+}
+
+==========================================================================================================
+
+Que 2 : 
+=======
+
+Write a C program to read name and age of person and by age check the person is eligible for vote or not using if-else.
+
+Sample input  : Enter your name: Kishor
+                Enter your age: 20
+Sample output : Hi kishor you are eligible to vote.
+
+
+Sample input  : Enter your name: Kishor
+                Enter your age: 16
+Sample output : Sorry Kishor you are not eligible to vote.
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char name[10];
+    int age;
+    printf("Enter your name:");
+    scanf("%s",&name);
+    printf("Enter your age:");
+    scanf("%d",&age);
+    if(age>=18)
+    {
+        printf("Hi %s you are eligible to vote.\n",name);
+    }
+    else {
+        printf("Sorry %s you are not eligible to vote.",name);
+    }
+
+    return 0;
+}
+
+
+==========================================================================================================
+
+Que 3 : 
+=======
+
+Write a C program to find maximum between two numbers using simple (if) only.
+
+Sample input  : int a = 100, b = 200
+Sample output : 200
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b;
+    printf("int a=");
+    scanf("%d",&a);
+    printf(",b=");
+    scanf("%d",&b);
+    if(a>b)
+    {
+        printf("%d",a);
+        return 0;
+    }
+    printf("%d",b);
+
+    return 0;
+}
+
+==========================================================================================================
+
+Que 4 : 
+=======
+
+Write a C program to find maximum between two numbers using if-else.
+
+Sample input  : int a = 100, b = 200
+Sample output : 200
+
+Sol:
+___
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b;
+    printf("int a=");
+    scanf("%d",&a);
+    printf("b=");
+    scanf("%d",&b);
+    if(a>b)
+    {
+        printf("%d",a);
+    }
+    else
+    {
+        printf("%d",b);
+    }
+
+    return 0;
+}
+
+
+==========================================================================================================
+
+Que 5 : 
+=======
+
+Write a C program to read one character from user and convert it into upercase if given character is in lowercase otherwise convert itno lowercase using simple (if) only.
+
+Sample input  : char ch = 'A';
+Sample output : a
+
+Sample input  : char ch = 'b';
+Sample output : B 
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<ctype.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch>='a'&& ch<='z')
+    {
+        printf("%c",toupper(ch));
+       
+    }
+     if(ch>='A'&& ch<='Z')
+    {
+        printf("%c",tolower(ch));
+     
+    }
+   
+    return 0;
+}
+
+==========================================================================================================
+
+Que 6 : 
+=======
+
+Write a C program to read one character from user and convert it into upercase if given character is in lowercase otherwise convert itno lowercase using if-else only.
+
+Sample input  : char ch = 'A';
+Sample output : a
+
+Sample input  : char ch = 'b';
+Sample output : B 
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<ctype.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch==toupper(ch))
+    {
+        printf("%c",tolower(ch));
+        return 0;
+    }
+    else
+    {
+    printf("%c",toupper(ch));
+    }
+
+    return 0;
+}
+
+												OR
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<ctype.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch>='a'&& ch<='z')
+    {
+        printf("%c",toupper(ch));
+        return 0;
+       
+    }
+        printf("%c",tolower(ch));
+     
+   
+    return 0;
+}
+
+
+==========================================================================================================
+
+Que 7 : 
+=======
+
+Write a C program to input any alphabet and check whether it is vowel or consonant using simple(if) only.
+
+Sample input  : char ch = 'A';
+Sample output : Vowel
+
+Sample input  : char ch = 'b';
+Sample output : Consonant
+
+Sol:
+__
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch=='A' ||  ch=='E' || ch=='I' || ch=='O' || ch=='U')
+    {
+        printf("Vowel",ch);
+        return 0;
+    }
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+    {
+        printf("Vowel",ch);
+        return 0;
+    }
+    printf("Consonant",ch);
+    
+
+    return 0;
+}
+
+==========================================================================================================
+
+Que 8 : 
+=======
+
+Write a C program to input any alphabet and check whether it is vowel or consonant using if-else.
+
+Sample input  : char ch = 'A';
+Sample output : Vowel
+
+Sample input  : char ch = 'b';
+Sample output : Consonant
+
+Sol:
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch=='A' ||  ch=='E' || ch=='I' || ch=='O' || ch=='U')
+    {
+        printf("Vowel",ch);
+        return 0;
+    }
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+    {
+        printf("Vowel",ch);
+        return 0;
+    }
+    else
+    {
+      printf("Consonant",ch);  
+    }
+    
+    
+
+    return 0;
+}
+
+
+==========================================================================================================
+
+Que 9 : 
+=======
+
+Write a C program to check whether a character is uppercase or lowercase alphabet using simple(if) only.
+
+Sample input  : char ch = 'A';
+Sample output : UpperCase
+
+Sample input  : char ch = 'b';
+Sample output : LoweCase
+
+Sol:
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch>='A' && ch<='Z')
+    {
+        printf("Uppercase",ch);
+        return 0;
+    }
+    printf("Lowercase",ch);
+    
+
+    return 0;
+}
+==========================================================================================================
+
+Que 10 : 
+=======
+
+Write a C program to check whether a character is uppercase or lowercase alphabet using if-else.
+
+Sample input  : char ch = 'A';
+Sample output : UpperCase
+
+Sample input  : char ch = 'b';
+Sample output : LoweCase
+
+Sol:
+____
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("char ch=");
+    scanf("%c",&ch);
+    if(ch>='A' && ch<='Z')
+    {
+        printf("Uppercase",ch);
+        return 0;
+    }
+    else
+    {
+    printf("Lowercase",ch);
+    }
+    
+
+    return 0;
+}

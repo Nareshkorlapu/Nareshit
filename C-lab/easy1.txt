@@ -1,0 +1,97 @@
+Que 1 :  A shopkeeper buys a TV set for Rs. 3500 and sells it at a profit of 27%. Apart from this a VAT of 12.7% and Service Charge is 3.87% is charged. 
+-------  Write a C program to Display total selling price, profit along with vat and service charge.
+         To calculate the selling price, profit, VAT, and service charge, follow these steps:
+
+         1) Calculate the selling price:
+
+            Selling Price = Cost Price + Profit
+
+            Selling Price = Rs. 3500 + (27% of Rs. 3500)
+
+
+         2) Calculate the profit:
+
+            Profit = Selling Price - Cost Price
+
+
+         3) Calculate VAT:
+
+            VAT = 12.7% of Selling Price
+
+
+         4) Calculate Service Charge:
+
+            Service Charge = 3.87% of Selling Price
+
+int main() {
+   int cp=3500;
+   float p,vat,sc,sp,tot;
+   printf("costprice=%d\n",cp);
+   p=(cp*27)/100;
+   printf("profit=%2f\n",p);
+   sp=cp+p;
+   printf("selling price=%2f\n",sp);
+   vat=(sp*12.7)/100;
+   printf("vat=%2f\n",vat);
+   sc=(sp*3.87)/100;
+   printf("service charge=%2f\n",sc);
+   tot=sp-vat-sc;
+   printf("total selling price=.%2f\n",tot);
+    return 0;
+
+}
+========================================================================================================
+
+Que 2 : Using ternary operator write a C program for a bookstore named "BookWorld" that calculates the discounted amount based on the total purchase amount. 
+------  
+
+The store provides three types of discounts to its customers:
+-> If the total purchase amount is less than Rs. 1000, there is no discount.
+-> If the total purchase amount is between Rs. 1000 and Rs. 5000 (inclusive), customers get a 5% discount on the total purchase amount.
+-> If the total purchase amount is greater than Rs. 5000, customers get a 10% discount on the total purchase amount.
+
+Sample input  : purchase amount = 999
+Sample output : total amount = 999
+
+Sample input  : purchase amount = 2000
+Sample output : total amount including 5% discount = 1900
+
+Sample input  : purchase amount = 10000
+Sample output : total amount including 10% discount = 9000
+
+========================================================================================================       
+
+Que 3 : You are developing a program for an online bus ticket booking platform called "BusTicketBooker." 
+------  The platform offers tickets for a fixed price of Rs. 300 per seat. However, there are discounts available for senior citizens. 
+        If a passenger's age is between 60 and 100 (inclusive), they will receive a 20% discount on the total booking cost.
+
+        Write a C program for "BusTicketBooker" that takes the number of tickets and the age of the passenger as inputs and calculates the total booking cost after applying any applicable discount using the ternary operator. 
+        The program should then display the bill with a suitable message, including the total cost and the discount amount (if applicable).
+
+        Your task is to implement the program logic inside the main function by using only Ternary Operator.
+
+
+Example 1: Passenger is not a senior citizen
+Sample Input: 
+              number of tickets: 3
+              age of the passenger: 45
+
+Sample Output:
+              Total cost before discount: Rs. 900.00
+              Discount amount: Rs. 0.00
+              Total cost after discount: Rs. 900.00
+
+
+Example 2: Passenger is a senior citizen
+Sample Input:
+              number of tickets: 2
+              age of the passenger: 65
+
+Sample Output:
+              Total cost before discount: Rs. 600.00
+              Discount amount: Rs. 120.00
+             Total cost after discount: Rs. 480.00
+
+
+========================================================================================================       
+       

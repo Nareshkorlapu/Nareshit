@@ -1,0 +1,423 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+Write a simple C program that reads an integer from the user and prints the multiplication table of the given number using a while loop.
+
+Sample Input :-
+---------------
+N = 5
+
+Sample-run :-
+--------------
+Test Case-1 :- (Valid Input)
+--------------
+Input: N = 7
+
+Output :-
+---------
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+
+Test Case-2 :- (Valid Input)
+--------------
+Input: N = 0
+
+Output :-
+----------
+0 x 1 = 0
+0 x 2 = 0
+0 x 3 = 0
+0 x 4 = 0
+0 x 5 = 0
+0 x 6 = 0
+0 x 7 = 0
+0 x 8 = 0
+0 x 9 = 0
+0 x 10 = 0
+
+Test Case-3 :- (Valid Input - Negative Number)
+--------------
+Input: N = -3
+
+Output :-
+---------
+-3 x 1 = -3
+-3 x 2 = -6
+-3 x 3 = -9
+-3 x 4 = -12
+-3 x 5 = -15
+-3 x 6 = -18
+-3 x 7 = -21
+-3 x 8 = -24
+-3 x 9 = -27
+-3 x 10 = -30
+
+Test Case-4 :- (Invalid Input - Non-integer)
+--------------
+Input: N = 4.5
+
+Output :- Invalid input. Please enter an integer.
+---------
+
+Test Case-5 :- (Invalid Input - String)
+---------------
+Input: N = "abc"
+
+Output :- Invalid input. Please enter an integer.
+---------
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,i=1;
+    char ch;
+    printf("Enter n value:");
+    if(scanf("%d%c",&n,&ch)!=2 || ch!='\n')
+    {
+    printf("Invalid input.Please enter integer");
+    return 1;
+    }
+    else
+    {
+        while(i<=10)
+    {
+        printf("%d x %d = %d\n",n,i,i*n);
+        i++;
+    }
+    
+
+    return 0;
+}
+}
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+Write a C program that reads a positive integer N from the user and calculates the sum of even and odd numbers between 1 and N using a while loop.
+The program should then print the sum of even numbers and the sum of odd numbers.
+
+Note: If the user enters a negative value, the program should print "Invalid Input".
+
+Test Case-1 :- (Valid Input - Positive Integer):
+--------------
+Input: N = 5
+Output :-
+---------
+Even sum => 2 + 4 = 6
+Odd sum  => 1 + 3 + 5 = 9
+
+Test Case-2 :- (Valid Input - Edge Case-Minimum or Maximum Values: Inputs at the smallest or largest allowable values.)
+--------------
+Input: N = 1
+
+Output :-
+----------
+Even sum => 0
+Odd sum  => 1
+
+Test Case-3 :- (Invalid Input - Negative Integer):
+--------------
+Input: N = -3
+
+Output :-
+---------
+Invalid Input
+
+Test Case-4 :- (Invalid Input - Non-integer Value):
+--------------
+Input: N = 4.5
+
+Output :-
+---------
+Invalid Input
+
+Test Case-5 :- (Invalid Input - String):
+--------------
+Input: N = "hello"
+
+Output :-
+---------
+Invalid Input
+
+Sol:-
+_____
+#include <stdio.h>
+
+int main() {
+    int n, i = 1;
+    int esum = 0, osum = 0;
+
+    printf("Input: N = ");
+    scanf("%d", &n);
+if(n>0){
+    while (i <= n) {
+        if (i % 2 == 0) {
+            esum += i; 
+        } else {
+            osum += i;  
+        }
+        i++; 
+    }
+    printf("Even sum => %d\n", esum);
+    printf("Odd sum => %d\n", osum);
+}
+else{
+    printf("Invalid Input");
+}
+
+    
+
+    return 0;
+}
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+Write a C program that reads an integer from the user and prints the count of digits in the given number.
+The program should handle both positive and negative numbers.
+
+Valid Test-Cases :-
+-------------------
+Test Case-1 :-
+---------------
+Input :- 56789
+--------
+
+Output :-  No of Digits - 5
+----------
+
+Test Case-2 :-
+--------------
+Input :- -456
+--------
+Output :- No of Digits - 3
+---------
+
+Test Case-3 :- (Edge Case - Single Digit Positive):
+--------------
+Input :- 7
+--------
+
+Output :- No of Digits - 1
+---------
+Test Case-4 :- (Edge Case - Single Digit Negative):
+--------------
+Input :- 9
+--------
+Output :- No of Digits - 1
+---------
+
+Test Case-5 :- (Zero as Input):
+---------------
+Input :- 0
+--------
+
+Output :- 1
+----------
+
+Invalid Test-Cases :-
+---------------------
+Test Case-6 :- (Non-integer Input):
+--------------
+Input :- 12.34
+--------
+
+Output :- Invalid Input
+---------
+
+Test Case-7 :- (String Input):
+--------------
+Input :- "abc"
+--------
+
+Output :- Invalid Input
+---------
+
+Test Case-8 :- (Special Characters):
+--------------
+Input :- @#$%
+--------
+
+Output :- Invalid Input
+---------
+
+Sol:-
+______
+#include <stdio.h>
+
+int main() {
+    int n, c = 0;
+
+    printf("Input :- ");
+    if (scanf("%d", &n) != 1) {
+        printf("Invalid input\n");
+        return 1; 
+    }
+
+    if (n < 0) {
+        n = -n;  
+    }
+   
+    if (n == 0) {
+        c = 1;
+    } else {
+        
+        while (n > 0) {
+            n = n / 10;
+            c++;        
+        }
+    }
+    
+    printf("No of digits: %d\n", c);
+
+    return 0;
+}
+
+|--------------|
+| Program-4 :- | [ok]
+|--------------|
+
+Write a C program to reverse a given integer using a while loop.
+
+Valid Test Cases :-
+--------------------
+Test Case-1 :- (Positive Number)
+--------------
+Input :- 98765
+--------
+
+Output :- Reversed Number: 56789
+---------
+
+Test Case-2 :- (Negative Number)
+--------------
+Input :-  -123
+--------
+
+Output :- Reversed Number: -321
+---------
+
+Test Case-3 :- (Single Digit Positive)
+-------------
+Input :- 8
+--------
+
+Output :- Reversed Number: 8
+---------
+
+Test Case-4 :- (Single Digit Negative)
+--------------
+Input :-  -5
+--------
+
+Output :- Reversed Number: -5
+---------
+
+Test Case-5 :- (Zero as Input)
+--------------
+Input :- 0
+--------
+
+Output :- Reversed Number: 0
+---------
+
+Invalid Test Cases :-
+----------------------
+Test Case-6 :- (Non-integer Input)
+--------------
+Input :- 45.67
+--------
+
+Output :- Invalid Input
+---------
+
+Test Case-7 :- (String Input):
+--------------
+Input :- "hello"
+--------
+
+Output :- Invalid Input
+---------
+
+Test Case-8 :- (Special Characters)
+--------------
+Input :- @123
+--------
+
+Output :- Invalid Input
+---------
+
+Sol:-
+_____
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int isValidInteger(const char *input) {
+    // Check if the input is a valid integer
+    if (*input == '-' || *input == '+') {
+        input++; // Skip the sign for checking
+    }
+    while (*input) {
+        if (!isdigit(*input)) {
+            return 0; // Not a valid integer
+        }
+        input++;
+    }
+    return 1; // Valid integer
+}
+
+int main() {
+    char input[100];
+    int n, reversed = 0, remainder;
+
+    // Prompt the user for input
+    printf("Input an integer: ");
+    scanf("%s", input);
+
+    // Validate the input
+    if (!isValidInteger(input)) {
+        printf("Invalid input\n");
+        return 1; // Exit with an error code
+    }
+
+    // Convert the validated input to an integer
+    n = atoi(input);
+
+    // Handle negative numbers
+    int isNegative = (n < 0) ? 1 : 0;
+    if (isNegative) {
+        n = -n; // Work with the absolute value
+    }
+
+    // Reverse the integer using a while loop
+    while (n != 0) {
+        remainder = n % 10;          // Get the last digit
+        reversed = reversed * 10 + remainder; // Append last digit
+        n /= 10;                     // Remove the last digit
+    }
+
+    // Restore the sign for negative numbers
+    if (isNegative) {
+        reversed = -reversed;
+    }
+
+    // Print the reversed integer
+    printf("Reversed integer: %d\n", reversed);
+
+    return 0;
+}

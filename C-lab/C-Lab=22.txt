@@ -1,0 +1,129 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+[Title:- List Out All Prime Numbers in a Range]
+-----------------------------------------------
+
+Write a C program to find and print all prime numbers within a given range defined by two integers, N1 and N2.
+The program should read N1 and N2 from the user and display all prime numbers in this range.
+
+Sample-run-1 :-
+----------------
+
+Sample Input :-
+---------------
+N1 = 1, N2 = 20
+
+Sample Output :-
+----------------
+2, 3, 5, 7, 11, 13, 17, 19.
+
+Sample-run-2 :-
+---------------
+
+Sample Input :-
+---------------
+N1 = 10, N2 = 1
+
+Sample Output :-
+----------------
+7, 5, 3, 2.
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b,c=0;
+    printf("N1=");
+    scanf("%d",&a);
+    printf("N2=");
+    scanf("%d",&b);
+    if(a<b)
+    for(int i=a;i<=b;i++)
+    {
+        c=0;
+        for(int j=1;j<=i;j++)
+        {
+            if(i%j==0) c++;
+        }
+            if(c==2){
+                printf("%d,",i);
+            }
+        }
+        else if(b<a){
+            for(int i=a;i>=b;i--) {
+                c=0;
+                for(int j=1;j<=i;j++) {
+                    if(i%j==0) c++;
+                }
+                if(c==2) printf("%d,",i);
+            }
+        }
+
+    return 1;
+}
+
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+[Title:- Finding Armstrong Numbers in a Given Range]
+----------------------------------------------------
+
+Write a C program to find and print all Armstrong numbers within a given range of two integers, 𝑁1 and 𝑁2.
+The program should read 𝑁1 and 𝑁2 from the user and display all Armstrong numbers in this range.
+If 𝑁1 is greater than 𝑁2, the program should print an error message.
+
+-> An Armstrong number (also known as a Narcissistic number or Pluperfect Digital Invariant) is a number that is equal to the sum of its own digits, each raised to the power of the number of digits.
+
+-> Example 1: 153 → [1 pow 3] + [5 pow 3] + [3 pow 3] = 153 
+-> Example 2: 1634 → [1 pow 4]  + [6 pow 4] + [3 pow 4] + [4 pow 4] = 1634
+
+Sample Input :-
+---------------
+𝑁1 = 100 & 𝑁2 = 100000
+
+Sample Output :-
+-----------------
+Armstrong numbers between 100 and 100000 are :-
+------------------------------------------------
+153
+370
+371
+407
+1634
+8208
+9474
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+[Title:- Find and Print Strong Numbers Within a Given Range]
+------------------------------------------------------------
+
+Write a C program to find and print all Strong numbers within a given range defined by two integers, N1 and N2.
+The program should read N1 and N2 from the user and display all Strong numbers within this range.
+
+-> A Strong number is a number in which the sum of the factorials of its digits is equal to the number itself.
+
+For example :-
+--------------
+145 is a Strong number because 1! + 4! + 5! = 145.
+
+Sample input :-
+---------------
+N1 = 1
+N2 = 100000
+
+Sample output :-
+----------------
+Strong numbers between 1 and 100000 are :-
+-------------------------------------------
+1
+2
+145
+40585

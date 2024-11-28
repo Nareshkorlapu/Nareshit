@@ -1,0 +1,13 @@
+images: ideogram,freepik,unsplash,pexels
+videos: freepik
+inspiration: dribble,behance
+UI/UX: figma
+
+HTML -- freecodecamp
+
+CSS -- freecodecamp,frontend mentor,Codepen,CSSBattle,Freefrontend
+
+Readymade templates  : htmlrev,startbootstrap
+
+fonts : google fonts, dafont, 1001 fonts
+

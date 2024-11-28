@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tech Event Survey Form</h1>
+    
+    <div>
+        <fieldset>
+    <legend>Personal Information</legend>
+    <label for="text">Name:</label>
+    <input type="text" name="text" id="text"><br><br>
+    <label for="em">Email:</label>
+    <input type="email" name="email" id="em"><br><br>
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" maxlength="100" style="width: 50px;"><br><br>
+    <label for="gender">Gender:</label><br>
+    <input type="radio" name="gender" id="m">
+    <label for="m">Male</label><br>
+    <input type="radio" name="gender" id="f">
+    <label for="f">Female</label><br><br>
+    </fieldset>
+    </div>
+    <div>
+        <fieldset>
+    <legend>Professional Inforamtion</legend>
+    <label for="job">Job Role:</label>
+        <select name="branch" id="" >
+            <option value="dev">Developer</option>
+            <option value="test">Tester</option>
+            <option value="mang">Manager</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <br><br>
+        <label for="range">Years of Experience:</label>
+        <input type="range" name="" id="" min="0" max="30">0 years
+        </fieldset>
+        </div>
+        <br><br>
+        <div>
+            <fieldset>
+            <legend>Interests</legend>
+            <label for="chckbox">Areas of Interest:</label><br>
+            <input type="checkbox" name="ai" id="checkbox">
+            <label for="checkbox">AI</label><br>
+            <input type="checkbox" name="cloud" id="checkbox">
+            <label for="checkbox">Cloud Computing</label><br>
+            <input type="checkbox" name="data" id="checkbox">
+            <label for="checkbox">Data Science</label><br>
+            <input type="checkbox" name="cybersecurity" id="checkbox">
+            <label for="checkbox">Cybersecurity</label>
+            </fieldset>
+        </div>
+        <br><br>
+        <div>
+            <fieldset>
+            <legend>Comments</legend>
+            <label for="area">Suggestions:</label>
+            <input type="text" name="" id="" style="width: 500px;height: 50px;">
+            </fieldset>
+        </div>
+        <input type="submit" value="Submit Survey" >
+</body>
+</html>

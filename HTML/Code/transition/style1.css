@@ -1,0 +1,41 @@
+.main{
+    display: flex;
+    gap: 20px;
+    height: 100vh;
+    width: 100vw;
+}
+.ball{
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+    animation-name: moving-ball;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+}
+@keyframes moving-ball {
+    0%{
+        top:0;
+        left: 0;
+    }
+    100%{
+        top: 90%;
+        bottom:80%;
+    }
+}
+.ball1{
+    animation-delay: 0.2s;
+    background-color: orange;
+}
+.ball2{
+    animation-delay: 0.4s;
+    background-color: blue;
+    border: 1px solid black;
+}
+.ball3{
+    animation-delay: 0.6s;
+    background-color: green;
+}

@@ -1,0 +1,417 @@
+|-------------|
+|Program-1 :- | [ok]
+|-------------|
+
+[Title: Determine the Number of Days in a Month Based on User Input]
+----------------------------------------------------------------------
+Problem Statement :-
+--------------------
+Write a C program that takes a month number (1-12) as input from the user and prints the number of days in that month using a if-else statement. If the user enters a number outside the range of 1-12, the program should display an error message.
+
+Explanation :-
+---------------
+Use a switch statement to handle different cases for each month:
+
+-> For months with 31 days (January, March, May, July, August, October, December), display "31 days."
+-> For months with 30 days (April, June, September, November), display "30 days."
+-> For February (month 2), print "28 or 29 days (depending on leap year)," as February can have 28 or 29 days.
+
+For any invalid month number (not between 1 and 12), print "Invalid month number."
+
+Additional Considerations :-
+-----------------------------
+The program should handle user input and validate it using a switch-case structure. While there's no need for a leap year calculation in this basic program, note that leap years affect February’s day count.
+
+Sample Input and Output :-
+---------------------------
+
+Sample input-1:  Enter Month 3
+-----------------
+Sample output-1: 31 days
+
+Sample input-2 :- Enter Month 2
+-----------------
+Sample output-2 :- 28 or 29 days (depending on leap year)
+-------------------
+
+Sample input 3 :- 11
+-----------------
+Sample output 3 :- 30 days
+-------------------
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() 
+{
+    int mnth;
+    printf("Enter month: ");
+    scanf("%d",&mnth);
+    if(mnth==1 || mnth==3 || mnth==5 || mnth==7 || mnth==8 || mnth==10 || mnth==12)
+    {
+        printf("31 days");
+    }
+    else if(mnth==2)
+    {
+        printf("28 or 29 days(depending on laep year");
+    }
+    else if(mnth==4 || mnth==6 || mnth==9 || mnth==11)
+    {
+        printf("30 days");
+    }
+    else
+    {
+        printf("Invalid month number");
+    }
+
+    return 0;
+}
+
+|-------------|
+|Program-2 :- | [ok]
+|-------------|
+
+[Title: "Perform Arithmetic Operations on Two Numbers Using a if-else"]
+-------------------------------------------------------------------------
+
+Write a C program to perform an arithmetic operation on two numbers using a switch case.
+Use operators (+, -, *, /, %) as cases, and prompt the user to select the type of operation they want to perform on the two numbers.
+
+Sample Input and Output :-
+---------------------------
+
+Sample Input :-
+----------------
+-> Enter num1: 10
+-> Enter num2: 20
+
+-> Enter operation: *
+
+Sample Output :-
+----------------
+-> Multiplication is: 200
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n1,n2;
+    char o;
+    printf("Enter num1:");
+    scanf("%d",&n1);
+    printf("Enter num2:");
+    scanf("%d",&n2);
+    printf("Enter operation:");
+    scanf(" %c",&o);
+   
+        if(o=='+')
+        {
+            printf("Addition:%d\n",n1+n2);
+        }
+        else if(o=='-')
+        {
+            printf("substraction:%d\n",n1-n2);
+        }
+        else if(o=='*')
+        {
+            printf("Multiplication:%d\n",n1*n2);
+        }
+        else if(o=='/')
+        {
+            printf("Division:%d\n",n1/n2);
+        }
+        else
+        {
+            printf("Invalid operator");
+        }
+    
+    
+    return 0;
+}
+
+|-------------|
+|Program-3 :- | [ok]
+|-------------|
+
+[Title: "Check if a Character is a Vowel, Consonant, or Special Character Using if-else"]
+-------------------------------------------------------------------------------------------
+
+Write a C program to check whether a given character is a vowel, consonant, or special character using a switch case.
+
+Sample Input and Output :-
+---------------------------
+
+Sample Input :-
+----------------
+A
+
+Sample Output :-
+----------------
+Vowel
+
+Sample Input :-
+---------------
+B
+
+Sample Output :-
+-----------------
+Consonant
+
+Sample Input :-
+----------------
+@
+
+Sample Output :-
+-----------------
+Special character
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character:");
+    scanf("%c",&ch);
+    if(ch==65 || ch==69 || ch==73 || ch==79 || ch==85)
+    {
+        printf("Vowel");
+    }
+    else if(ch==97 || ch==101 || ch==105 || ch==111 || ch==117)
+    {
+        printf("Vowel");
+    }
+    else if(ch>=33 && ch<=64 || ch>=123 && ch<=127)
+    {
+        printf("Special character");
+    }
+    else if(ch>=66 || ch<=68 && ch>=70 || ch<=72 && ch>=74 || ch<=78 && ch>=82 || ch<=84 && ch>=86 || ch<=90)
+        {
+        printf("Consonants");
+    }
+
+    return 0;
+}
+
+|-------------|
+|Program-4 :- | [ok]
+|-------------|
+
+[Title: "Control Light and AC"]
+--------------------------------
+
+[Solve Using if-else and goto Statement]
+---------------------------------------------
+Write a C program that allows the user to control the state of a light and an air conditioner (AC). The program should present the following menu options to the user:
+
+Turn ON the Light
+Turn OFF the Light
+Turn ON the AC
+Turn OFF the AC
+Based on the user's choice, the program should display the corresponding action message:
+
+If the user selects option 1, display "Light is now ON."
+If the user selects option 2, display "Light is now OFF."
+If the user selects option 3, display "AC is now ON."
+If the user selects option 4, display "AC is now OFF."
+The program should also handle invalid input:
+
+If the user enters a number outside the range of 1 to 4, display an error message: "Invalid choice! Please enter 1, 2, 3, or 4."
+The program should allow the user to retry by entering a valid option using the goto statement.
+
+Sample Input and Output :-
+---------------------------
+
+Example 1 :-
+-------------
+-> Select an option :-
+-----------------------
+1. Turn ON the Light
+2. Turn OFF the Light
+3. Turn ON the AC
+4. Turn OFF the AC
+
+Enter your choice: 1
+---------------------
+Output: Light is now ON.
+
+Example 2 :-
+-------------
+-> Select an option :-
+-----------------------
+1. Turn ON the Light
+2. Turn OFF the Light
+3. Turn ON the AC
+4. Turn OFF the AC
+
+Enter your choice: 4
+----------------------
+Output: AC is now OFF.
+
+Example 3 :-
+-------------
+-> Select an option :-
+-----------------------
+1. Turn ON the Light
+2. Turn OFF the Light
+3. Turn ON the AC
+4. Turn OFF the AC
+
+Enter your choice: 5
+----------------------
+Output: Invalid choice! Please enter 1, 2, 3, or 4.
+
+Sol:
+____
+#include <stdio.h>
+
+int main() {
+    int choice;
+
+    menu:
+    printf("Select an option:\n");
+    printf("1. Turn ON the Light\n");
+    printf("2. Turn OFF the Light\n");
+    printf("3. Turn ON the AC\n");
+    printf("4. Turn OFF the AC\n");
+    printf("Enter your choice: ");
+    
+    
+    scanf("%d", &choice);
+
+    
+    if (choice == 1) {
+        printf("Light is now ON.\n");
+    }
+    else if (choice == 2) {
+        printf("Light is now OFF.\n");
+    }
+    else if (choice == 3) {
+        printf("AC is now ON.\n");
+    }
+    else if (choice == 4) {
+        printf("AC is now OFF.\n");
+    }
+    else {
+        printf("Invalid choice! Please enter 1, 2, 3, or 4.\n");
+    
+        goto menu;
+    }
+
+    return 0;
+}
+
+|-------------|
+|Program-5 :- | [ok]
+|-------------|
+
+[Title: Calculate Minimum Number of Notes and Coins for a Given Amount.] [Using If-Else Statements]
+----------------------------------------------------------------------------------------------------
+Write a C program to input an amount from the user and print the minimum number of notes (Rs. 500, 100, 50, 20, 10, 5, 2, 1) required for that amount. This program calculates the minimum number of notes needed for a given amount in C programming. It determines the minimum number of notes required for each denomination.
+
+Note :- The program should not print any denomination if its count is zero.
+-------
+
+Input :-
+--------
+Enter the amount: 1275
+
+Output :-
+----------
+-> Rs. 500 notes: 2
+-> Rs. 100 notes: 2
+-> Rs. 50 notes: 1
+-> Rs. 20 notes: 1
+-> Rs. 5 coins: 1
+
+Sol:-
+_____
+
+Without using nested-if statements:-
+______________________________
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int amount,fivehndrd,hundred,fifty,twenty,five,two,one;
+    printf("Enter the amount:");
+    scanf("%d",&amount);
+    fivehndrd=amount/500;
+    printf("-->Rs.500 notes:%d\n",fivehndrd);
+    hundred=amount%500/100;
+    printf("-->Rs.100 notes:%d\n",hundred);
+    fifty=amount%500%100/50;
+    printf("-->Rs.100 notes:%d\n",fifty);
+    twenty=amount%500%100%50/20;
+    printf("-->Rs.50 notes:%d\n",twenty);
+    five=amount%500%100%50%20/5;
+    printf("-->Rs.5 coins:%d\n",five);
+    two=amount%500%100%50%20%5/2;
+    printf("-->Rs.2 coins:%d\n",two);
+    one=amount%500%100%50%20%5%2/1;
+    printf("-->Rs.1 coin:%d\n",one);
+    
+
+    return 0;
+}
+
+Using nested-if  statements:-
+______________________
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int amount,count;
+    printf("Enter the amount:");
+    scanf("%d",&amount);
+    
+    if(amount>=500)
+    {
+        count=amount/500;
+        printf("->Rs.500 notes:%d\n",count);
+    }
+    if(amount>=100)
+    {
+        count=amount%500/100;
+        printf("->Rs.100 notes:%d\n",count);
+    }
+    if(count>=50)
+    {
+        count=amount%500%100/50;
+        printf("->Rs.50 notes:%d\n",count);
+    }
+    if(amount>=20)
+    {
+        count=amount%500%100%50/20;
+        printf("->Rs.20 notes:%d\n",count);
+    }
+    if(amount>=10)
+    {
+        count=amount%500%100%50%20/10;
+        printf("->Rs.10 notes:%d\n",count);
+    }
+    if(amount>=5)
+    {
+        count=amount%500%100%50%20%10/5;
+        printf("->Rs.5 coins:%d\n",count);
+    }
+    if(amount>=2)
+    {
+        count=amount%500%100%50%20%10%5/2;
+        printf("->Rs.2 coins:%d\n",count);
+    }
+    if(amount>=1)
+    {
+        count=amount%500%100%50%20%10%5%2/1;
+        printf("->Rs.1coins:%d\n",count);
+    }
+    
+
+    return 0;
+}
+

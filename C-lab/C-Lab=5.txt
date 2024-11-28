@@ -1,0 +1,81 @@
+
+Que 1 :
+========
+
+Write a C program using the ternary operator to calculate the electricity bill for a given number of units consumed by a customer.
+For the first 100 units, the rate is Rs. 3.00 per unit.
+For any additional units beyond 100, the rate is Rs. 4.50 per unit.
+
+Example 1: Units consumed less than or equal to 100
+Sample Input: units consumed : 75
+Sample Output: The total electricity bill is: Rs. 225.00
+        
+Example 2: Units consumed more than 100
+Sample Input: units consumed: 150
+Sample Output: The total electricity bill is: Rs. 525.00
+        
+Example 3: Units consumed exactly 0
+Sample Input: units consumed: 0
+Sample Output: The total electricity bill is: Rs. 0.00
+ANS:
+#include <stdio.h>
+
+int main() {
+    int unitsConsumed;
+    float totalBill;
+
+    // Input the number of units consumed
+    printf("Enter the units consumed: ");
+    scanf("%d", &unitsConsumed);
+
+    // Calculate the total bill using ternary operator
+    totalBill = (unitsConsumed <= 100) ? (unitsConsumed * 3.0) : 
+                (100 * 3.0 + (unitsConsumed - 100) * 4.5);
+
+    // Output the result
+    printf("The total electricity bill is: Rs. %.2f\n", totalBill);
+
+    return 0;
+}
+
+
+
+
+========================================================================================================       
+
+Que 2 : 
+=======
+
+Write a C program that takes an integer as input and checks if it is a positive, negative, or zero. 
+Display the appropriate message as output without using the ternary operator.
+
+========================================================================================================       
+
+Que 3 : 
+=======
+
+Devlop a program on a payroll system for a company. The system needs to calculate the salary of an employee based on their employee type ('M' for manager or 'H' for HR employee) and their basic salary. 
+For managers, their salary should be increased by 10% as a performance bonus and for HR  increased by 5% . Write a C program that takes the employee type and basic salary as inputs and calculates the increased salary using the ternary operator.
+
+========================================================================================================    
+
+Que 4 :
+=======
+
+Write a Cprogram to print sum of N natural numbers without using loops.
+
+Sample input : int n = 10
+Sample output : 55
+ANS:
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,sum;
+    printf("Enter the num:");
+    scanf("%d",&n);
+    sum=n*(n+1)/2;
+    printf("sum of the all natural numbers:%d",sum);
+
+    return 0;
+}

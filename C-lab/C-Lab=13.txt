@@ -1,0 +1,450 @@
+Q-1 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int i = 2;
+    if(i = 5) -> 5 will be assigned to i and if(5) will be evaluated to true.
+        printf("Hello %d ", i);
+    else
+        printf("Welcome %d ",i);
+    return 0;
+}
+
+a). Compilation Error.
+b). Hello 5
+c). Hello 2 
+d). Welcome 5
+
+answer :- b). Hello 5.
+---------
+
+Q-2 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    char ch = 'a';
+    if(ch)
+        printf("Hi %d ",ch);
+    else 
+        printf("Hello %d ",ch);
+    return 0;
+}
+
+a). Hi 97.
+b). Hi a
+c). Hello 97 
+d). Hello a
+
+answer :- b). Hi a.==Wrong
+		    .Hi 97.==Right
+
+---------
+
+Q-3 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    char name[] = "java";
+    if(name) 
+        printf("Hello %s ",name);
+    else 
+        printf("Hi %s ",name);
+    return 0;
+}
+
+a). Compile time Error.
+b). Hello java
+c). Hi java 
+d). Hello java Hi java
+
+answer :- b). Hello java.
+---------
+
+Q-4 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    if(-a > a); 
+        printf("Hi");
+    return 0;
+}
+
+a). Hi.
+b). no output.
+c). Compile time Error.
+d). 10
+
+answer :- a). Hi.
+
+------------------
+
+Q-5 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+int main() {
+    int a = 5, b = 10, c = 15;
+    if (a < b && b > c)
+        printf("Condition 1\n");
+    else if (a + b == c)
+        printf("Condition 2\n");
+    else if (a > c || b < c)
+        printf("Condition 3\n");
+    else
+        printf("Condition 4\n");
+    return 0;
+}
+
+a) Condition 1
+b) Condition 2
+c) Condition 3
+d) Condition 4
+
+answer :-  c) Condition 3
+		  b)Condition 2==compiler
+----------
+Explanation:
+------------
+First condition (a < b && b > c) is false because b > c is false.
+Second condition (a + b == c) is true (5 + 10 == 15), so "Condition 2" should be printed, but there is a higher-priority else if that is evaluated next (a > c || b < c).
+Since a > c is false but b < c is true, "Condition 3" is printed.
+
+Q-6 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+int main() {
+    int x = 0, y = 10;
+    if (x++ && y--) {
+        if (y > x)
+            printf("Branch 1\n");
+        else
+            printf("Branch 2\n");
+    } else {
+        if (x == 1)
+            printf("Branch 3\n");
+        else
+            printf("Branch 4\n");
+    }
+    return 0;
+}
+
+a) Branch 1
+b) Branch 2
+c) Branch 3
+d) Branch 4
+
+answer :- c) Branch 3
+--------
+Explanation:
+------------
+The condition x++ && y-- is false because x++ evaluates to 0 initially (pre-increment). So, the outer if block is skipped.
+In the else block, x becomes 1 after increment, so "Branch 3" is printed.
+
+Q-7 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+int main() {
+    int a = 20, b = 15;
+    if (a = b) {
+        if (a > 10)
+            printf("Hello ");
+        if (b < 20)
+            printf("World\n");
+        else
+            printf("C Language\n");
+    } else {
+        printf("Programming\n");
+    }
+    return 0;
+}
+
+a) Hello World
+b) Hello C Language
+c) Programming
+d) No output
+
+answer :- a) Hello World
+---------
+Explanation:
+------------
+a = b is an assignment, not a comparison, so a becomes 15 (same as b), making the condition true.
+The first if (a > 10) is true, printing "Hello".
+The second if (b < 20) is also true, printing "World".
+
+Q-8 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+int main() {
+    int n = 5;
+    if (n % 2 == 0)
+        if (n % 3 == 0)
+            printf("Divisible by 6\n");
+        else
+            printf("Divisible by 2\n");
+    else
+        if (n % 3 == 0)
+            printf("Divisible by 3\n");
+        else
+            printf("Not divisible by 2 or 3\n");
+    return 0;
+}
+What will be the output if n = 5?
+
+a) Divisible by 6
+b) Divisible by 2
+c) Divisible by 3
+d) Not divisible by 2 or 3
+
+answer :- D) Not divisible by 2 or 3
+---------
+Explanation:
+------------
+n % 2 == 0 is false (5 is odd).
+The else block is executed, and since n % 3 == 0 is also false, the final output is "Not divisible by 2 or 3".
+
+Q-9 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+int main() {
+    int x = 5;
+    if (x > 3)
+        if (x < 10)
+            if (x == 5)
+                printf("Five\n");
+            else
+                printf("Not Five\n");
+        else
+            printf("Greater than 10\n");
+    else
+        printf("Less than 3\n");
+    return 0;
+}
+
+a) Five
+b) Not Five
+c) Greater than 10
+d) Less than 3
+
+answer :- a) Five
+---------
+Explanation:
+------------
+x > 3 is true.
+x < 10 is also true.
+x == 5 is true, so "Five" is printed.
+
+Q-10 :-
+------
+What will be the output of the following C program Snippet?
+-----------------------------------------------------------
+
+#include <stdio.h>
+int main() {
+    int a = 7, b = 14;
+    if (a > 5)
+        if (b > 10)
+            if (a + b > 20)
+                printf("Case 1\n");
+            else
+                printf("Case 2\n");
+        else
+            printf("Case 3\n");
+    else
+        printf("Case 4\n");
+    return 0;
+}
+
+a) Case 1
+b) Case 2
+c) Case 3
+d) Case 4
+
+answer: a) Case 1
+--------
+Explanation:
+------------
+a > 5 is true.
+b > 10 is true.
+a + b > 20 is true (7 + 14 = 21), so "Case 1" is printed.
+
+Program-1 :-
+------------
+Write a C Program to take the hours and minutes as input from the user and show whether it is AM or PM using an if-else statement.
+
+Test-Case-1:
+------------
+Enter the hours (in 24-hour format): 10
+
+Enter the minutes: 30
+
+The time is 10:30 AM
+
+Test-Case-2:
+------------
+Enter the hours (in 24-hour format): 19
+
+Enter the minutes: 45
+
+The time is 07:45 PM
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int am,pm,hr,min,pmhr,amhr;
+    printf("Enter the hours(in 24-hour format):");
+    scanf("%d",&hr);
+    printf("Enter the minutes:");
+    scanf("%d",&min);
+    if(hr>=1 && hr<=12 )
+    {
+        printf("%d:%2dAM",hr,min);
+    }
+    else if(hr>=13 && hr<24)
+    {
+        pmhr=(hr-12);
+        printf("%d:%2dPM",pmhr,min);
+    }
+    else if(hr==24)
+    {
+        amhr=hr-12;
+        printf("%d:%2dAM",amhr,min);
+    }
+else
+{
+printf("Invalid hours entered");
+} 
+
+    return 0;
+}
+
+Program-2 :-
+------------
+Scenario:
+
+A company offers a bonus to its employees based on their years of service and their performance rating. The criteria are as follows:
+
+If an employee has more than 5 years of service:
+If their performance rating is greater than 4, they receive a 20% bonus on their salary.
+If their performance rating is between 3 and 4 (inclusive), they receive a 10% bonus.
+If their performance rating is below 3, they receive a 5% bonus.
+If an employee has 5 years of service or less:
+If their performance rating is greater than 4, they receive a 10% bonus.
+If their performance rating is 3 or below, they receive no bonus.
+
+Question:
+---------
+Write a C program that takes the employee’s years of service, performance rating, and salary as input and calculates the total bonus amount based on the criteria given above.
+
+Example Input and Output:
+-------------------------
+Test-Case 1:
+------------
+Enter the years of service: 6
+Enter the performance rating (1-5): 4.5
+Enter the salary: 50000
+
+Output:
+-------
+Bonus: 10000
+Total Salary: 60000
+
+Test-Case 2:
+------------
+Enter the years of service: 3
+Enter the performance rating (1-5): 3
+Enter the salary: 45000
+
+Output:
+--------
+Bonus: 0
+Total Salary: 45000
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int ser,ts;
+    float perrat,sal,bonus;
+    printf("Enter the years of services:");
+    scanf("%d",&ser);
+    printf("Enter the performance rating(1-5):");
+    scanf("%f",&perrat);
+    printf("Enter the salary:");
+    scanf("%f",&sal);
+    if(ser>5)
+    {
+        if(perrat<3)
+        {
+          bonus=5*sal/100;
+          printf("Bonus:%.2f\n",bonus);
+          ts=sal+bonus;
+          printf("Total Salary:%d\n",ts);
+        }
+        else if(perrat>=3 && perrat<=4)
+        {
+            bonus=10*sal/100;
+            printf("Bonus:%.2f\n",bonus);
+            ts=sal+bonus;
+            printf("Total Salary:%d\n",ts);
+        }
+        else 
+        {
+           bonus=20*sal/100;
+            printf("Bonus:%.2f\n",bonus);
+            ts=sal+bonus;
+            printf("Total Salary:%d\n",ts); 
+        }
+    }
+    else 
+    {
+        if(perrat>=0 && perrat<=3)
+        {
+            bonus=0;
+            printf("Bonus:%.2f\n",bonus);
+            ts=sal+bonus;
+            printf("Total Salary:%d\n",ts);
+        }
+        else if(perrat>4)
+        {
+            bonus=10*sal/100;
+            printf("Bonus:%.2f\n",bonus);
+            ts=sal+bonus;
+            printf("Total Salary:%d\n",ts);
+        }
+    }
+
+    return 0;
+}

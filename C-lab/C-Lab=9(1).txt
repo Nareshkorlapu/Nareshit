@@ -1,0 +1,129 @@
+Que 1 : 
+=======
+
+Write a C program to read name and age of person and by age check the person is eligible for vote or not using simple (if) only.
+
+Sample input  : Enter your name: Kishor
+                Enter your age: 20
+Sample output : Hi kishor you are eligible to vote.
+
+Sample input  : Enter your age: 16
+Sample output : Sorry Kishor you are not eligible to vote.
+
+==========================================================================================================
+
+Que 2 : 
+=======
+
+Write a C program to read name and age of person and by age check the person is eligible for vote or not using if-else.
+
+Sample input  : Enter your name: Kishor
+                Enter your age: 20
+Sample output : Hi kishor you are eligible to vote.
+
+
+Sample input  : Enter your name: Kishor
+                Enter your age: 16
+Sample output : Sorry Kishor you are not eligible to vote.
+
+
+==========================================================================================================
+
+Que 3 : 
+=======
+
+Write a C program to find maximum between two numbers using simple (if) only.
+
+Sample input  : int a = 100, b = 200
+Sample output : 200
+
+==========================================================================================================
+
+Que 4 : 
+=======
+
+Write a C program to find maximum between two numbers using if-else.
+
+Sample input  : int a = 100, b = 200
+Sample output : 200
+
+
+==========================================================================================================
+
+Que 5 : 
+=======
+
+Write a C program to read one character from user and convert it into upercase if given character is in lowercase otherwise convert itno lowercase using simple (if) only.
+
+Sample input  : char ch = 'A';
+Sample output : a
+
+Sample input  : char ch = 'b';
+Sample output : B 
+
+==========================================================================================================
+
+Que 6 : 
+=======
+
+Write a C program to read one character from user and convert it into upercase if given character is in lowercase otherwise convert itno lowercase using if-else only.
+
+Sample input  : char ch = 'A';
+Sample output : a
+
+Sample input  : char ch = 'b';
+Sample output : B 
+
+
+==========================================================================================================
+
+Que 7 : 
+=======
+
+Write a C program to input any alphabet and check whether it is vowel or consonant using simple(if) only.
+
+Sample input  : char ch = 'A';
+Sample output : Vowel
+
+Sample input  : char ch = 'b';
+Sample output : Consonant
+
+==========================================================================================================
+
+Que 8 : 
+=======
+
+Write a C program to input any alphabet and check whether it is vowel or consonant using if-else.
+
+Sample input  : char ch = 'A';
+Sample output : Vowel
+
+Sample input  : char ch = 'b';
+Sample output : Consonant
+
+
+==========================================================================================================
+
+Que 9 : 
+=======
+
+Write a C program to check whether a character is uppercase or lowercase alphabet using simple(if) only.
+
+Sample input  : char ch = 'A';
+Sample output : UpperCase
+
+Sample input  : char ch = 'b';
+Sample output : LoweCase
+
+==========================================================================================================
+
+Que 10 : 
+=======
+
+Write a C program to check whether a character is uppercase or lowercase alphabet using if-else.
+
+Sample input  : char ch = 'A';
+Sample output : UpperCase
+
+Sample input  : char ch = 'b';
+Sample output : LoweCase

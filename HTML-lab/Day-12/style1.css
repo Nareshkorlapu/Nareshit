@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 10px;
+}
+.div1{
+    background-color: rgb(55, 118, 125);
+    height: 150px;
+    width: 200px;
+    margin: 15px 0px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.div2-1{
+    display: flex;
+    justify-content: center;
+}
+.div2{
+    color: white;
+    background-color: rgb(230, 121, 88);
+    height: 55px;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.div3{
+    color: white;
+    background-color: rgb(63, 0, 139);
+    padding-top: 25px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

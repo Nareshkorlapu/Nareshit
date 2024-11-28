@@ -1,0 +1,340 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+[Title :- Automorphic Number ]
+------------------------------
+
+(USING WHILE LOOP)
+------------------
+Write a C program to check whether the given number is an automorphic number or not.
+
+Automorphic Number :-
+---------------------
+An automorphic number is a number whose square ends with the same digits as the number itself.
+
+For example :-
+--------------
+
+5, 6, and 25 are automorphic numbers.
+
+-> 5×5=25 → The original number is 5 (single digit), and the last digit is also 5.
+-> 6×6=36 → The original number is 6 (single digit), and the last digit is also 6.
+-> 25×25=625 → The original number is 25 (double digit), and the last two digits are 25.
+
+Sample Input :-
+---------------
+5
+
+Sample Output:
+---------------
+5 is an automorphic number.
+
+Sample Input :-
+----------------
+7
+
+Sample Output :-
+-----------------
+7 is not an automorphic number.
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,n,r=0,s;
+    printf("Enter no:");
+    scanf("%d",&a);
+    s=a*a;
+    while(a<=n)
+    {
+    
+        if(s%10==a)
+        {
+            printf("%d is an automorphic number",a);
+        }
+        else if(s%100==a)
+        {
+            printf("%d is an automorphic number",a);
+        }
+        else
+        {
+            printf("%d is not an automorphic number",a);
+        }
+        r++;
+         return 0;
+    }
+}
+
+							OR
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,a,b,t,rem=0,c=0,val=0;
+    printf("Enter the no:");
+    scanf("%d",&n);
+    a=n*n;
+    t=a;
+    while(a!=0)
+    {
+        c++;
+        a=a/10;
+    }
+    if(c==1||c==2)
+    {
+        val=t%10;
+    }
+    else if(c==3)
+    {
+        val=t%100;
+    }
+    if(n==val)
+    {
+        printf("%d is an automorphic number",n);
+    }
+    else {
+        printf("%d is not an automorphic number",n);
+    }
+
+    return 0;
+}
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+[Title:- Multiplication of Digits of Number]
+--------------------------------------------
+
+(USING WHILE LOOP)
+Write a C program to calculate the product of the digits of a given integer.
+If the number is negative, convert it to a positive number before calculating the product.
+
+Sample Input :-
+----------------
+Enter a number: 1234
+
+Sample Output :---
+-----------------
+The product of the digits [1 X 2 X 3 X 4] is: 24
+
+Sample Input :-
+----------------
+Enter a number: -567
+
+Sample Output :-
+-----------------
+The product of the digits [5 X 6 X 7] is: 210
+
+Sol:-
+______
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<stdlib.h>
+int main() {
+    int a,n,r=1;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    a=abs(a);
+    if(a==0)
+    {
+        r=0;
+    }
+    else{
+        while(a>0)
+    {
+        n=a%10;
+        r=r*n;
+        a=a/10;
+        
+    } 
+    }
+   
+    printf("The product of the digits is:%d",r);
+return 0;
+
+}
+
+								OR
+#include <stdio.h>
+#include <stdlib.h> 
+
+int main() {
+    int a, n,r=1;
+    int firstDigit = 1;  
+    printf("Enter a number: ");
+    scanf("%d", &a); 
+    
+
+    a = abs(a);
+  
+    if (a == 0) {
+        printf("[0]\n");
+    } else {
+        printf("The product of the digits [");
+ 
+        while (a > 0) {
+            n = a % 10; 
+            if (firstDigit) {
+                printf("%d", n);  
+                firstDigit = 0;   
+            } else {
+                printf(" x %d", n); 
+            }
+            r=r*n;
+            a = a / 10; 
+        }
+        printf("] is=%d\n",r); 
+    }
+
+    return 0;
+}
+
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+[Title:- Prime Number Check]
+----------------------------
+
+(USING FOR LOOP)
+Write a C program to check whether a given number is a prime number or not.
+
+Sample Input :-
+----------------
+Enter an integer: 5
+
+Sample Output :-
+----------------
+5 is a prime number.
+
+Sample Input :-
+----------------
+Enter an integer: 6
+
+Sample Output :-
+-----------------
+6 is not a prime number.
+Sol:-
+___
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+  int a,n,r=1;
+    printf("Enter an integer:");
+    scanf("%d",&a);
+    if(a<=1)
+    {
+        r=0;
+    }
+    else
+    {
+        for(n=2;n<=a/2;n++)
+        {
+            if(a%n==0)
+            {
+                r=0;
+                break;
+            }
+        }
+    }
+    if(r){
+        printf("%d is a prime number",a);
+    }
+    else
+    {
+        printf("%d is not a prime number",a);
+    }
+
+    return 0;
+}
+
+|--------------|
+| Program-4 :- | [ok]
+|--------------|
+
+[Title:- Perfect Number]
+------------------------
+
+(USING FOR LOOP)
+----------------
+Write a C program to check whether a given integer is a perfect number.
+A number is considered perfect if it is equal to the sum of all its divisors, excluding itself.
+
+-> For example, 
+---------------
+	6 is a perfect number because the divisors of 6 are 1, 2, and 3,[6 is also divisor but excluded] and their sum is 1 + 2 + 3 = 6.
+	Similarly, 28 is a perfect number because the sum of its divisors (1, 2, 4, 7, 14)[28 is also divisor but excluded] is also 28.
+
+Sample Input :-
+---------------
+6
+
+Sample Output :-
+----------------
+6 is a perfect number.
+
+Sample Input :-
+---------------
+12
+
+Sample Output :-
+-----------------
+12 is not a perfect number.
+
+|--------------|
+| Program-5 :- | [ok]
+|--------------|
+
+[Title:- Disarim Number]
+------------------------
+
+(USING FOR LOOP)
+Write a C program to check whether a given number is a Disarium number.
+
+Disarium Number :-
+-------------------
+A number is a Disarium number if the sum of the digits raised to the power of their respective positions is equal to the number itself.
+
+For example:
+
+Sample Input :-
+---------------
+89
+
+Sample Output :-
+----------------
+89 is a Disarium number.
+
+Explanation :-
+--------------
+89:-  8^1 + 9^2 = 89
+
+Sample Input :-
+----------------
+175
+
+Sample Output :-
+-----------------
+175 is a Disarium number.
+
+Explanation :-
+---------------
+175: 1^1 + 7^2 + 5^3 = 175
+
+Sample Input :-
+----------------
+45
+
+Sample Output :-
+-----------------
+45 is NOT a Disarium number.
+
+Explanation :-
+--------------
+45: 4^1 + 5^2 = 29

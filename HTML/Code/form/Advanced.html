@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <form action="main.c">
+        <input type="text" placeholder="Enter a name"><br><br>
+        <input type="number" placeholder="Enter age" min="15" max="30"><br><br>
+        <input type="password" placeholder="Enter password" minlength="5" pattern="[A-Z,a-z,0-9]"{5} required>
+    <!--Radio buttons-->
+    <div>
+    <p>please choose gender</p>
+    <input type="radio" name="gender" id="m">
+    <label for="m">Male</label><br>
+    <input type="radio" name="gender" id="f">
+    <lable for="f">Female</lable>
+    </div>
+    <!--Create a radio button to choose branch in intermediate-->
+    <div>
+    <p>Choose a branch</p>
+    <input type="radio" name="branch" id="1">
+    <lable for="1">MPC</lable><br>
+    <input type="radio" name="branch" id="2">
+    <lable for="2">BiPC</lable><br>
+    <input type="radio" name="branch" id="3">
+    <lable for="3">CEC</lable><br>
+    <input type="radio" name="branch" id="4">
+    <lable for="4">HEC</lable>
+    </div>
+    <!--Checkboxes-usually used for multiple options-->
+    <div>
+    <p>Please choose the languages known</p>
+    <input type="checkbox" name="l" id="en">
+    <lable for="en">English</lable>
+    <input type="checkbox" name="l" id="tel">
+    <lable for="tel">Telugu</lable>
+    <input type="checkbox" name="l" id="hi">
+    <lable for="hi">Hindi</lable>
+    <input type="checkbox" name="l" id="mr">
+    <lable for="mr">Marati</lable>
+    <input type="checkbox" name="l" id="ta">
+    <lable for="ta">Tamil</lable>
+    <input type="checkbox" name="l" id="kn">
+    <lable for="kn">Kannada</lable>
+    </div>
+    <!--Create a checkbox list to select hobbies-->
+    <div>
+        <p>Please choose your hobbies</p>
+        <input type="checkbox" name="hobbies--" id="en">
+        <lable for="en">Eating</lable>
+        <input type="checkbox" name="hobbies--" id="tel">
+        <lable for="tel">Drinking</lable>
+        <input type="checkbox" name="hobbies--" id="hi">
+        <lable for="hi">Watching</lable>
+        <input type="checkbox" name="hobbies--" id="mr">
+        <lable for="mr">Running</lable>
+        <input type="checkbox" name="hobbies--" id="ta">
+        <lable for="ta">Reading</lable>
+        <input type="checkbox" name="hobbies--" id="kn">
+        <lable for="kn">Singing</lable>
+        </div>
+        <!--drop downs-->
+        <!--Single selection-->
+        <div>
+        <p>Branch</p>
+        <select name="branch" id="" multiple>
+            <optgroup label="Engineering">
+            <option value="cse">CSE</option>
+            <option value="eee">EEE</option>
+            <option value="mech">MECH</option>
+            <option value="civil">CIVIL</option>
+            <option value="ece">ECE</option>
+            </optgroup>
+            <optgroup label="Degree">
+            <option value="bsc">BSC</option>
+            <option value="bba">BBA</option>
+            </optgroup>
+            <optgroup label="Masters">
+            <option value="mca">MCA</option>
+            <option value="mba">MBA</option>
+            </optgroup>
+        </select>
+        </div>
+        <!--write a dropdown to choose vehicle for test drive-->
+        <div>
+            <p>Vehicle test</p>
+            <select name="Vehicle" id="">
+                <optgroup label="2-Wheeler">
+                    <option value="Scooty">Scooty</option><
+                    <option value="honda">Honda</option>
+                </optgroup>
+                <optgroup label="4-Wheeler">
+                    <option value="Car">CAR</option>
+                    <option value="jeep">JEEP</option>
+                </optgroup>
+            </select>
+        </div><br>
+        <button type="submit">Submit</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,224 @@
+|-------------|
+|Program-1 :- |
+|-------------|
+
+Scenario Question :-
+---------------------
+A restaurant wants to build a simple program that helps customers order their meals based on a menu selection. The menu has the following options:
+
+1. Pizza - $10
+2. Burger - $7
+3. Pasta - $8
+4. Salad - $5
+5. Exit
+
+The user needs to select an item by entering the corresponding number (1-5). If the user selects an invalid option, they should be notified. The program should display the selected item and its price. If the user selects "Exit," the program should terminate.
+
+Task :-
+--------
+Write a C program using the switch case statement to implement the above scenario. Your program should:
+
+-> Display the menu options to the user.
+-> Accept the user's choice.
+-> Use a switch case to determine the selected item and print the item name and price.
+-> Handle invalid choices and print an appropriate message.
+
+Expected Output Example :-
+---------------------------
+Menu :-
+-------
+1. Pizza
+2. Burger
+3. Pasta
+4. Salad
+5. Exit
+
+Enter your choice: 2
+
+You selected Burger. Price: $7
+
+Menu :-
+
+1. Pizza
+2. Burger
+3. Pasta
+4. Salad
+5. Exit
+
+Enter your choice: 5
+
+Exiting the program. Thank you!
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int choose;
+    menu:
+    printf("menu:-\n");
+    printf("------------------------------\n");
+    printf("1.Pizza\n");
+    printf("2.Burger\n");
+    printf("3.Pasta\n");
+    printf("4.Salad\n");
+    printf("5.Exit\n");
+    printf("Enter your choice:");
+    scanf("%d",&choose);
+    
+    switch(choose)
+    {
+        case 1:printf("You selected Pizza :Price - $10\n");
+        break;
+        case 2:printf("You selected Burger :Price - $7\n");
+        break;
+        case 3:printf("You selected Pasta :Price - $8\n");
+        break;
+        case 4:printf("You selected Salad :Price - $5\n");
+        break;
+        case 5:printf("Exiting the program.Thank you!\n");
+        break;
+        default:printf("Invalid input\n");
+        goto menu;
+    }
+    
+
+    return 0;
+}
+
+|-------------|
+|Program-2 :- |
+|-------------|
+
+Scenario Question :-
+---------------------
+A banking system wants a program that provides basic operations to its customers using an ATM interface. The program should offer the following options:
+
+1. Check Balance: Displays the current balance.
+2. Deposit Money: Allows the user to deposit a specified amount.
+3. Withdraw Money: Allows the user to withdraw a specified amount if sufficient funds are available.
+4. Exit: Ends the program.
+
+The program should :-
+----------------------
+-> Start with an initial balance of $1000.
+-> Allow the user to choose an option from the menu.
+-> Use a switch case statement to handle the chosen option.
+-> Display appropriate messages and update the balance based on user input.
+-> Handle invalid menu choices and ensure the user does not withdraw more money than the current balance.
+
+Task :-
+--------
+Write a C program using the switch case statement to implement the above scenario. Your program should:
+
+-> Display the menu options to the user.
+-> Accept the user's choice and execute the corresponding operation using a switch case.
+-> Display the updated balance after each operation.
+-> Handle invalid inputs gracefully.
+
+Expected Output Example 1 :-
+----------------------------
+Banking Menu :-
+---------------
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+
+Enter your choice: 1
+
+Your current balance is: $1000
+
+Banking Menu :-
+----------------
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+
+Enter your choice: 2
+
+Enter the amount to deposit: 500
+Deposit successful! Your new balance is: $1500
+
+Banking Menu :-
+---------------
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+
+Enter your choice: 3
+
+Enter the amount to withdraw: 2000
+Insufficient balance! Your current balance is: $1500
+
+Banking Menu :-
+---------------
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+
+Enter your choice: 4
+
+Exiting the program. Thank you for using our service!
+
+Expected Output Example 2:
+
+Banking Menu :-
+----------------
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+Enter your choice: 5
+
+Invalid choice! Please select a valid option.
+
+Sol:-
+______
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int option,inbal=1000,dep=500,totdep,with,totwith;
+    menu:
+    printf("Banking Menu:\n");
+    printf("1.Check Balance\n");
+    printf("2.Deposit Money\n");
+    printf("3.Withdraw Money\n");
+    printf("4.Exit\n");
+    printf("Enter your option:");
+    scanf("%d",&option);
+    switch(option)
+    {
+       case 1: printf("Your current balance is:$1000\n");
+        break;
+        case 2:printf("Enter the amount to deposit:");
+        scanf("%d",&dep);
+        totdep=inbal+dep;
+        printf("Deposit successful!Your new balance is:$%d\n",totdep);
+        break;
+        case 3:printf("Enter the amount to withdraw:");
+        scanf("%d",&with);
+        if(with>(inbal+dep))
+        {
+            
+            printf("Insufficient balance!Your current balance is:$%d\n",inbal+dep);
+        }
+        else if(with<(inbal+dep))
+        {
+            totwith=(inbal+dep)-with;
+            printf("Withdraw successful!Your new balance is:$%d",totwith);
+        }
+        break;
+        case 4:printf("Exiting the program.Thank you for using our service!\n");
+        break;
+        default:printf("Invaid input\n");
+        goto menu;
+    }
+
+    return 0;
+}

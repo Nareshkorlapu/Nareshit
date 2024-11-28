@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 150px;
+}
+nav{
+    margin-right: 30px;
+}
+a{
+   margin-right: 20px; 
+   text-decoration: none;
+}
+#main{
+    display: flex;
+    
+}
+.content{
+    margin: 150px 200px;
+    text-align: center;
+
+}
+button{
+    background-color: white;
+    color: violet;
+    border: 1px solid aqua;
+    border-radius: 10px;
+    padding: 10px;
+    margin:15px 10px;
+}
+p{
+    margin: 20px 0px;
+    color: gray;
+}
+.second-head{
+    font-size: 30px;
+}
+.first-p{
+    font-size: 26px;
+}
+#about{
+    
+    margin: 20px;
+}
+.p1{
+    text-align: center;
+}
+.head{
+    text-align: center;
+}
+.main-2{
+    display: flex;
+    justify-content: center;
+}
+.box{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 30px 20px;
+    height: 175px;
+    width: 350px;
+}
+h4{
+    margin: 10px;
+}
+.box1{
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 20px;
+    height: 400px;
+    width: 300px;
+    
+}
+.exp-box{
+    display: flex;
+    justify-content: center;
+}
+.img-box{
+    margin: 20px 0px;
+}
+.e-row{
+    display: flex;
+
+    
+}
+.e-head{
+    text-align: center;
+}
+.e-img{
+    display: flex;
+    margin: 10px;
+}
+.e-p{
+    color: black;
+}
+.exp-img{
+    height: 40px;
+    width: 50px;
+    margin: 10px 0px;
+}
+.p-box{
+    display: flex;
+    justify-content: center;
+}
+.p-img{
+    height: 130px;
+    width: 250px;
+    margin: 10px 0px;
+}
+.box2{
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 20px;
+    height: 550px;
+    width: 300px;
+    
+}
+.p-p{
+    text-align: center;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+}
+.con-box{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 15px;
+    width: 500px;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.mail{
+    display: flex;
+}
+.link{
+    display: flex;
+}
+footer{
+    text-align: center;
+}
+.nav-foot{
+    margin: 10px;
+}

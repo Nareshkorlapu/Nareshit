@@ -1,0 +1,422 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+Write a C program using a while loop that reads two integers, N1 and N2, from the user. The program should print all the numbers from N1 to N2 (inclusive) in a single line, separated by commas.
+
+Sample-run :-
+--------------
+
+Test Case-1 :- [Basic Range]
+--------------  
+Input :-
+--------
+N1 = 1, N2 = 10
+
+Expected Output :-
+------------------
+1,2,3,4,5,6,7,8,9,10
+
+Test Case-2 :- [Negative to Positive Range]
+--------------
+Input :-
+--------
+N1 = -5, N2 = 5
+
+Expected Output :-
+------------------
+-5,-4,-3,-2,-1,0,1,2,3,4,5
+
+Test Case-3 :- [Single Number (N1 = N2)]
+--------------
+Input :-
+--------
+N1 = 7, N2 = 7
+
+Expected Output :-
+------------------
+7
+
+Test Case 4 :- [Reverse Input (N1 > N2)]
+--------------
+Input :-
+--------
+N1 = 10, N2 = 1
+
+Expected Output :-
+-------------------
+Invalid input. N1 should be less than or equal to N2.
+
+Test Case 5 :- [Zero Range]
+--------------
+Input :-
+--------
+N1 = 0, N2 = 3
+
+Expected Output :-
+------------------
+0,1,2,3
+
+Test Case 6 :- [Negative Range]
+--------------
+Input :-
+---------
+N1 = -10, N2 = -5
+
+Expected Output :-
+-------------------
+-10,-9,-8,-7,-6,-5
+
+Test Case 7 :- [Same Start and End with Negative Value]
+--------------
+Input :-
+--------
+N1 = -2, N2 = -2
+
+Expected Output :-
+------------------
+-2
+
+Sol:-
+______
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int N1,N2;
+    printf("Enter the values of N1 and N2:");
+    scanf("%d%d",&N1,&N2);
+    if(N1<=N2)
+    {
+    while(N1<N2)
+    {
+        printf("%d,",N1);
+        N1++;
+    } 
+    printf("%d",N2);
+    }
+    else 
+    {
+        printf("Invalid input.N1 should be less than or equal to N2.");
+    }
+
+    return 0;
+}
+
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+Write a C program using a while loop that reads two integers, N1 and N2, from the user. The program should print all the numbers from N1 to N2 (inclusive) in a single line, separated by commas, in reverse order.
+
+Test Case-1 :- [Basic Reverse Range]
+--------------
+Input :-
+---------
+N1 = 10, N2 = 1
+
+Expected Output :-
+------------------
+10,9,8,7,6,5,4,3,2,1
+
+Test Case-2 :- [Negative to Positive Range in Reverse]
+--------------
+Input :-
+--------
+N1 = 5, N2 = -5
+
+Expected Output :-
+-------------------
+5,4,3,2,1,0,-1,-2,-3,-4,-5
+
+Test Case-3 :- [Single Number (N1 = N2)]
+--------------
+Input :-
+--------
+N1 = 7, N2 = 7
+
+Expected Output :-
+------------------
+7
+
+Test Case-4 :- [Forward Input (N1 < N2)]
+--------------
+Input :-
+--------
+N1 = 1, N2 = 10
+
+Expected Output :-
+------------------
+Invalid input. N1 should be greater than or equal to N2.
+
+Test Case-5 :- [Zero to Negative Range]
+--------------
+Input :-
+---------
+N1 = 0, N2 = -3
+
+Expected Output :-
+------------------
+0,-1,-2,-3
+
+Test Case-6 :- [Negative Range in Reverse]
+---------------
+Input :-
+--------
+N1 = -5, N2 = -10
+
+Expected Output :-
+-------------------
+-5,-6,-7,-8,-9,-10
+
+Test Case-7 :- [Same Start and End with Negative Value]
+--------------
+Input :-
+--------
+N1 = -3, N2 = -3
+
+Expected Output :-
+------------------
+-3
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int N1,N2;
+    printf("Enter the values of N1 and N2:");
+    scanf("%d%d",&N1,&N2);
+    if(N1>=N2)
+    {
+    while(N1>N2)
+    {
+        printf("%d,",N1);
+        N1--;
+    } 
+    printf("%d",N2);
+    }
+    else 
+    {
+        printf("Invalid input.N1 should be less than or equal to N2.");
+    }
+
+    return 0;
+}
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+Write a C program that reads a choice from the user and performs one of the following operations based on the input:
+
+-> Choice 1: Print all lowercase letters from 'a' to 'z'.
+-> Choice 2: Print all lowercase letters from 'z' to 'a' in reverse order.
+-> Choice 3: Print all uppercase letters from 'A' to 'Z'.
+-> Choice 4: Print all uppercase letters from 'Z' to 'A' in reverse order.
+-> Choice 5: Exit the program.
+	For any choice other than 1-5, the program should display an "Invalid choice" message.
+
+The program should use a switch statement to execute the appropriate case based on the user's choice and use a while loop to print the alphabets. If the user enters an invalid choice, the program should display an error message.
+
+Sample-run :-
+-------------
+Menu :
+------
+1. Print lowercase letters from 'a' to 'z'
+2. Print lowercase letters from 'z' to 'a'
+3. Print uppercase letters from 'A' to 'Z'
+4. Print uppercase letters from 'Z' to 'A'
+5. Exit
+
+Enter your choice (1-5) :- 2
+--------------------------
+
+Test Case 1 :- [Print lowercase letters from 'a' to 'z']
+--------------
+Input :-
+--------
+Choice: 1
+
+Expected Output :-
+------------------
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+Test Case 2 :- [Print lowercase letters from 'z' to 'a' in reverse order]
+---------------
+Input :-
+--------
+Choice: 2
+
+Expected Output :-
+------------------
+z y x w v u t s r q p o n m l k j i h g f e d c b a
+
+Test Case 3 :- [Print uppercase letters from 'A' to 'Z']
+---------------
+Input :-
+---------
+Choice: 3
+
+Expected Output :-
+------------------
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+Test Case 4 :- [Print uppercase letters from 'Z' to 'A' in reverse order]
+--------------
+Input :-
+--------
+Choice: 4
+
+Expected Output :-
+-------------------
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+
+Test Case 5 :- [Exit the program]
+--------------
+Input :-
+---------
+Choice: 5
+
+Expected Output :-
+------------------
+Exiting the program.
+
+Test Case 6 :- [Invalid choice less than 1]
+--------------
+Input :-
+--------
+Choice: 0
+
+Expected Output :-
+-------------------
+Invalid choice. Please enter a number between 1 and 5.
+
+Test Case 7 :- [Invalid choice greater than 5]
+--------------
+Input :-
+--------
+Choice: 6
+
+Expected Output :-
+------------------
+Invalid choice. Please enter a number between 1 and 5.
+
+Test Case 8 :- [Invalid input: non-numeric value]
+--------------
+Input :-
+---------
+Choice: a
+
+Expected Output :-
+------------------
+Invalid input. Please enter a valid numeric choice between 1 and 5.
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int choice;
+    char ch;
+    start:
+    printf("Menu:\n");
+    printf("-------\n");
+    printf("1.Print lowercase letters from 'a' to 'z'\n");
+    printf("2.Print lowercase letters from 'z' to 'a'\n");
+    printf("3.print uppercase letters from 'A' to 'Z'\n");
+    printf("4.print uppercase letters from 'Z' to 'A'\n");
+    printf("5.Exit\n");
+    printf("Choice:");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        ch='a';
+        while(ch<='z')
+        {
+            printf(" %c",ch);
+            ch++;
+        }
+        break;
+        case 2:
+        ch='z';
+        while(ch>='a')
+        {
+            printf(" %c",ch);
+            ch--;
+        }
+        break;
+        case 3:
+         ch='A';
+        while(ch<='Z')
+        {
+            printf(" %c",ch);
+            ch++;
+        }
+        break;
+        case 4:
+         ch='Z';
+        while(ch>='A')
+        {
+            printf(" %c",ch);
+            ch--;
+        }
+        break;
+        case 5:printf("Exiting the program");
+        break;
+        default:printf("Invalid input,please enter 1 to 5");
+        goto start;
+    }
+
+    return 0;
+}
+
+
+|--------------|
+| Program-4 :- | [ok]
+|--------------|
+
+Write a C program that prints all characters from uppercase 'A' to lowercase 'z' along with their ASCII values using a while loop.
+
+Sample Output :-
+-----------------
+Character and its ASCII value:
+A: 65
+B: 66
+C: 67
+...
+Y: 89
+Z: 90
+[: 91
+\: 92
+]: 93
+^: 94
+_: 95
+`: 96
+a: 97
+b: 98
+c: 99
+...
+x: 120
+y: 121
+z: 122
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    
+    char ch=65;
+    while(ch<=122)
+    {
+        printf("%c:%d\n",ch,(int)ch);
+        ch++;
+    }
+
+    return 0;
+}

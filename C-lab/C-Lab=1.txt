@@ -1,0 +1,14 @@
+										C-Lab 
+1.Write a C program to swap the numbers using third variable.
+input:- a=10,b=5
+output: a=5,b=10
+======================================================================================
+2.Write a C program to swap the numbers without using third variable.
+input:- a=10,b=5
+output: a=5,b=10
+======================================================================================
+3.Write a c program to perform addition of two numbers without using + operator. 
+======================================================================================
+4.Write a c program to make sum of the given digit.
+input:- a=25
+output:- 7

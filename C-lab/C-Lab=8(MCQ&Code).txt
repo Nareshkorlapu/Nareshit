@@ -1,0 +1,365 @@
+c-language-mcq's
+-----------------
+
+Q-1 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    if(printf("Hey ")){
+        printf("Hello ");
+    }
+    printf("Hi");
+    return 0;
+}
+
+Output :- Hey Hello Hi
+---------
+
+Q-2 :- [ok]
+-----------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    if(printf("")){
+        printf("Hello ");
+    }
+    printf("Hi");
+    return 0;
+}
+
+Output :-Hi
+---------
+
+Q-3 :- [ok]
+-----------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    if(printf(" ")){
+        printf("Hello ");
+    }
+    printf("Hi");
+    return 0;
+}
+
+Output :-Hello Hi
+
+Q-4 :- [ok]
+-----------
+
+What will be the output of the below c program snippet?
+
+
+#include <stdio.h>
+
+int main() {
+    printf("%d",printf("Hello"));
+    return 0;
+}
+
+Output :- Hello5
+----------
+
+Q-5 :- [ok]
+-----------
+
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    printf("%d",printf("%d",10));
+    return 0;
+}
+
+Output :- 102
+---------
+
+Q-6 :- [ok]
+-----------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    int val;
+    printf("Enter a Value ");
+    printf("%d",scanf("%d",&val));
+    printf("\nThe value of Val is %d ",val);
+    return 0;
+}
+
+Output :-Enter a Value 3
+1
+The Value of val is 3
+---------
+
+Q-7 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    int val1, val2;
+    printf("Enter a Two Values ");
+    printf("%d",scanf("%d%d",&val1,&val2));
+    printf("\nThe value of Val1 and Val2 are %d %d",val1,val2);
+    return 0;
+}
+
+Output :-Enter a Two Values 1
+2
+2
+The value of Val1 and Val2 are 1 2
+---------
+
+Q-8 :- [ok]
+-----------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20, c = 30;
+    printf("%d",printf("%d%d%d",a, b, c));
+    return 0;
+}
+
+Output :- 1020306
+----------
+
+Q-9 :- [ok]
+-----------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    int val = 0;
+    printf("Enter a value ");
+    if(scanf("%d",&val)){
+        printf("Hello ");
+    }
+    printf("The value is %d",val);
+    return 0;
+}
+
+Output :-Enter a value 3
+Hello The value is 3
+---------
+
+Q-10 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    printf("%d",printf(""));
+    return 0;
+}
+
+Output :- 0
+---------
+
+Q-11 :- [ok]
+-------------
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    printf("%d",if(a>5){
+        printf("a is big");
+    });
+    return 0;
+}
+
+Output :- Error
+5 | printf("%d",if(a>5){
+   |			  ^~
+---------
+
+Q-12 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 30, c = 20;
+    printf("%d is big", (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c));
+    return 0;
+}
+
+Output :- 30 is big
+---------
+
+Q-13 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+int x = -5;
+if (x) {
+    printf("True\n");
+} else {
+    printf("False\n");
+}
+
+a) True
+b) False
+c) Compilation error
+d) Undefined behavior
+
+Output :-a)True
+---------
+
+Q-14 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    int a = 20, b = 20;
+    (a>b) ? printf("A is big %d ",a) : printf("B is big %d ",b);
+    return 0;
+}
+
+Output :-B is big 20
+---------
+
+Q-15 :- [ok]
+------------
+What will be the output of the below c program snippet?
+
+#include <stdio.h>
+
+int main() {
+    printf(printf("hi"));
+    return 0;
+}
+
+Output :-Error
+---------
+
+Programs
+--------
+Program-1 :-
+------------
+"Write a C program to find the largest number among three numbers using the ternary operator. Take input values using the scanf() function."
+
+Sample-run
+----------
+Test Case 1 :- 
+--------------
+[Positive and Negative Values]
+------------------------------
+Input: a = 15, b = -8, c = 7
+Expected Output: The largest number is 15
+
+Test Case 2 :- 
+--------------
+[All Values are Equal]
+----------------------
+Input: a = 10, b = 10, c = 10
+Expected Output: The largest number is 10
+
+Test Case 3 :-  
+--------------
+[Zeros and Positive Values]
+---------------------------
+Input: a = 0, b = 0, c = 5
+Expected Output: The largest number is 5
+
+Sol:
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("a=");
+    scanf("%d",&a);
+    printf("b=");
+    scanf("%d",&b);
+    printf("c=");
+    scanf("%d",&c);
+    printf("The largest number is %d",(a>b)?((a>c)?a:c):((b>c)?b:c));
+
+    return 0;
+}
+Program-2 :-
+------------
+Write a C program to find the sum and average of a student's marks in five subjects. The program should take the marks as input, calculate the sum and percentage, and then print both the sum and percentage using an if statement?
+
+Note :-
+-------
+Add validation to ensure that marks are non-negative.
+
+Sample-run
+----------
+Test Case-1 :-
+--------------
+-> Input: 80, 70, 90, 85, 75
+-> Expected Output:
+-> Sum of marks: 400
+-> Percentage: 80.00%
+-> Result: "The student has passed."
+
+Test Case-2 :-
+--------------
+-> Input: 50, 45, 55, 60, 40
+-> Expected Output:
+-> Sum of marks: 250
+-> Percentage: 50.00%
+-> Result: "The student has passed."
+
+Test Case-3 :-
+--------------
+-> Input: 30, 40, 35, 25, 45
+-> Expected Output:
+-> Sum of marks: 175
+-> Percentage: 35.00%
+-> Result: "The student has failed."
+
+Test Case 4 :-
+--------------
+-> Negative Marks (Invalid Input)
+-> Input: 80, -10, 90, 85, 75
+-> Error: "Invalid input: Marks cannot be negative."
+
+Sol:
+Using Marks:
+____________
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int s1,s2,s3,s4,s5,sum;
+    float percent;
+    printf("Input:");
+    scanf("%d%d%d%d%d",&s1,&s2,&s3,&s4,&s5);
+    printf("Expected output:\n");
+    if(s1>=0 && s2>=0 && s3>=0 && s4>=0 && s5>=0)
+    {
+       sum=s1+s2+s3+s4+s5;
+    printf("Sum of marks:%d\n",sum);
+    percent=sum*100/500;
+    printf("Percntage:%.4f%\n",percent);
+    if(sum>175) puts("The student has passed");
+    else puts("The student has failed");  
+    }
+    else puts("Invalid");
+
+   
+
+    return 0;
+}
+

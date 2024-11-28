@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.div1{
+    margin: 10px 0px;
+}
+.div2{
+    background-color: red;
+    color: white;
+    margin: 10px 0px;
+}
+.div3{
+    background-color: lightgray;
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div4{
+    background-color:olivedrab;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div5{
+    background-color: dodgerblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}.div6{
+    background-color:mediumaquamarine;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div7{
+    background-color:slategray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div8{
+    background-color:salmon;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div9{
+    background-color:violet;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div10{
+    background-color:darkgoldenrod;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div11{
+    margin: 10px 0px;
+}
+.div12{
+    background-color: rgb(246, 6, 6);
+    margin: 10px 0px;
+}
+.div13{
+    background-color: rgb(46, 6, 246);
+    margin: 10px 0px;
+}
+.div14{
+    background-color: rgb(6, 246, 122);
+    margin: 10px 0px;
+}
+.div15{
+    background-color: rgb(246, 6, 226);
+    margin: 10px 0px;
+}
+.div16{
+    background-color: rgba(211,211,211);
+    margin: 10px 0px;
+}
+.div17{
+    background-color: rgb(128, 128, 128);
+    margin: 10px 0px;
+}
+.div18{
+    background-color: #ff0000;
+    margin: 10px 0px;
+}
+.div19{
+    background-color: #0000ff;
+    margin: 10px 0px;
+}
+.div20{
+    background-color: #3cb371;
+    margin: 10px 0px;
+}
+.div21{
+    background-color: #ee82ee;
+    margin: 10px 0px;
+}
+.div22{
+    background-color: #ffa500;
+    margin: 10px 0px;
+}

@@ -1,0 +1,66 @@
+1)Write a C program to calculate and print the area of a square and rectangle.
+
+Side of square is : 5
+
+Length and breadth of rectanngle is : 4 , 5
+====================================
+2)Write a c program to find the next multiple of 10 of a given two digit number
+
+input :- 56
+
+output :-60
+
+=====================================
+3)Write a c program to find the previous multiple of 10 of a given two digit number
+
+input :- 56
+
+output :-50
+
+=====================================
+
+4)
+Write a c program to find the next multiple of 10 of a given two digit number, if the given number's last digit is less than 5 then 
+
+find the previous multiple of 10 and if the given number's last digit is greater than or equal to 5 then find the next multiple of 10.
+
+[Dont use if else or ternary operator ]
+=============================
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int num,ld,rv,res1,res2;
+    printf("Enter the num:");
+    scanf("%d",&num);
+    ld=num%10;
+    rv=10-ld;
+    res1=num+rv;
+    printf("Next multiple of 10 is:%d\n",res1);
+    res2=num-ld;
+    printf("Previous mutiple of 10 is:%d",res2);
+
+    return 0;
+}
+======================================
+Write a C program to reverse 3 digit number without using any loops. Given number is 786 and expected output is 687.
+
+
+======================================
+
+
+4)Write a c program to take input of 3 digit number from the user , and add the 1st digit and last digit of that given number.
+
+
+
+Input as :
+
+Enter a three digit number :
+
+345
+
+
+
+Output as :
+
+The addition of first and last digit of the given num is : 8

@@ -1,0 +1,278 @@
+Program-1 :-
+------------
+[Title: Calculate Batting Average in Cricket]
+----------------------------------------------
+Problem: You are asked to write a C program to calculate the batting average of a batter in cricket based on the following inputs :-
+--------------------------------------------------------------------------------------------------------------------------------------
+-> Total runs scored by the batter.
+-> Total number of innings played.
+-> Total number of not outs (where the batter was not dismissed).
+
+The batting average is calculated using the formula :-
+-------------------------------------------------------
+|------------------------------------------------------|
+|  Batting Average =        Total Runs Scored          |
+|                     ------------------------------   |
+|		      Total Innings − Total Not Outs   |
+​|------------------------------------------------------|
+ 
+Write a C program to :-
+-----------------------
+-> Take input from the user for total runs, total innings, and total not outs.
+-> Calculate and display the batting average.
+-> Validate that the number of innings minus not outs is greater than 0. If not, the program should display an error message.
+-> Display the batting average rounded to two decimal places.
+
+Test Cases :-
+--------------
+
+Test Case 1 :-
+----------------
+Total Runs: 1500
+Total Innings: 50
+Total Not Outs: 5
+Expected Batting Average: 33.00
+
+Test Case 2 :-
+--------------
+Total Runs: 2300
+Total Innings: 60
+Total Not Outs: 10
+Expected Batting Average: 46.00
+
+Constraints :-
+--------------
+The number of innings must be greater than the number of not outs.
+
+Sample Input :-
+--------------
+Enter the total runs scored: 1200
+Enter the total number of innings: 45
+Enter the total number of not outs: 3
+
+Sample Output :-
+----------------
+The batting average is: 28.00
+
+Sol:-
+___
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int runs,inn,nout;
+    float ba;
+    printf("Total runs:");
+    scanf("%d",&runs);
+    printf("Total innings:");
+    scanf("%d",&inn);
+    if(inn>0)
+    {
+    printf("Total Not Outs:");
+    scanf("%d",&nout);
+    ba=runs/(inn-nout);
+    printf("Batting Averge:%.2f",ba);
+}
+else{
+    printf("Error!");
+}
+    return 0;
+}
+
+
+
+Program-2 :-
+-------------
+[Title: Reverse of Three digit number]
+--------------------------------------
+Write a C program to reverse a given three-digit number without using loops or ternary operators. The program should:
+
+The input number will always be a valid three-digit integer (between 100 and 999).
+
+Example Input :-
+-----------------
+Enter a three-digit number: 456
+Example Output:
+
+Reversed number: 654
+
+Additional Test Cases:
+-----------------------
+Test Case-1 :-
+---------------
+Input: 321
+Output: 123
+
+Test Case-2 :-
+--------------
+Input: 987
+Output: 789
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,fd,mdp,md,ld;
+    first:
+    printf("Enter number:");
+    scanf("%d",&n);
+    if(n>=100 && n<1000)
+    {
+        ld=n%10;
+        mdp=n/10;
+        md=mdp%10;
+        fd=mdp/10;
+        printf("%d%d%d",ld,md,fd);
+    }
+    else
+    {
+        printf("Invalid input number,Please enter number between 100-999:\n");
+        goto first;
+    }
+
+    return 0;
+}
+
+Program-3 :-
+-------------
+[Title: Online Shopping Discount Calculator Using Character Input]
+
+Description: An online shopping platform offers various discounts based on the type of user (Guest, Registered User, or VIP User) and the total purchase amount. The discount policy is as follows:
+
+Discount Policy:
+---------------
+Guest Users (G):
+--------------
+No discount if the purchase amount is less than $100.
+A 5% discount if the purchase amount is between $100 and $500.
+A 10% discount if the purchase amount is above $500.
+
+Registered Users (R):
+---------------------
+A 5% discount if the purchase amount is less than $200.
+A 10% discount if the purchase amount is between $200 and $500.
+A 15% discount if the purchase amount is above $500.
+
+VIP Users (V):
+-------------
+A 10% discount if the purchase amount is less than $200.
+A 20% discount if the purchase amount is between $200 and $500.
+A 25% discount if the purchase amount is above $500.
+
+Problem Statement:
+Write a C program that takes the user type (G, R, or V) and the total purchase amount as input, calculates the applicable discount, and displays the discount amount and final payable amount.
+
+Test Case 1:
+----------
+Enter user type (G for Guest, R for Registered, V for VIP): R
+Enter the purchase amount: 300
+
+Output:
+Discount: $30.00
+Final Amount: $270.00
+Test Case 2:
+-----------
+Enter user type (G for Guest, R for Registered, V for VIP): V
+Enter the purchase amount: 600
+
+Output:
+Discount: $150.00
+Final Amount: $450.00
+Test Case 3:
+-----------
+Enter user type (G for Guest, R for Registered, V for VIP): G
+Enter the purchase amount: 80
+
+Output:
+Discount: $0.00
+Final Amount: $80.00
+
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char utype;
+    int pamt,dis,famt;
+    printf("Enter user type(G for Guest,R for Registered,V for VIP):");
+    scanf("%c",&utype);
+    printf("Enter the purchase amount:");
+    scanf("%d",&pamt);
+    if(utype=='G')
+    {
+        if(pamt>500)
+        {
+            dis=0.1*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);
+        }
+        else if(pamt>=100 && pamt<=500)
+        {
+         dis=0.05*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:%%d",famt);   
+        }
+        else
+        {
+            dis=0/pamt*100;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);
+        }
+    }
+    else if(utype=='R')
+    {
+        if(pamt>500)
+        {
+            dis=0.15*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);
+        }
+        else if(pamt>=200 && pamt<=500)
+        {
+         dis=0.1*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);   
+        }
+        else
+        {
+            dis=0.05*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);
+        }
+    }
+    else if(utype=='V')
+    {
+         if(pamt>500)
+        {
+            dis=0.25*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);
+        }
+        else if(pamt>=200 && pamt<=500)
+        {
+         dis=0.2*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);   
+        }
+        else
+        {
+            dis=0.1*pamt;
+            printf("Discount:$%d\n",dis);
+            famt=pamt+dis;
+            printf("Final amount:$%d",famt);
+        }
+    }
+
+    return 0;
+}

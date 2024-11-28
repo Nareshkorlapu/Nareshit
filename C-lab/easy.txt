@@ -1,0 +1,109 @@
+Que 1 :  Write a 'C' program to check and print that given number is even or odd without using ternary operator and control statments.
+--------
+
+Sample input : int a = 10
+Sample Output : EVEN
+
+Sample input : int a = 125
+Sample Output : ODD
+int main()
+{
+int a;
+printf"Enter a no:);
+scanf("%d",&a);
+if(a%2==0)
+{
+printf("even no");
+}
+else
+{
+printf("odd no");
+}
+}
+
+                               
+======================================================================================================== 
+
+Que 2 :  Write a 'C' program to check and print the Maximum number among two numbers without using ternary operator and control statments.
+--------
+
+Sample input : int a = 10 , b = 20
+Sample Output : MAX = 20
+int main()
+{
+int a,b;
+printf("Enter a two digit number:);
+scanf("%d %d",&a &b);
+if(a>b)
+{
+printf("a is max:",a);
+}
+else
+{
+printf("b is max:,b);
+}
+}
+
+============================================================================  
+
+Que 4 :  Write a 'C' program to check and print the Maximum number among three numbers without using ternary operator and control statments.
+--------
+
+Sample input : int a = 10 , b = 200, c = 134;
+Sample Output : MAX = 200
+
+int main() {
+    int a,b,c;
+    printf("enter three digit variables:");
+    scanf("%d %d %d",&a,&b,&c);
+    (a>b&&a>c)&&(printf("%d is big",a));
+    (b>a&&b>c)&&(printf("%d is big",b));
+    (c>b&&c>a)&&(printf("%d is big",c));
+    
+    return 0;
+}
+                              
+
+                               
+===========================================================================
+========================================
+
+Que 1 : Write a 'C' program to take the marks of a student in 5 subjects as input and determine how many subjects have marks greater than or equal to 35 and how many have marks less than 35. 
+------- The program should not use any control statements (if, else, switch, etc.) or the ternary operator. 
+
+Sample input  : int sub1 = 38, sub2 = 34, sub3 = 35, sub4 = 78, sub5 = 20
+
+Sample Output : Pass in 3 subject and fail in 2 subject.  
+       
+========================================================================================================       
+
+Que 7 : Write a 'C' program to take the number of days and convert into (days:months:years)
+-------
+
+Sample input  : int days = 500
+
+Sample Output :  1 year 4 month and 15 days.
+       
+========================================================================================================       
+
+Que 8 : Write a 'C' program to take the number of seconds and convert into (H:M:S)
+-------
+
+Sample input  : int seconds = 3665
+
+Sample Output : 1 hour 1 minute and 5 second
+#include <stdio.h>
+
+  int main() {
+  int sec;
+  printf("enter the number of seconds:");
+  scanf("%d",&sec);
+  int h=sec/3600;
+  printf("%d\n",h);
+  sec=sec%3600;
+  int m=sec/60;
+  printf("%d\n",m);
+  sec=sec%60;
+  printf("%d\n",sec);
+  return 0;
+}

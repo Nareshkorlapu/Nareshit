@@ -1,0 +1,177 @@
+Que 1 :  Write a 'C' program to check and print that given number is even or odd without using ternary operator and control statments.
+--------
+
+Sample input : int a = 10
+Sample Output : EVEN
+
+Sample input : int a = 125
+Sample Output : ODD
+ANS:-
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a;
+    printf("Enter the num:");
+    scanf("%d",&a);
+    a%2==0 && printf("Even");
+    a%2!=0 && printf("Odd");
+
+    return 0;
+}
+                               
+======================================================================================================== 
+
+Que 2 :  Write a 'C' program to check and print the Maximum number among two numbers without using ternary operator and control statments.
+--------
+
+Sample input : int a = 10 , b = 20
+Sample Output : MAX = 20
+ANS:
+// Online C compiler to run C program online
+#include <stdio.h>
+int main() {
+    int a,b,max;
+    printf("Enter first number:");
+    scanf("%d",&a);
+    printf("Enter second number:");
+    scanf("%d",&b);
+    max=(a+b+(a-b));
+    printf("MAX:%d",max);
+
+    return 0;
+}
+
+
+============================================================================  
+
+Que 4 :  Write a 'C' program to check and print the Maximum number among three numbers without using ternary operator and control statments.
+--------
+
+Sample input : int a = 10 , b = 200, c = 134;
+Sample Output : MAX = 200
+ANS:
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a,b,c,max;
+    printf("Enter first number:");
+    scanf("%d",&a);
+    printf("Enter second number:");
+    scanf("%d",&b);
+    printf("Enter third number:");
+    scanf("%d",&c);
+     max = a;
+    (b > max) && (max = b);
+    (c > max) && (max = c);
+    printf("MAX: %d\n", max);
+
+    return 0;
+}
+
+                              
+
+                               
+===========================================================================
+========================================
+
+Que 1 : Write a 'C' program to take the marks of a student in 5 subjects as input and determine how many subjects have marks greater than or equal to 35 and how many have marks less than 35. 
+------- The program should not use any control statements (if, else, switch, etc.) or the ternary operator. 
+
+Sample input  : int sub1 = 38, sub2 = 34, sub3 = 35, sub4 = 78, sub5 = 20
+
+Sample Output : Pass in 3 subject and fail in 2 subject. 
+
+
+#include <stdio.h>
+
+int main() {
+    int sub1, sub2, sub3, sub4, sub5;
+    int passCount = 0, failCount = 0;
+    int passingScore = 35;
+
+    // Input scores for five subjects
+    printf("Enter first score: ");
+    scanf("%d", &sub1);
+    printf("Enter second score: ");
+    scanf("%d", &sub2);
+    printf("Enter third score: ");
+    scanf("%d", &sub3);
+    printf("Enter fourth score: ");
+    scanf("%d", &sub4);
+    printf("Enter fifth score: ");
+    scanf("%d", &sub5);
+
+    // Check each subject and update counts using logical operators
+    (sub1 >= passingScore && (passCount++)) || (failCount++);
+    (sub2 >= passingScore && (passCount++)) || (failCount++);
+    (sub3 >= passingScore && (passCount++)) || (failCount++);
+    (sub4 >= passingScore && (passCount++)) || (failCount++);
+    (sub5 >= passingScore && (passCount++)) || (failCount++);
+
+    // Print results
+    printf("Number of subjects passed: %d\n", passCount);
+    printf("Number of subjects failed: %d\n", failCount);
+
+    return 0;
+} 
+       
+========================================================================================================       
+
+Que 7 : Write a 'C' program to take the number of days and convert into (days:months:years)
+-------
+
+Sample input  : int days = 500
+
+Sample Output :  1 year 4 month and 15 days. 
+
+#include <stdio.h>
+int main(){
+    
+    int n,y,m,w,d;
+
+
+    printf("Enter no of days: ");
+    scanf("%d", &n);
+    
+    y=n/365;
+    m=n%365/30;
+    w=n%365%30/7;
+    d=n%365%30%7;
+    
+    printf("total days:%d year %dmonth %d week %d days",y,m,w,d);
+    
+
+    return 0;
+}
+
+       
+========================================================================================================       
+
+Que 8 : Write a 'C' program to take the number of seconds and convert into (H:M:S)
+-------
+
+Sample input  : int seconds = 3665
+
+Sample Output : 1 hour 1 minute and 5 second
+
+
+#include <stdio.h>
+int main(){
+    
+    int n,h,m,s;
+
+
+    printf("Enter seconds: ");
+    scanf("%d", &n);
+    
+h=n/3600;
+m=n%3600/60;
+s=n%60;
+    
+    printf("duration:%d hour %d minute %d sec",h,m,s);
+    
+
+    return 0;
+}
