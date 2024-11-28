@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: cursive;
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -117,7 +120,7 @@ h4{
     border-radius: 15px;
     padding: 30px;
     margin: 30px 20px;
-    height: 550px;
+    height: 600px;
     width: 300px;
     
 }
