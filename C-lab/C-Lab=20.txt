@@ -38,6 +38,34 @@ Sample Output 3 :-
 ------------------
 3^4 = 81
 
+SOL:-
+______
+#include <stdio.h>
+
+int main() {
+    int b,e, res=1,c=0;
+    
+    printf("Enter base: ");
+    scanf("%d", &b);
+    printf("Enter exponent: ");
+    scanf("%d", &e);
+
+    if (b <=0 || e<=0) {
+        printf("Invalid input...Please enter positive values\n");
+        return 1; 
+    }
+
+    while (c<e) {
+        res=res*b;
+        c++;        
+    }
+
+    printf("%d^%d = %d\n", b, e, res);
+
+    return 0;
+}
+
+
 |--------------|
 | Program-2 :- | [ok]
 |--------------|
@@ -47,9 +75,9 @@ The program should prompt the user to enter a number, compute its factorial, and
 
 -> If the user enters a negative number, the program should display an error message: "Invalid input. Please enter a positive integer."
 -> If the input is 0, the program should print: "Factorial of 0 = 1," because by definition, 0! = 1.
-|-----------------------------------|
+|----------------------------------------------|
 |Formula: n! = 1 × 2 × 3 × ... × n. |
-|-----------------------------------|
+|----------------------------------------------|
 Sample Input :- Enter a positive integer: -5
 ---------------
 Sample Output :- Invalid input. Please enter a positive integer.
@@ -59,6 +87,33 @@ Sample Input :- Enter a positive integer: 5
 ---------------
 Sample Output :- Factorial of 5 = 120
 ----------------
+
+Sol:-
+____
+#include <stdio.h>
+
+int main() {
+    int n;
+    long fact = 1;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Invalid input. Please enter a positive integer.\n");
+        return 1;
+    } else if (n == 0) {
+        printf("Factorial of 0 = 1\n"); 
+        return 0; 
+    }
+
+    for (int i = 1; i <= n; i++) {
+        fact=fact*i;
+    }
+
+    printf("Factorial of %d = %lld\n", n, fact);
+
+    return 0;
+}
 
 |--------------|
 | Program-3 :- | [ok]
@@ -77,6 +132,38 @@ Sample Input :- Enter an integer: 1121
 Sample Output :- 1121 is not a palindrome number.
 ----------------
 
+Sol:-
+________
+#include <stdio.h>
+
+int main() {
+    int n, m, rev = 0, rem;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    m = n;
+
+    if (n < 0) {
+        printf("%d is not a palindrome.\n", n);
+        return 0; 
+    }
+
+    while (n != 0) {
+        rem = n % 10;    
+        rev = rev * 10 + rem; 
+        n /= 10;                  
+    }
+
+    if (m == rev) {
+        printf("%d is a palindrome.\n", m);
+    } else {
+        printf("%d is not a palindrome.\n", m);
+    }
+
+    return 0;
+}
+
 |--------------|
 | Program-4 :- | [ok]
 |--------------|
@@ -92,6 +179,35 @@ Sample Input :- Enter an integer: 6
 ---------------
 Sample Output :- 6 is not a prime number.
 ----------------
+Sol:-
+_____
+#include <stdio.h>
+
+int main() {
+    int n, i, p = 1; 
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        p = 0; // 
+    } else {
+        for (i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                p = 0; 
+                break; 
+            }
+        }
+    }
+
+    if (p) {
+        printf("%d is a prime number.\n", n);
+    } else {
+        printf("%d is not a prime number.\n", n);
+    }
+
+    return 0;
+}
 
 |--------------|
 | Program-5 :- | [ok]
@@ -102,6 +218,76 @@ The program should take an integer as input and output each digit of the number 
 
 Sample Input: 1256
 Sample Output: one two five six
+
+Sol:-
+____
+#include <stdio.h>
+
+void printDigitInWords(int digit) {
+    switch (digit) {
+        case 0: printf("zero "); break;
+        case 1: printf("one "); break;
+        case 2: printf("two "); break;
+        case 3: printf("three "); break;
+        case 4: printf("four "); break;
+        case 5: printf("five "); break;
+        case 6: printf("six "); break;
+        case 7: printf("seven "); break;
+        case 8: printf("eight "); break;
+        case 9: printf("nine "); break;
+        default: break; // Should not happen
+    }
+}
+
+int main() {
+    int n;
+    
+    // Prompt the user for input
+    printf("Input: ");
+    scanf("%d", &n);
+
+    // Handle negative numbers
+    if (n < 0) {
+        n = -n; // Make n positive
+    }
+
+    // Array to store digit words
+    char *digitWords[10]; // Array to store words for each digit
+    int count = 0; // Count of digits
+
+    // If the input is 0, print "zero"
+    if (n == 0) {
+        printf("zero\n");
+        return 0;
+    }
+
+    // Process each digit
+    while (n > 0) {
+        int digit = n % 10; // Get the last digit
+        switch (digit) {
+            case 0: digitWords[count++] = "zero"; break;
+            case 1: digitWords[count++] = "one"; break;
+            case 2: digitWords[count++] = "two"; break;
+            case 3: digitWords[count++] = "three"; break;
+            case 4: digitWords[count++] = "four"; break;
+            case 5: digitWords[count++] = "five"; break;
+            case 6: digitWords[count++] = "six"; break;
+            case 7: digitWords[count++] = "seven"; break;
+            case 8: digitWords[count++] = "eight"; break;
+            case 9: digitWords[count++] = "nine"; break;
+        }
+        n /= 10; // Remove the last digit
+    }
+
+    // Print the digit words in reverse order
+    for (int i = count - 1; i >= 0; i--) {
+        printf("%s ", digitWords[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
 
 #################################### [ EXTRA QUESTIONS ] ######################################################## 
 
@@ -116,6 +302,37 @@ For example, if the input number is 153830, the output should be 8 since 8 is th
 Sample input : 153830
 
 Sample Output : 8 is highest digit in the number.
+
+Sol:-
+____
+#include <stdio.h>
+
+int main() {
+    int n, maxDigit = -1; // Initialize maxDigit to a low value
+    // Prompt the user for input
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    // Handle negative numbers by converting to positive
+    if (n < 0) {
+        n = -n; // Make n positive
+    }
+
+    // Process each digit
+    while (n > 0) {
+        int digit = n % 10; // Get the last digit
+        if (digit > maxDigit) {
+            maxDigit = digit; // Update maxDigit if current digit is greater
+        }
+        n /= 10; // Remove the last digit
+    }
+
+    // Output the maximum digit found
+    printf("The maximum digit is: %d\n", maxDigit);
+
+    return 0;
+}
+
 
 |--------------|
 | Program-2 :- | [ok]
