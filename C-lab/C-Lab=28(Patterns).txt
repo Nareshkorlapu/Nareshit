@@ -1,0 +1,227 @@
+|-------------|
+| Program-1 : |
+|-------------|
+
+Write C program to print given pattern.
+----------------------------------------
+
+|-----------------|
+|         #         |
+|         #         |
+| #  #  #  #  #  |
+|         #         |
+|         #         |
+|-----------------|
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter a value=");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i==(n/2)+1){
+            printf("  #");
+            }
+            else if(j==(n/2)+1){
+                printf("  #");
+            }
+            else{
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+|-------------|
+| Program-2 : |
+|-------------|
+
+Write C program to print given pattern.
+----------------------------------------
+
+|----------------|
+| #  #  #  #  #  |
+| #           	  #  |
+| #           	  #  |
+| #           	  #  |
+| #  #  #  #  #  |
+|----------------|
+
+Sol:-
+______
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    printf("Rows=");
+    scanf("%d",&n);
+    printf("Columns=");
+    scanf("%d",&m);
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            if(i==n-(n-1) || j==m-(m-1)){
+            printf(" #");
+            }
+            else if(i==n || j==m){
+                printf(" #");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+|-------------|
+| Program-3 : |
+|-------------|
+
+Write C program to given pattern.
+----------------------------------
+
+|----------------|
+| #     #  #  #  |
+| #     #        |
+| #  #  #  #  #  |
+|       #     #  |
+| #  #  #     #  | 
+|----------------|
+
+Sol:-
+_____
+
+Without Test cases(n=5):-
+____________________________________
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter n value:");
+    scanf("%d",&n);
+    for(int r=1;r<=n;r++){
+        for(int c=1;c<=n;c++){
+            if(r==(n/2)+1 || c==(n/2+1) || (c==1 && r<(n/2)+1) || (c==5 && r>(n/2+1) || r==1 && c>(n/2+1) || (r==5 && c<(n/2)+1))){
+                printf(" #");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+With Test cases:-
+_____________________
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter n value:");
+    scanf("%d",&n);
+    for(int r=1;r<=n;r++){
+        for(int c=1;c<=n;c++){
+            if(r==(n/2)+1 || c==(n/2+1) || (c==n-(n-1) && r<(n/2)+1) || (c==n && r>(n/2+1) || r==n-(n-1) && c>(n/2+1) || (r==n && c<(n/2)+1))){
+                printf(" #");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+|-------------|
+| Program-4 : |
+|-------------|
+
+Write C program to print given pattern.
+---------------------------------------
+
+|----------------|
+| #  0  0  0  #  |
+| 0  #  0  #  0  | 
+| 0  0  #  0  0  |
+| 0  #  0  #  0  | 
+| #  0  0  0  #  | 
+|----------------|
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter n value:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i==j || i+j==(n+1)){
+                printf("# ");
+            }
+            else{
+                printf("0 ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+|-------------|
+| Program-5 : |
+|-------------|
+
+Write C program to print given pattern.
+----------------------------------------
+
+|----------------|
+| 0  0  0  0  1  |
+| 0  0  0  1  1  |
+| 0  0  1  1  1  |
+| 0  1  1  1  1  |
+| 1  1  1  1  1  |
+|----------------|
+
+Sol:-
+______
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter n value:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        for(int j=n;j>i;j--){
+            printf("0 ");
+        }
+        for(int j=1;j<=i;j++){
+            printf("1 ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

@@ -100,6 +100,32 @@ Test-Case-5 :- (Both Invalid)
 Input: Base = 0, Exponent = -3
 Output: Invalid input...Please enter positive values
 
+Sol:-
+_______
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    int b,e,a,c;
+    int i;
+    printf("Input:Base=");
+    scanf("%d",&b);
+    printf("Exponent=");
+    scanf("%d",&e);
+    if(b>0 && e>0){
+    for(i=1;i<=e;i++){
+        c=pow(b,e);
+    }
+    printf("output:%d^%d=%d",b,e,c);
+    }
+    else{
+        printf("Invalid input...Please enter positive values");
+    }
+
+    return 0;
+}
+
 |--------------|
 | Program-3 :- | [ok]
 |--------------|
@@ -154,6 +180,32 @@ Test-Case-5 :-
 --------------
 Input: Rows = 0, Columns = 3
 Output: Invalid input. Rows and columns must be positive integers.
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    printf("Rows:");
+    scanf("%d",&n);
+    printf("Columns:");
+    scanf("%d",&m);
+    if(n>0 && m>0){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            printf("%3d",j);
+        }
+        printf("\n");
+    }
+    }
+    else{
+        printf("Invalid input.Rows and columns must be positive integers.");
+    }
+
+    return 0;
+}
 
 |--------------|
 | Program-4 :- | [ok]
@@ -212,6 +264,34 @@ Test-Case-5 :-
 Input: Rows = 0, Columns = 3
 Output: Invalid input. Rows and columns must be positive integers.
 
+Sol:-
+____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    int temp;
+    printf("Rows:");
+    scanf("%d",&n);
+    printf("Columns:");
+    scanf("%d",&m);
+    if(n>0 && m>0){
+    for(int i=1;i<=n;i++){
+        temp=i;
+        for(int j=1;j<=m;j++){
+            printf("%3d",temp++);
+        }
+        printf("\n");
+    }
+    }
+    else{
+        printf("Invalid input.Rows and columns must be positive integers.");
+    }
+
+    return 0;
+}
+
 SET-B
 -----
 
@@ -237,6 +317,29 @@ Test-Case-3 :- [Invalid]
 -------------------------
 Input: "abc" (non-integer input)
 Output: Error: Invalid input. Only integers are allowed.
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,a=0,x=1;
+    printf("Input:");
+    while(x){
+        scanf("%d",&n);
+        if(n>=0){
+            
+            a=a+n;
+            
+        }
+        else{
+            break;
+        }
+    }
+   printf("Total Sum=%d",a);
+    return 0;
+}
 
 |--------------|
 | Program-2 :- | [ok]
@@ -339,6 +442,31 @@ Test-Case-5 :-
 Input: Rows = 0, Columns = 3
 Output: Invalid input. Rows and columns must be positive integers.
 
+Sol:-
+________
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    printf("Rows=");
+    scanf("%d",&n);
+    printf("Columns=");
+    scanf("%d",&m);
+    if(n>0 && m>0){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            printf("%3d",i);
+        }
+        printf("\n");
+    }
+    }
+    else{
+        printf("Invalid input.Rows and columns must be positive integers.");
+    }
+    return 0;
+}
+
 |--------------|
 | Program-4 :- | [ok]
 |--------------|
@@ -395,6 +523,34 @@ Test-Case-5 :-
 ---------------
 Input: Rows = 0, Columns = 3
 Output: Invalid input. Rows and columns must be positive integers.
+
+Sol:-
+_____
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    char ch='A',temp;
+    printf("Rows=");
+    scanf("%d",&n);
+    printf("Columns=");
+    scanf("%d",&m);
+    if(n>0 && m>0){
+    for(int i=1;i<=n;i++){
+        temp=ch;
+        for(int j=1;j<=m;j++){
+            printf("%3c",temp++);
+        }
+        ch++;
+        printf("\n");
+    }
+    }
+    else{
+        printf("Invalid input.Rows and columns must be positive integers.");
+    }
+    return 0;
+}
 
 SET-C
 -----
@@ -548,6 +704,31 @@ Test-Case-6 :-
 ---------------
 Input: Rows = 0, Columns = 3
 Output: Invalid input. Rows and columns must be positive integers.
+
+Sol:-
+______
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    printf("Rows=");
+    scanf("%d",&n);
+    printf("Columns=");
+    scanf("%d",&m);
+    if(n>0 && m>0){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            printf(" *");
+        }
+        printf("\n");
+    }
+    }
+    else{
+        printf("Invalid input.Rows and columns must be positive integers.");
+    }
+    return 0;
+}
 
 |--------------|
 | Program-4 :- | [ok]

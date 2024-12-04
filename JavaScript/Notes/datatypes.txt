@@ -1,0 +1,84 @@
+Javascript is dynamically typed language
+The datatype of a variable is decided by elements value in it. it can be changed with value.
+changing one datatype to another datatype is called "type casting". There are two types of type casting i.e., implicit and explicit
+implicit, without external force, it converts one data type to another
+explicit, we need force to convert one data type to another
+
+There are two classifications of datatypes in Javascript
+I. primitive Data Types:
+i. number: number is data type assigned to any numerical value
+eg:5,5.369
+ii.string: string is a collection of characters.String can be represented by ' or ". 
+eg:'raj',"ravi"
+iii.boolean: it is used to declare tru or false. Teue is 1 and false is 0.
+iv.undefined: it is used to store "undefined" data
+v.null: it is used to store "null" data
+II.non-Primitve Data Types:
+i. functions:
+ii.Arrays
+iii. objects
+
+
+
+i. number: Any numerical data is number , to find datatype of an element , we can use typeof operator
+numbers have some default method called "Math Methods"
+Math.pow(),Math.sqrt(),Math.cbrt(),Math.ceil(),Math.floor(),Math.round(),Mat.abs(),Math.random()
+
+var num=25.5214;
+num.toFixed() -- used to get number with fixed number of digits after decimal
+num.toPrecision() -- used to get a number with significant digits
+num.toString() -- used to change the base of a number
+
+ii. strings: 
+we can represent strings in three ways
+i. single quote: var s='prasad';
+ii. double quote: var s="prasad"
+There is direct difference between ' or " but In case nested double or nested single quotes occur, at that we can use them differently
+
+String is a collection / array of characters. Each characters contains an index which starts from 0.
+iii. backticks: var s=`prasad`;
+The use of backticks is to get dynamical values without breaking the string
+var str="Javascript"
+console.log(`The name is ${str}`)
+
+string stores each character with index starting from 0.
+toUppercase()
+toLowerCase()
+length
+charAt()
+indexOf()
+lastIndexOf()
+startsWith()
+endsWith()
+split('delimiter')
+trim()
+replace
+replaceAll()
+slice(start,end)
+
+Boolean:
+Boolean is used to store or represent true or false. True is considered as 1 and false is considered as 0
+
+undefined and null:
+undefined: The accidental absence of value
+null: The intentional absence of value
+
+what is Hoisting?
+We can access value before its declaration. In JS Hoisting is possible because Execution context creates memory before actual declaration. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

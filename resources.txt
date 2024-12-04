@@ -1,13 +1,20 @@
-images: ideogram,freepik,unsplash,pexels
+images: ideogram, freepik,unsplash,pexels
 videos: freepik
 inspiration: dribble,behance
-UI/UX: figma
+UI/UX : figma
 
-HTML -- freecodecamp
+HTML --  freecodecamp
 
-CSS -- freecodecamp,frontend mentor,Codepen,CSSBattle,Freefrontend
+CSS -- freecodecamp,
+frontend mentor, codepen,
+cssbattle,
+freefrontend
 
-Readymade templates  : htmlrev,startbootstrap
+readymade templates: htmlrev,startbootstrap
 
-fonts : google fonts, dafont, 1001 fonts
+fonts: google fonts, dafont,1001 fonts
+
+deployements: git&github, netlify
+
+communities: dev.to,hashnode
 
