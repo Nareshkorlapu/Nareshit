@@ -24,20 +24,18 @@ header h3{
     height: 50px;
     width: 100px;
 }
-.container-2{
-    display: flex;
-    /* border: 1px solid black; */
-    border-radius: 5px;
-}
+
 main{
     height: 80vh;
-    border: 1px solid black;
+    display: flex;
+    border: 1px solid black; 
+    border-radius: 5px;
 }
 .bigbox-1{
-   display: grid;
-   grid-template-columns: 30% 30% 30%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
     border: 1px solid black;
-height: 80vh;
+    
     border-radius: 5px;
     margin: 5px;
     width: 750px;
@@ -46,7 +44,7 @@ height: 80vh;
 .bigbox{
     border: 1px solid black;
     border-radius: 5px;
-    height: 100px;
+   height: 100px;
     width: 200px;
     margin: 10px;
 }

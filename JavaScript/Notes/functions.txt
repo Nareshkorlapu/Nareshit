@@ -1,0 +1,18 @@
+Functions are used to perform a specific task . We divide into small snippets called functions.
+    Why functions?
+    -- responsibility
+    -- ease to debug
+Syntax:
+    function function_name(parameters){ //parameters sometimes also arguments also(function prototype)
+         //function definition
+    }
+
+    function_names(arguments) // function call
+    function display(){
+    console.log("Hello world")
+}
+display()
+
+functions are called " first class citizens" in JS
+
+-- functions can accept values through parameters and functions may return values.
