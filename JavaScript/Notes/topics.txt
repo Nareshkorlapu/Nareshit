@@ -1,8 +1,0 @@
-var variable
-introduction(internal,external)
-devloper tools(console)
-Primitive Data Types(number,string,boolean,undefined,null) 
-operators
-functions
-
-useful websites for JS==JSHero, free code camp, JS challenger 
