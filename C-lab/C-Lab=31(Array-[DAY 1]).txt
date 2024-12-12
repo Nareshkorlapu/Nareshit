@@ -349,6 +349,33 @@ Sample Output :-
 The values stored in the array are: 2 5 7
 The values stored in the array in reverse order are: 7 5 2
 
+Sol:-
+----------------
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int index;
+    printf("Enter size of elements:");
+    scanf("%d",&index);
+    for(int i=0;i<index;i++){
+        printf("Element at index %d:",i);
+        scanf("%d",&arr[i]);
+    }
+   printf("The values stored in the array are:");
+    for(int i=0;i<index;i++){
+      printf("%2d",arr[i]);
+    }
+    printf("\n");
+printf("The values stored in the array in reverse order are:");
+    for(int i=(index-1);i>=0;i--){
+    
+    printf("%2d",arr[i]);
+}
+    return 0;
+}
+
 |--------------|
 | Program-5 :- | [ok]
 |--------------|
@@ -366,3 +393,33 @@ Sample Output :-
 -----------------
 The elements stored in the first array are: 15 10 12
 The elements copied into the second array are: 15 10 12
+
+Sol:-
+--------------------------------------------------------------------
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int a[20],b[20];
+    int index;
+    printf("Enter size of elements:");
+    scanf("%d",&index);
+    for(int i=0;i<index;i++){
+        printf("Element at index %d:",i);
+        scanf("%d",&a[i]);
+    }
+   printf("The elements stored in the first array are:");
+    for(int i=0;i<index;i++){
+      printf("%3d",a[i]);
+    }
+    for(int i=0;i<index;i++){
+        b[i]=a[i];
+    }
+    printf("\n");
+printf("The values stored in the second array are:");
+
+    for(int i=0;i<index;i++){
+    printf("%3d",b[i]);
+}
+    return 0;
+}

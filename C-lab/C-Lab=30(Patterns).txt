@@ -50,6 +50,7 @@ Write a C program to given pattern.
 
 Sol:-!
 ----------------
+// Online C compiler to run C program online
 #include <stdio.h>
 int main()
 {
@@ -57,7 +58,7 @@ int main()
     printf("Enter n value:");
     scanf("%d",&n);
     for(int i=1;i<=n;i++){
-        a=n;
+        a=i*2-1;
       for(int j=n;j>i;j--){
         printf("   ");
       }
@@ -72,7 +73,35 @@ int main()
     }
     return 0;
 }
+						Or
 
+Reliance-building-explanation:
+-----------------------------------------------------------------------------
+// Online C compiler to run C program online
+#include <stdio.h>
+int main()
+{
+    int n,a=1;
+    printf("Enter n value:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        a=i*2-1;
+      for(int j=1;j<=n;j++){
+          if((i+j)>n){
+              printf("%3d",a--);
+          }
+          else{
+        printf("   ");
+          }
+      }
+      for(int k=1;k<i;k++){
+          printf("%3d",i-k);
+      }
+      
+      printf("\n");
+    }
+    return 0;
+}
 
 |-------------|
 | Program-3 : |
