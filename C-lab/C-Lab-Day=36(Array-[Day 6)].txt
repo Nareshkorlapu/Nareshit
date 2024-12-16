@@ -1,0 +1,338 @@
+|------------|
+| Program-1  | [ok]
+|------------|
+
+Write a program in C to find the sum of the rows and columns of a square matrix ?
+---------------------------------------------------------------------------------
+Sample Input :-
+---------------
+-> Input the size of the square matrix :- 2  
+-> Input elements in the 2x2 matrix :-
+  
+Element - [0][0]: 5  
+Element - [0][1]: 6  
+Element - [1][0]: 7  
+Element - [1][1]: 8
+
+Sample Output :-
+----------------
+-> The matrix is:  
+__    __
+|  5 6 | 
+|_ 7 8_|  
+
+The sum of rows and columns of the matrix is :-
+-----------------------------------------------  
+__     __
+|  5  6 |-> 11 
+|_ 7  8_|-> 15
+   |  |
+  \|/\|/
+  12 14
+  
+Test Cases :-
+-------------
+
+-> Valid Test Cases :-
+----------------------
+Test Case-1 :- [Minimum Size Matrix]
+--------------
+Input :-
+--------
+-> Input the size of the square matrix :- 1  
+-> Input elements in the 1x1 matrix :-  
+
+Element - [0][0]: 10  
+
+Expected Output :-
+-------------------
+The matrix is:  
+
+10  
+
+The sum of rows and columns of the matrix is:  
+
+10  10  
+
+Test Case 2 :- [Typical Square Matrix (3x3)]
+--------------
+Input :-
+--------
+-> Input the size of the square matrix :- 3  
+-> Input elements in the 3x3 matrix :-
+  
+Element - [0][0]: 1  
+Element - [0][1]: 2  
+Element - [0][2]: 3  
+Element - [1][0]: 4  
+Element - [1][1]: 5  
+Element - [1][2]: 6  
+Element - [2][0]: 7  
+Element - [2][1]: 8  
+Element - [2][2]: 9  
+
+Expected Output :-
+-------------------
+The matrix is :-  
+----------------
+1  2  3  
+4  5  6  
+7  8  9  
+
+The sum of rows and columns of the matrix is :-
+-----------------------------------------------  
+ 1   2   3 ->  6  
+ 4   5   6 ->  15  
+ 7   8   9 ->  24  
+ |   |   |  
+\|/ \|/ \|/ 
+12  15  18  
+
+Invalid Test Cases :-
+----------------------
+Test Case 3 :- [Negative Matrix Size]
+--------------
+Input :-
+--------
+-> Input the size of the square matrix: -3  
+
+Expected Output :-
+------------------
+Invalid matrix size. Please enter a positive integer.
+
+Test Case 4 :- [Non-Numeric Matrix Size]
+--------------
+Input :-
+---------
+-> Input the size of the square matrix: a  
+
+Expected Output :-
+-------------------
+Invalid input. Please enter a numeric value for the matrix size.
+
+|------------|
+| Program-2  | [ok]
+|------------|
+
+Write a program in C to accept two matrices and check whether they are equal.
+
+Sample Input:
+
+less
+Copy code
+Input Rows and Columns of the 1st matrix: 2 2  
+Input Rows and Columns of the 2nd matrix: 2 2  
+
+Input elements in the first matrix:  
+Element - [0][0]: 1  
+Element - [0][1]: 2  
+Element - [1][0]: 3  
+Element - [1][1]: 4  
+
+Input elements in the second matrix:  
+Element - [0][0]: 1  
+Element - [0][1]: 2  
+Element - [1][0]: 3  
+Element - [1][1]: 4  
+
+Sample Output :-
+-----------------
+The first matrix is:  
+
+1 2  
+3 4  
+
+The second matrix is:  
+
+1 2  
+3 4  
+
+Two matrices are equal.
+
+Test Cases :-
+-------------
+Valid Test Cases :-
+--------------------
+Test Case-1 :- [Identical Matrices (2x2)]
+---------------
+Input :-
+---------
+Input Rows and Columns of the 1st matrix: 2 2  
+Input Rows and Columns of the 2nd matrix: 2 2  
+
+Input elements in the first matrix :-
+  
+Element - [0][0]: 5  
+Element - [0][1]: 6  
+Element - [1][0]: 7  
+Element - [1][1]: 8  
+
+Input elements in the second matrix :-  
+
+Element - [0][0]: 5  
+Element - [0][1]: 6  
+Element - [1][0]: 7  
+Element - [1][1]: 8  
+
+Expected Output :-
+------------------
+The first matrix is:  
+5 6  
+7 8  
+
+The second matrix is:  
+5 6  
+7 8  
+
+Two matrices are equal.
+
+Test Case 2 :- [Non-Identical Matrices (2x2)]
+--------------
+Input :-
+--------
+Input Rows and Columns of the 1st matrix: 2 2  
+Input Rows and Columns of the 2nd matrix: 2 2  
+
+Input elements in the first matrix:  
+
+Element - [0][0]: 1  
+Element - [0][1]: 2  
+Element - [1][0]: 3  
+Element - [1][1]: 4  
+
+Input elements in the second matrix:  
+
+Element - [0][0]: 5  
+Element - [0][1]: 6  
+Element - [1][0]: 7  
+Element - [1][1]: 8  
+
+Expected Output :-
+-------------------
+The first matrix is:  
+1 2  
+3 4  
+
+The second matrix is:  
+5 6  
+7 8  
+
+Two matrices are not equal.
+
+Invalid Test Cases :-
+---------------------
+Test Case-3 :- [Different Dimensions]
+--------------
+Input :-
+---------
+Input Rows and Columns of the 1st matrix: 2 3  
+Input Rows and Columns of the 2nd matrix: 3 2  
+
+Expected Output :-
+------------------
+Matrices with different dimensions cannot be compared. Please ensure both matrices have the same dimensions.
+
+Test Case-3 :- [Negative Dimensions]
+--------------
+Input :-
+--------
+Input Rows and Columns of the 1st matrix: -2 -2  
+Input Rows and Columns of the 2nd matrix: 2 2  
+
+Expected Output :-
+------------------
+Invalid matrix dimensions. Please enter positive integers for rows and columns.
+
+|------------|
+| Program-3  | [ok]
+|------------|
+
+Write a C program to find the maximum element of each row in a 2D array?
+-------------------------------------------------------------------------
+Example :-
+-----------
+Input :-
+---------
+enter row and columns 3 4  
+
+1   2   3   21  
+12  1   65  9  
+1   56  34  2  
+
+Output :-
+----------
+Maximum element of row 1: 21  
+Maximum element of row 2: 65  
+Maximum element of row 3: 56  
+
+Valid Test Cases
+-----------------
+Test-Case-1 :-
+--------------
+Input :-
+---------
+enter row and columns 2 3  
+
+1 2 3  
+4 5 6  
+
+Output :-
+----------
+Maximum element of row 1: 3  
+Maximum element of row 2: 6  
+
+Test-Case-2 :-
+--------------
+Input :-
+---------
+enter row and columns 3 2  
+
+-5 -10  
+0   100  
+25  25  
+
+Output :-
+---------
+Maximum element of row 1: -5  
+Maximum element of row 2: 100  
+Maximum element of row 3: 25  
+
+Test-Case-3 :-
+--------------
+Input :-
+--------
+enter row and columns 1 4  
+
+9 8 7 6  
+
+Output :-
+---------
+Maximum element of row 1: 9  
+
+Invalid Test Cases
+-------------------
+Test-Case-4 :-
+--------------
+Input :-
+--------
+enter row and columns -3 4  
+
+Output :-
+---------
+Reason: Number of rows cannot be negative.
+
+Test-Case-5 :-
+--------------
+Input :-
+---------
+enter row and columns 3 -2  
+
+Reason: Number of columns cannot be negative.
+
+Test-Case-6 :-
+--------------
+Input :-
+---------
+enter row and columns 0 0  
+
+Reason: The array size is invalid (no rows and no columns).
