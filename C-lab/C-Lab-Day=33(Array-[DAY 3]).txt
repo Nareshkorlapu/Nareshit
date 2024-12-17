@@ -69,39 +69,54 @@ Sol:-
 
 int main() {
     int n, element, position;
-
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
-
     int arr[n+1]; 
-
     printf("Enter %d elements: ", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
-
     printf("Enter the element to be inserted: ");
     scanf("%d", &element);
-    
     printf("Enter the position: ");
     scanf("%d", &position);
-
     for (int i = n; i >= position; i--) {
         arr[i] = arr[i-1];
     }
-
     arr[position - 1] = element;
-
     n++;
-
     printf("Array after insertion: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
-
     return 0;
 }
 
+Sol:-(Danny)
+---------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    int a[20],i,n,e,p;
+    printf("Enter the Arry size: ");
+    scanf("%d",&n);
+    printf("Enter %d Arrys: ",n);
+    for(i=0;i<n;i++)scanf("%d",&a[i]);
+    printf("enter new element = ");
+    scanf("%d",&e);
+    printf("Enter the position= ");
+    scanf("%d",&p);
+    if(p<1||p>n+1)
+    printf("position 1 to %d only",n);
+    else
+    {
+        for(i=n;i>=p;i--)a[i]=a[i-1];
+        a[i]=e;
+        printf("Array after insertion: ");
+        for(i=0;i<=n;i++)printf("%4d",a[i]);
+    }
+
+}
 
 |--------------|
 | Program-3 :- | [ok]
