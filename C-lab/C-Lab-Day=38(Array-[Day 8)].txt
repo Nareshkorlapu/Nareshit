@@ -1,0 +1,207 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+[Title:- Store First N Prime Numbers into an Array]
+---------------------------------------------------
+
+Write a C program to store the first N prime numbers into an array and print the resulting array ?
+---------------------------------------------------------------------------------------------------
+Example :-
+-----------
+Input :-
+--------
+3
+
+Output :-
+----------
+[2, 3, 5]
+
+Input :-
+---------
+5
+
+Output :-
+---------
+[2, 3, 5, 7, 11]
+
+Test Cases :-
+--------------
+Test-Case-1 :- [Valid]
+----------------------
+Input :- 4
+--------
+Expected Output :- [2, 3, 5, 7]
+------------------
+
+Test-Case-2 :- (Valid)
+--------------
+Input :- 6
+--------
+Expected Output :- [2, 3, 5, 7, 11, 13]
+------------------
+
+Test-Case-3 (Invalid)
+-------------
+Input :- 0
+--------
+Expected-Output :- Invalid input. N should be greater than 0.
+------------------
+
+Test-Case-4 :- (Invalid)
+--------------
+Input :- -5
+---------
+Expected Output: Invalid input. N should be greater than 0.
+
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+[Title:- Print Common Elements of Two Arrays]
+---------------------------------------------
+Write a C program to print the common elements of two arrays ?
+----------------------------------------------------------------
+Example :-
+-----------
+Input :-
+--------
+arr1 = {1, 2, 3, 4, 5}  
+arr2 = {5, 7, 8, 1, 1, 2, 10}
+
+Output :-
+---------
+Common elements are: 1 2 5
+
+Test Cases :
+------------
+
+Test-Case-1 :- (Valid)
+--------------
+Input :-
+---------
+arr1 = {3, 4, 5, 6}  
+arr2 = {7, 5, 3, 1}
+
+Expected Output :-
+------------------
+Common elements are: 3 5
+
+Test-Case-2 :- (Valid)
+--------------
+Input :-
+--------
+arr1 = {10, 20, 30}  
+arr2 = {15, 25, 10}
+
+Expected Output :-
+------------------
+Common elements are: 10
+
+Test-Case-3 :- (Invalid)
+--------------
+Input :-
+--------
+arr1 = {}  
+arr2 = {1, 2, 3}
+
+Expected Output :-
+-------------------
+Invalid input. Both arrays should have elements.
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+[Title:- Print All Leaders in the Array]
+----------------------------------------
+Write a C program to print all the leaders in an array?
+--------------------------------------------------------
+Note: An element is a leader if it is greater than all the elements to its right.
+
+Example :-
+----------
+Input :-
+--------
+{10, 9, 14, 23, 15, 0, 9}
+
+Output :-
+---------
+Leader elements are: 23, 15, 9
+
+Test Cases :-
+--------------
+Test-Case-1 :- (Valid)
+---------------
+Input :- {16, 17, 4, 3, 5, 2}
+---------
+
+Expected Output :-
+-------------------
+Leader elements are: 17, 5, 2
+
+Test-Case-2 :- (Valid)
+--------------
+Input :- {1, 2, 3, 4, 0}
+
+Expected Output :-
+-------------------
+Leader elements are: 4, 0
+
+Test-Case-3 :- (Invalid)
+--------------
+Input: {}
+
+Expected Output :-
+-------------------
+Invalid input. The array cannot be empty.
+
+|--------------|
+| Program-4 :- |[ok]
+|--------------|
+
+[Title:- Print Pairs of Numbers]
+--------------------------------
+Write a C program that takes an array of integers as input and prints pairs of numbers such that the first number in the pair starts from the beginning of the array and the second number starts from the end of the array.
+
+Example :-
+----------
+Input :-
+--------
+arr = {1, 2, 3, 4, 5, 6}
+
+Output :-
+---------
+(1, 6)  
+(2, 5)  
+(3, 4)
+
+Test-Cases :-
+--------------
+
+Test-Case-1 :- (Valid)
+--------------
+Input: {7, 8, 9, 10, 11, 12}
+
+Expected-Output :-
+------------------
+(7, 12)  
+(8, 11)  
+(9, 10)
+
+Test-Case-2 :- (Valid)
+--------------
+Input: {1, 2, 3, 4}
+
+Expected-Output :-
+------------------
+(1, 4)  
+(2, 3)
+
+Test Case 3 (Invalid)
+Input :-  {}
+---------
+Expected-Output :-
+------------------
+Invalid input. The array cannot be empty.
+

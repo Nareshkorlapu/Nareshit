@@ -17,6 +17,20 @@ Sample output :
 .....
 7 x 10 = 70
 
+Sol:-
+------------------------------
+var n,i=0,a=0;
+function table(n)
+{
+    while(i<10)
+    {
+        i++;
+        a=n*i;
+        console.log(n+"X"+i+"="+a);
+    }
+}
+table(n=prompt("Enter the number"))
+Prompt: If user wants to give the input for result the developer must use the prompt like "FunctionName(parameter=prompt("statement")
 ============================================================
 
 Que 2 :
@@ -43,6 +57,33 @@ Sample input  : N = 10;
 Sample output : even sum => 30 
                 odd sum  => 25
 
+Sol:-
+---------------------------
+var N,j=0,esum=0,osum=0;
+function isEsumOsum(N)
+{
+    if(N>0)
+    {
+        while(N>j)
+        {
+            j++;
+            if(j%2==0)
+            {
+                esum+=j;
+            }
+            else{
+                osum+=j;
+            }
+        }
+        console.log("Esum="+esum)
+        console.log("Osum="+osum)
+    }
+    else{
+        console.log("Invalid input")
+    }
+}
+//isEsumOsum(N=(prompt("Enter the number")))
+isEsumOsum(10)
 ============================================================
 
 Que 3 :
@@ -61,6 +102,29 @@ Sample output1 : zero
 
 Sample input1  : -1
 Sample output1 : negative number
+
+Sol:-
+--------------------
+var n,count=0;
+function countNum(n)
+{
+    if(n<0)
+        console.log("negative number")
+    else if(n==0)
+        console.log("zero")
+    else{
+        while(n!=0)
+    {
+        var c=(n%10)
+        count++;
+        n=Math.floor(n/10)
+    }
+    console.log("Count="+count)
+}
+
+}
+// countNum(n=(prompt("Enter n value"))) ==user input
+countNum(12345)
 ============================================================
 
 Que 4 :
