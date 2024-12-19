@@ -124,6 +124,32 @@ Write 'JavaScript' program to reverse a number using while
 Sample input  : Enter a number : 12345
 Sample output : Reverse : 54321
 */
-let num1 = 123456789;
-let result = num1.toString().split('').reverse().join('');
+let num1;
+function r(num1){
+    let result = num1.toString().split('').reverse().join('');
 console.log(result);
+}
+r(100)
+//OR
+function rev(num){
+    var reverse=0,rem=0;
+    while(num){
+        rem =num%10;
+        reverse=reverse*10+rem;
+        num=Math.floor(num/10);
+    }
+    console.log("Reversed number: "+reverse);
+}
+rev(100)
+//Write a 'JavaScript' program to calculate the factorial of a given positive integer.
+//-> FORMULA => n!=1×2×3×...×n.
+function fact(d1){
+    var f=1;
+        while(d1){
+            f=f*d1 ;
+            d1--;
+        }
+        console.log(f);
+    }
+    
+    fact(5)
