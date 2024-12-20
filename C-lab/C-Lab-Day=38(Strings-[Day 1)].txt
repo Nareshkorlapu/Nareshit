@@ -1,0 +1,225 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+[Title:- Reverse a Given String]
+--------------------------------
+Write a C program to reverse a given string?
+---------------------------------------------
+Example :-
+-----------
+
+Sample-Input :- "Welcome"
+Sample-Output :- "emocleW"
+
+Test-Cases :-
+--------------
+Test-Case-1 :-
+-------------- 
+Input: "Hello"
+Expected Output: "olleH"
+
+Test-Case-2 :-
+--------------
+Input: "12345"
+Expected Output: "54321"
+
+Test-Case-3 :-
+--------------
+Input: "" (Empty String)
+Expected Output: ""
+
+Sol:-
+-------------------------------------------
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    char s[100];
+    int i;
+    printf("Enter a string: ");
+    scanf("%s",&s);
+    for(i=0;s[i]!='\0';i++)
+    {
+        
+    }
+    while(i)
+    {
+        printf("%c",s[--i]);
+    }
+
+    return 0;
+}
+
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+[Title:- Count the Number of Alphabets in a String]
+----------------------------------------------------
+Write a C program to count the number of alphabetic characters in a given string?
+---------------------------------------------------------------------------------
+Example :-
+-----------
+
+Sample Input: "Apple"
+Sample Output: "The count of alphabets is: 5"
+
+Test Cases :-
+-------------
+Test-Case-1 :-
+--------------
+Input: "Hello123"
+Expected Output: "The count of alphabets is: 5"
+
+Test-Case-2 :-
+--------------
+Input: "12345"
+Expected Output: "The count of alphabets is: 0"
+
+Test-Case-3 :-
+--------------
+Input: "!"
+Expected Output: "The count of alphabets is: 0"
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+[Title:- Count Vowels, Consonants, Digits, and Special Characters]
+-------------------------------------------------------------------
+Write a C program to count the number of vowels, consonants, digits, and special characters in a given string.
+
+Example :-
+-----------
+Sample Input :- "Nareshit@123"
+Sample Output :-
+-----------------
+Vowel count is: 3  
+Consonant count is: 5  
+Digit count is: 3  
+Special Character count is: 1  
+
+Test Cases :-
+--------------
+
+Test-Case-1 :-
+--------------
+Input: "A1@bC"
+Expected Output:
+Vowel count is: 1  
+Consonant count is: 2  
+Digit count is: 1  
+Special Character count is: 1  
+
+Test-Case-2 :-
+---------------
+Input: "12345"
+Expected Output :-
+-------------------
+Vowel count is: 0  
+Consonant count is: 0  
+Digit count is: 5  
+Special Character count is: 0  
+
+Test-Case-3 :-
+--------------
+Input: "!!!"
+Expected Output :-
+-------------------
+Vowel count is: 0  
+Consonant count is: 0  
+Digit count is: 0  
+Special Character count is: 3  
+
+|--------------|
+| Program-4 :- | [ok]
+|--------------|
+
+[Title:- Check If a String Contains Any Vowel]
+----------------------------------------------
+Write a C program to check whether a given string contains any vowel or not.
+
+Example :-
+-----------
+Sample Input: "Apple"
+Sample Output: "This string contains a vowel."
+
+Test Cases :-
+-------------
+
+Test-Case-1 :-
+---------------
+Input: "Rhythm"
+Expected Output: "There is no vowel present in this string."
+
+Test-Case-2 :-
+---------------
+Input: "AI"
+Expected Output: "This string contains a vowel."
+
+Test-Case-3 :-
+--------------
+Input: "" (Empty String)
+Expected Output: "There is no vowel present in this string."
+
+|--------------|
+| Program-5 :- | [ok]
+|--------------|
+
+[Title:- Sort a String in Ascending Order]
+-------------------------------------------
+Description: Write a C program to sort the characters in a string in ascending order.
+
+Example :-
+-----------
+Sample Input: "apple"
+Sample Output: "After sorting, the string is: aelpp"
+
+Test Cases :-
+
+Test-Case-1 :-
+---------------
+Input: "Banana"
+Expected Output: "After sorting, the string is: Baaann"
+
+Test-Case-2 :-
+--------------
+Input: "123"
+Expected Output: "After sorting, the string is: 123"
+
+Test-Case-3 :-
+--------------
+Input: "!@#"
+Expected Output: "After sorting, the string is: !#@"
+
+|--------------|
+| Program-6 :- |
+|--------------|
+
+[Title:- Check If a String is a Palindrome]
+-------------------------------------------
+
+Description: Write a C program to check whether a given string is a palindrome or not.
+
+Example :-
+----------
+Sample Input :- "madam"
+Sample Output: "madam is a palindrome"
+
+Test Cases :-
+-------------
+Test-Case-1 :-
+--------------
+Input: "racecar"
+Expected Output: "racecar is a palindrome"
+
+Test-Case-2 :-
+--------------
+Input: "hello"
+Expected Output: "hello is not a palindrome"
+
+Test-Case-3 :-
+--------------
+Input: "" (Empty String)
+Expected Output: "An empty string is a palindrome"

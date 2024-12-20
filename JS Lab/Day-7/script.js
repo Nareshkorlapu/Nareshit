@@ -162,68 +162,109 @@ Thank you for banking with us.
 
 ===========================================================================================================================
 */
-var opt,damt,wamt;
-function bankApplication()
-{
-    function menu()
-    {
-        console.log("=========Bank Account Menu=======");
-        console.log("1.Create Account");
-        console.log("2.Deposite Money");
-        console.log("3.Withdraw Money");
-        console.log("4.Check Balanace");
-        console.log("5.Exit");
+function create(){
+    amt=+prompt("Enter amount to open acount")
+    if(amt<=0){
+        alert("Invalid amount")
+        create()
     }
-    menu()
-   function swit()
-    {
-        switch(opt)
-        {
-        case 1:
-            createAccount();
-            break;
-        case 2:
-            depositeMoney();
-            break;
-        case 3:
-            withdrawMoney();
-            break;
-        case 4:
-            checkBalance();
-            break;
-        case 5:
-            exit();
-            break;
+    else if(amt<2000){
+        alert("Initial deposit not lessthan 2000")
+        create()
+    }
+    else {
+        alert("Your account is creates successfully");
+        ogacno=dmacno;
+        bankin();
+    }
+}
+function dep(){
+    if(ogacno==dmacno){
+    var dep=+prompt('Enter the amount to deposit');
+    if(dep>0){
+        amt+=dep;
+        alert("Amount deposited successfully")
+        alert("amount after depositing is :"+ amt);
+        bankin()
+
+    }
+    else{
+        alert(" Invalid amount to deposit ");
+        dep()
+    }
+
+    }
+    else{
+        alert("Create account first");
+        bankin();
+    }
+}
+function wtdrw(){
+    if(ogacno!=dmacno){
+        alert("Create account first");
+        bankin();
+    }
+    else{
+    var wt=+prompt("Enter amount to withdraw");
+    
+
+    if(wt<=0){
+        alert(" Invalid amount to withdraw ");  
+        wtdrw();
+    }
+    else{
+        if(amt-wt<2000){
+            alert("Insufficient funds");
+            bankin();
         }
-        
+        else{
+            amt-=wt;
+            alert(wt+ " Withdrawn successfully");
+            alert("Available balance"+ amt);
+            bankin()
+        }
     }
-    swit(opt=Number(prompt("Enter your option: ")))
 }
-bankApplication()
-function createAccount()
-{
-    alert("Your account is created successfully, your account number is ${accountNumber()}");
-   menu()
 }
-function depositeMoney(damt)
-{
-    alert("Rs: "+damt+"  deposite successfully.");
-    alert("Your current balance is: Rs. "+damt);
-    menu()
+function ckbal(){
+    if(ogacno!=dmacno){
+        alert("Create account first");
+        bankin();
+    }
+    else{
+        alert("Available balance is : " + amt);
+    }
+    
 }
-depositeMoney(damt=Number(prompt("Enter amount to deposite:")))
-
-function withdrawMoney(wamt)
-{
-
-}
-function checkBalance()
-{
-
-}
-function exit()
-{
-    alert("Thank you for banking with us")
+function Term(){
+    alert("Thanks for banking with us")
+    return
 }
 
+var opt, amt, dmacno=12354, ogacno=0;
+console.log("--- Bank Account Menu ---")
+console.log("1. Create Account")
+console.log("2. Deposit Money")
+console.log("3. Withdraw Money")
+console.log("4. Check Balance")
+console.log("5. Exit")
+bankin()
+function bankin(){
+    opt=0;
+opt=+prompt("enter your option")
+
+if(opt>=1 && opt<=5){
+switch(opt){
+    case 1: create();break;
+    case 2: dep();break;
+    case 3: wtdrw();break;
+    case 4: ckbal();break;
+    case 5: Term();break;
+}
+}
+else {
+    alert("Invalid input")
+    bankin()
+}
+}
 
