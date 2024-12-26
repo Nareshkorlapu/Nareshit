@@ -1,0 +1,87 @@
+Que 1 : 
+--------
+
+Dynamic Counter with Increment and Decrement Buttons
+
+A counter application where users can increment, decrement, or reset the count.
+
+==========================================================================
+
+Que 2 :
+-------
+
+	Simple Quiz Application
+
+	A basic quiz program where users select answers and get feedback on whether they are correct.
+
+You are building a simple quiz application where:
+
+	-> The application will display one question at a time.
+	-> The question will have multiple answer options.
+
+	-> Each option will be represented by a button.
+	-> Users can click on a button to select their answer.
+
+After clicking an answer, the application will display:
+	-> "Correct!" if the answer is correct, styled in green text.
+	-> "Wrong!" if the answer is incorrect, styled in red text.
+
+The user must see instant feedback after selecting an answer.
+
+Expected Output
+	-> A question with four answer buttons is displayed.
+	-> When a user clicks a button:
+	-> Feedback ("Correct!" or "Wrong!") is displayed immediately below the question.
+	-> The feedback is styled with appropriate colors (green or red).
+
+==============================================================================
+
+Que 3 :
+--------
+
+Shopping List
+
+Description: Create a shopping list where users can add and remove items.
+
+Requirements:
+
+An input field to type item names.
+
+An "Add" button that adds the item to the list.
+
+Each list item should have a "Delete" button to remove it from the list.
+
+=========================================================================================
+
+Que 4 :
+-------
+
+Color Changer
+
+Description: Create a page where users can change the background color by clicking buttons.
+
+Requirements:
+
+A set of buttons, each with a different color.
+
+When a button is clicked, the background color of the page should change to that color.
+
+=========================================================================================
+
+Que 5 :
+--------
+
+Image Gallery
+
+Description: Create an image gallery where clicking on a thumbnail displays the full-sized image.
+
+Requirements:
+
+A row of thumbnail images.
+
+A larger display area for the full-sized image.
+
+Clicking a thumbnail should display the corresponding full-sized image in the display area.
+
+==========================================================================================
+

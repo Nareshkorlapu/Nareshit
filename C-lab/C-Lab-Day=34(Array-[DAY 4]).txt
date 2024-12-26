@@ -15,7 +15,33 @@ Sample Output :-
 -----------------
 After rotating the array from the 4th position, the array is: 12 14 18 20 22 25 27 0 3 6 9
 
+Sol:-
+-------------------------------
+// Online C compiler to run C program online
+#include <stdio.h>
 
+int main() {
+    int a[100];
+    int n,pos;
+    printf("Enter the size of the array: ");
+    scanf("%d",&n);
+    printf("Enter %d elements:",n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Enter the position: ");
+    scanf("%d",&pos);
+    for(int i=pos;i<n;i++){
+        printf("%3d",a[i]);
+    }
+    for(int i=0;i<pos;i++){
+        printf("%3d",a[i]);
+    }
+    
+
+    return 0;
+}
 |--------------|
 | Program-2 :- | [ok]
 |--------------|
@@ -185,6 +211,46 @@ The array represents the integer 4321.
 Incrementing by one gives 4321 + 1 = 4322.
 Thus, the resulting array is [4, 3, 2, 2].
 
+Sol:-(Danny)
+--------------------------------------------
+#include<stdio.h>
+int main()
+{   int n;
+    int a[20];
+    printf("enter the size of array : ");
+    scanf("%d",&n);
+
+    printf("enter the elements : ");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    printf("After adding the digit : ");
+    if(a[n-1]<9)
+    {
+        a[n-1]=a[n-1]+1;
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==9&&a[n-1]==9)
+    {
+       a[0]=10;
+       a[i]=0;
+    }
+    
+    else if(a[n-1]==9)
+    {
+       a[n-1]=0;
+       a[n-2]=a[n-2]+1;
+    }
+    }
+    for(int i=0;i<n;i++)
+    {
+        printf("%2d",a[i]);
+  }
+}
 |--------------|
 | Program-4 :- | [ok]
 |--------------|
@@ -204,6 +270,37 @@ The frequency of each element in the array:
 12 occurs 1 time
 43 occurs 3 times
 
+Sol:-(danny)
+------------------------------------------------
+#include <stdio.h>
+int main() {
+    int n,i,j;
+    int a[20],b[20];
+    
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements: ", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("The frequency of each element in the array:\n");
+    for (i = 0; i < n; i++) {
+        if (b[i]) 
+            continue;
+            
+         int c=0;
+        for (j = 0; j < n; j++) {
+            if (a[i] == a[j]) {
+                c++;
+                b[j] = 1; 
+            }
+        }
+        printf("%d occurs %d time%s\n", a[i],c, c > 1 ? "s" : "");
+    }
+    return 0;
+}
 |-------------------|
 | Practice-Program  |
 |-------------------|
@@ -236,3 +333,38 @@ Average performance score: 72.00
 Number of employees scoring above average: 3  
 Scores of employees above average: 75 85 90
 
+Sol:-(Danny)
+--------------------------------------
+#include<stdio.h>
+int main()
+{   int ne,av=0,count=0;
+    int a[20];
+    printf("Enter the employees : ");
+    scanf("%d",&ne);
+    printf("Enter the performance scores: ");
+    for(int i=0;i<ne;i++)
+    {
+            scanf("%d",&a[i]);
+    }
+    printf("Average performance score: ");
+    for(int i=0;i<ne;i++)
+    {
+        av=av+a[i];
+    }
+    printf("%d",av/ne);
+    printf("\n");
+    printf("Number of employees scoring above average: ");
+    for(int i=0;i<ne;i++)
+    {
+        if(a[i]>av/ne) count++;
+    }
+    printf("%d",count);
+    printf("\n");
+    printf("Scores of employees above average:");
+    for(int i=0;i<ne;i++)
+    {
+        if(a[i]>av/ne){
+            printf("%3d",a[i]);
+   }
+  }
+}
