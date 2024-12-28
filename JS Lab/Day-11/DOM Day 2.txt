@@ -1,0 +1,31 @@
+Que 1 :
+---------
+
+Form Validation
+
+Build a Form Validation application where users:
+
+	-> Enter data into fields like name, email, and password.
+	-> Receive instant feedback if fields are invalid (e.g., missing input, invalid email format).
+	-> Cannot submit the form until all inputs are valid.
+
+-> Adding validation rules using JavaScript.
+-> Manipulating form elements and displaying error messages dynamically.
+-> Preventing default form submission using event.preventDefault().
+
+==================================================================================================
+
+que 2 :
+---------
+
+Live Character Counter
+
+Build a Character Counter where:
+
+	-> Users type into a textarea.
+	-> The app displays the number of characters typed and the maximum allowed.
+	-> Highlight the text area when the character count is near the limit.
+
+-> Using input events to detect changes in real-time.
+-> Dynamically updating DOM elements.
+-> Adding conditional styles for warnings.

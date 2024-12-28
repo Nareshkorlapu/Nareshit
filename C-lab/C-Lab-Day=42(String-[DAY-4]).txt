@@ -1,0 +1,326 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+[Title:- Remove All Spaces from a Given String]
+-----------------------------------------------
+
+Write a C program to remove all spaces from a given string ?
+-------------------------------------------------------------
+Sample-Input :-
+----------------
+Enter a String: Black cat on a mat  
+
+Sample-Output :-
+----------------
+Resulting String: Blackcatonamat  
+
+Test-Cases :-
+--------------
+
+Test-Case-1 :-
+---------------
+Input :- Black cat on a mat
+--------
+
+Output :- Blackcatonamat
+---------
+
+Test-Case-2 :-
+--------------
+Input :- Hello World
+--------
+
+Output :- HelloWorld
+---------
+
+Test-Case-3 :-
+--------------
+Input :- NoSpaces
+--------
+
+Output :- NoSpaces
+---------
+
+Test-Case-4 :- (Invalid):
+--------------
+Input :- "" (Empty string)
+--------
+
+Output :- Resulting String: ""
+---------
+
+Sol:-
+----------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[100];
+    int i, j = 0;
+    
+    printf("Enter the string: ");
+    scanf("%[^\n]s", s);  
+    for (i = 0; s[i] != '\0'; i++) {
+        if (s[i] != ' ') {
+            s[j++] = s[i];  
+        }
+    }
+    
+    s[j] = '\0'; 
+
+    printf("String without spaces: %s\n", s);
+
+    return 0;
+}
+
+OR
+-------
+#include<stdio.h>
+#include<string.h>
+int main(){
+char str[100];
+int i,j;
+   printf("Enter first string: ");
+   scanf("%[^\n]",str);
+
+  for( i=0;i<strlen(str);i++){
+     if(str[i]!=' ')
+     
+      printf("%c",str[i]);
+}
+}
+
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+[Title:- Convert Characters to Uppercase from Given Index to End Index]
+-----------------------------------------------------------------------
+
+Write a C program to convert all characters to uppercase from a given starting index to an ending index. If the index is invalid, print an error message ?
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Sample-Input :-
+---------------
+Enter a String: I am a student  
+Enter the starting index number: 4  
+Enter the ending index number: 13  
+
+Sample-Output :-
+----------------
+Resulting String: I am A STUDENT  
+
+Test-Cases :-
+--------------
+
+Test-Case-1 :-
+--------------
+Input :-
+--------
+String :- I am a student  
+Starting index :- 4  
+Ending index :- 13
+  
+Output :- I am A STUDENT
+----------
+
+Test-Case-2 :-
+--------------
+Input :-
+--------
+String: programming  
+Starting index: 3  
+Ending index: 6  
+
+Output :- proGRAMming
+---------
+
+Test-Case-3 :- (Invalid)
+--------------
+Input :-
+--------
+String: Java  
+Starting index: 5  
+Ending index: 8  
+
+Output :- Index is not available
+---------
+
+Test-Case-4 :- (Invalid)
+--------------
+Input :-
+--------
+String: Example  
+Starting index: -1  
+Ending index: 5  
+
+Output :- Index is not available
+---------
+Sol:-
+-----------------------
+#include<stdio.h>
+#include<string.h>
+int main(){
+char str[100];
+int i,j;
+int s,e,k;
+   printf("Enter a string: ");
+   scanf("%[^\n]",str);
+   printf("Enter the starting index number:");
+   scanf("%d",&s);
+   printf("Enter the ending index number:");
+   scanf("%d",&e);
+if(s<=strlen(str) && e<=strlen(str)){
+  for( i=0;i<s;i++){
+      printf("%c",str[i]);
+     }
+     for(j=s;j<=e;j++){
+         printf("%c",str[j]-32);
+     }
+     for(k=e+1;k!=strlen(str);k++){
+         printf("%c",str[k]);
+     }
+}
+else{
+    printf("Index is not available");
+}
+}
+OR
+------------
+#include<stdio.h>
+#include<string.h>
+int main(){
+char s[100];
+int i,n,si,ei;
+   printf("Enter first string:- ");
+   scanf("%[^\n]",s);
+   printf("Enter the starting index number:- ");
+   scanf("%d",&si);
+   printf("Enter the ending index number:- ");
+   scanf("%d",&ei);
+   n=strlen(s);
+ for(i=0;i<n;i++)
+ {
+     if(i>si && i<=ei)
+     {
+         printf("%c",s[i]-32);
+     }
+     else
+     {
+         printf("%c",s[i]);
+     }
+ }
+
+}
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+[Title:- Convert the First Letter of Each Word to Uppercase]
+-------------------------------------------------------------
+
+Write a C program to capitalize the first letter of each word in a given string ?
+----------------------------------------------------------------------------------
+Sample-Input :-
+----------------
+Enter a String: i am a student of Nareshit  
+
+Sample-Output :-
+----------------
+Resulting String: I Am A Student Of Nareshit  
+
+Test-Cases :-
+--------------
+
+Test-Case-1 :-
+--------------
+Input :- i am a student of Nareshit
+---------
+
+Output :- I Am A Student Of Nareshit
+----------
+
+Test-Case-2 :-
+---------------
+Input :- java programming is fun
+--------
+
+Output :- Java Programming Is Fun
+---------
+
+Test-Case-3 :-
+--------------
+Input :- hello
+---------
+
+Output :- Hello
+---------
+
+Test-Case-4 :- (Invalid)
+--------------
+Input :- "" (Empty string)
+--------
+
+Output :- Resulting String: ""
+---------
+
+|--------------|
+| Program-4 :- | [ok]
+|--------------|
+
+[Title:- Remove a Given Character from a String]
+-------------------------------------------------
+
+Write a C program to remove a specified character from a given string ?
+------------------------------------------------------------------------
+Sample-Input :-
+---------------
+Enter a String: Bookstore  
+Enter the character you want to remove: o  
+
+Sample-Output :-
+----------------
+Resulting String: Bkstre
+
+Test-Cases :-
+--------------
+
+Test-Case-1 :-
+---------------
+Input :-
+---------
+String: Bookstore  
+Character: o  
+
+Output :- Bkstre
+---------
+
+Test-Case-2 :-
+--------------
+Input :-
+--------
+String: Programming  
+Character: g
+  
+Output :- Prorammin
+---------
+
+Test-Case-3 :-
+--------------
+Input :-
+--------
+String: Hello World  
+Character: l
+  
+Output :- Heo Word
+---------
+
+Test-Case-4 :- (Invalid)
+--------------
+Input :-
+--------
+String: Example  
+Character: z  
+
+Output :- Resulting String: Example
+----------

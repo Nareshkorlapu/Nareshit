@@ -1,0 +1,13 @@
+completing HTML in freecodecamp
+CSS flexboxfroggy
+CSS gridgarden
+CSS transitions and animations
+HTML & CSS portifolio
+frontend mentor 3 tasks
+functions
+arrays method
+string methods
+DOM-counter,todo
+events-memory game,rock paper sissor
+timers-countdown timer 
+API-weatherapi,movieapi,ecommerce api,ai api

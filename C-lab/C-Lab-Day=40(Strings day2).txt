@@ -1,0 +1,337 @@
+|--------------|
+| Program :- 1 | [ok]
+|--------------|
+
+[Title:- Check If Two Strings Are Anagrams with Test Cases]
+-----------------------------------------------------------
+
+Write a C program to check whether two given strings are anagrams of each other ?
+---------------------------------------------------------------------------------
+Explanation :-
+--------------
+Two strings are anagrams if they contain the same characters in the same frequency, but in a different order. For example:
+
+-> "listen" and "silent" are anagrams.
+-> "Jack" and "Jake" are not anagrams.
+
+Sample Inputs and Outputs :-
+----------------------------
+Sample-Input-1 :-
+-----------------
+String 1: listen  
+String 2: silent  
+
+Sample-Output :-
+----------------
+These are anagram strings.
+
+Sample-Input-2 :-
+-----------------
+String 1: Jack  
+String 2: Jake  
+
+Sample-Output :-
+-----------------
+These are not anagram strings.
+
+Test-Cases :-
+--------------
+Test-Case-1 :- (Valid Case - Anagrams):
+--------------
+Input :-
+--------
+String 1: listen  
+String 2: silent  
+
+Expected-Output :-
+-------------------
+These are anagram strings.
+
+Test-Case-2 :- (Valid Case - Not Anagrams):
+---------------
+Input :-
+--------
+String 1: Jack  
+String 2: Jake  
+
+Expected-Output :-
+------------------
+These are not anagram strings.
+Test-Case-3 :- (Valid Case - Different Lengths):
+--------------
+Input :-
+--------
+String 1: hello  
+String 2: hell  
+
+Expected-Output :-
+-------------------
+These are not anagram strings. (Different lengths.)
+
+Test-Case-4 :- (Valid Case - Case Sensitivity):
+--------------
+Input :-
+---------
+String 1: Listen  
+String 2: Silent  
+
+Expected-Output :-
+------------------
+These are not anagram strings. (Case-sensitive comparison.)
+
+Test-Case-5 :- (Invalid Case - Special Characters):
+--------------
+Input :-
+--------
+String 1: !@#$  
+String 2: #@!$  
+
+Expected-Output :-
+------------------
+These are anagram strings.
+
+Test-Case-6 :- (Invalid Case - Numbers in Strings):
+--------------
+Input :-
+--------
+String 1: 12345  
+String 2: 54321  
+
+Expected-Output :-
+-------------------
+These are anagram strings.
+
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+char str1[100],str2[100];int i,j,c=0,t=0;
+printf("Enter the string:");
+scanf("%s%s",str1,str2);
+for(int i=0;str1[i] != '\0';i++){
+        for(int j=i+1;str1[j] != '\0';j++){
+            if(str1[i]>str1[j]){
+                t=str1[i];
+                str1[i]=str1[j];
+                str1[j]=t;
+            }
+        }
+      }
+for(int i=0;str2[i] != '\0';i++){
+        for(int j=i+1;str2[j] != '\0';j++){
+            if(str2[i]>str2[j]){
+                t=str2[i];
+                str2[i]=str2[j];
+                str2[j]=t;
+            }
+        }
+      }
+for(i=0;i<str1[i]!='\0';i++){
+
+        if(str1[i]==str2[i]) c++;
+}
+if(c==strlen(str1))printf("these are anargram strings",str1);
+else
+    printf("these are not a anargram strings",str1);
+}
+
+|--------------|
+| Program :- 2 | [ok]
+|--------------|
+
+[Title:- Character Frequency in a String]
+-----------------------------------------
+
+Write a C program to calculate and display the frequency of each character present in a given string ?
+-------------------------------------------------------------------------------------------------------
+Sample-Input :-
+---------------
+String: "Hello Everyone"
+
+Sample-Output :-
+----------------
+The frequency of H is 1
+The frequency of e is 3
+The frequency of l is 2
+The frequency of o is 2
+The frequency of   is 1  (This counts the space character)
+The frequency of E is 1
+The frequency of v is 1
+The frequency of r is 1
+The frequency of y is 1
+The frequency of n is 1
+
+Test-Cases :-
+-------------
+Test-Case-1 :- (Valid Case - Mixed Characters):
+--------------
+Input :-
+--------
+String: "Hello World"
+
+Expected-Output :-
+------------------
+The frequency of H is 1
+The frequency of e is 1
+The frequency of l is 3
+The frequency of o is 2
+The frequency of   is 1
+The frequency of W is 1
+The frequency of r is 1
+The frequency of d is 1
+
+Test-Case-2 :- (Valid Case - Single Character Repeated):
+--------------
+Input :-
+---------
+String: "aaaaa"
+
+Expected-Output :-
+------------------
+The frequency of a is 5
+
+Test-Case-3 :- (Edge Case - Empty String):
+---------------
+Input :-
+--------
+String: ""
+
+Expected-Output :
+------------------
+No characters to count.
+
+Test-Case-4 :- (Valid Case - Special Characters):
+--------------
+Input :-
+---------
+String: "@@!!##$$"
+
+Expected-Output :-
+-------------------
+The frequency of @ is 2
+The frequency of ! is 2
+The frequency of # is 2
+The frequency of $ is 2
+
+Test-Case-5 :- (Valid Case - Case Sensitivity):
+--------------
+Input :-
+--------
+String: "AaAaBbBb"
+
+Expected Output :-
+-------------------
+The frequency of A is 2
+The frequency of a is 2
+The frequency of B is 2
+The frequency of b is 2
+
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+char str[100];int i,j;
+   printf("Enter a string: ");
+   scanf("%[^\n]",str);
+   
+for(int i=0;i<strlen(str)-1;i++){
+    int c=1;
+        for(int j=i+1;j<strlen(str);j++){
+              if(str[i]==str[j]){
+                  c++;
+               str[j]=-1;
+        }
+        }
+        if(str[i] !=-1 )printf("The frequency %c of  %d\n",str[i],c);
+}
+return 0;
+}
+
+|--------------|
+| Program :- 3 |
+|--------------|
+
+[Title:- Swap First and Last Characters of a String]
+------------------------------------------------------
+
+Write a C program to swap the first and last characters of a given string and display the result?
+---------------------------------------------------------------------------------------------------
+Sample-Input :-
+----------------
+String: "Welcome"
+
+Sample-Output :-
+----------------
+Output: eelcomW
+
+Test-Cases :-
+-------------
+Test-Case-1 :- (Valid Case - Normal String):
+--------------
+Input :-
+--------
+String: "Welcome"
+
+Expected Output :-
+------------------
+Output: eelcomW
+
+Test-Case-2 :- (Valid Case - Two Characters):
+--------------
+Input :-
+--------
+String: "Hi"
+
+Expected-Output :-
+------------------
+Output: iH
+
+Test-Case-3 :-  (Edge Case - Single Character):
+---------------
+Input :-
+--------
+String: "A"
+
+Expected Output :-
+-------------------
+Output: A (No change, as first and last characters are the same)
+
+Test-Case-4 :- (Edge Case - Empty String):
+--------------
+Input :-
+---------
+String: ""
+
+Expected Output :-
+-------------------
+Output: Invalid input (No characters to swap)
+
+Test-Case-5 :- (Valid Case - Special Characters):
+--------------
+Input :-
+--------
+String: "@Hello!"
+
+Expected-Output :-
+-------------------
+
+Output: !Hello@
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i,j,t=0;
+    char s[100];
+    printf("enter the string :- ");
+    scanf("%s",s);
+    for(i=0;s[i] !='\0';i++)
+    {
+               t=s[0];
+               s[0]=s[strlen(s)-1];
+              s[strlen(s)-1]=t;
+       }
+       printf("%s",s);
+}
+

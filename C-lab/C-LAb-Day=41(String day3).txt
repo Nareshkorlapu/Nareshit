@@ -1,0 +1,198 @@
+|--------------|
+| Program-1 :- | [ok]
+|--------------|
+
+[Title:- Find the Sum of Numbers in a Given String]
+----------------------------------------------------
+
+Write a C program to compute the sum of all numerical values present in a given string?
+----------------------------------------------------------------------------------------
+
+Sample-Input :-
+----------------
+Enter a String: TS12ab345
+
+Sample-Output :-
+-----------------
+Sum Of the numbers is: 15
+
+Test-Cases :-
+-------------
+
+Test-Case-1 :-
+--------------
+Input :- TS12ab345
+--------
+
+Output :- Sum Of the numbers is: 15
+---------
+
+Test-Case-2 :-
+---------------
+Input :- a0b1c2
+--------
+
+Output :- Sum Of the numbers is: 3
+---------
+
+Test-Case-3 :-
+--------------
+Input :- abcd
+--------
+
+Output :- Sum Of the numbers is: 0
+---------
+
+Test-Case-4 :- (Invalid):
+--------------
+Input :- "" (Empty string)
+--------
+
+Output :- Sum Of the numbers is: 0
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i,sum=0;
+    char str[100];
+    printf("enter a string :- ");
+    scanf("%s",str);
+    int len=strlen(str);
+    for(i=0;i<len;i++)
+    {
+        if(str[i]>='0' && str[i]<='9')
+        {
+            sum=sum+str[i]-48;
+        }
+    }
+    printf("Sum Of the numbers is: %d",sum);
+}
+
+---------
+
+|--------------|
+| Program-2 :- | [ok]
+|--------------|
+
+[Title:- Combine Two Strings into a Single String]
+--------------------------------------------------
+
+Write a C program to concatenate two strings into a single string ?
+--------------------------------------------------------------------
+Sample-Input :-
+---------------
+Enter first String :- Naresh
+Enter Second String :- it
+
+Sample-Output :-
+----------------
+Resulting String is :- Nareshit
+
+Test-Cases :-
+-------------
+
+Test-Case-1 :-
+--------------
+Input :- Naresh, it
+--------
+
+Output :- Resulting String is: Nareshit
+---------
+
+Test-Case-2 :-
+---------------
+Input :- Hello, World
+--------
+
+Output :- Resulting String is: HelloWorld
+---------
+
+Test-Case-3 :-
+---------------
+Input :- Java, Programming
+--------
+
+Output :- Resulting String is: JavaProgramming
+---------
+
+Test-Case-4 :- (Invalid):
+--------------
+Input :- Naresh, "" (Second string empty)
+--------
+
+Output :- Resulting String is: Naresh
+
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+char str1[100],str2[100];
+int i;
+   printf("Enter first string: ");
+   scanf("%s",str1);
+   printf("Enter second string: ");
+   scanf("%s",str2);
+   int n=strlen(str1);
+  for( i=0;str2[i]!= '\0';i++)
+  {
+        str1[n++]=str2[i];
+  }      
+  str1[n]='\0';
+  printf("%s",str1);
+  
+return 0;
+}
+---------
+
+|--------------|
+| Program-3 :- | [ok]
+|--------------|
+
+[Title:- Multiply Two Positive Numbers as Strings]
+--------------------------------------------------
+Write a C program to multiply two positive integers provided as strings ?
+--------------------------------------------------------------------------
+Sample-Input :-
+---------------
+Input Strings :- "100" and "15"
+----------------
+Sample Output :-
+-----------------
+Multiplication of 100 and 15 is: 1500
+
+Test-Cases :-
+-------------
+
+Test-Case-1 :-
+--------------
+Input :- "100", "15"
+--------
+
+Output :- Multiplication of 100 and 15 is: 1500
+
+Test-Case-2 :-
+--------------
+Input :- "123", "456"
+--------
+
+Output :- Multiplication of 123 and 456 is: 56088
+
+Test-Case-3 :-
+--------------
+Input :- "0", "1000"
+--------
+
+Output :- Multiplication of 0 and 1000 is: 0
+---------
+
+Test-Case-4 :- (Invalid):
+--------------
+Input :- "abc", "15"
+--------
+
+Output :- Error: Input contains non-numeric characters.
+---------

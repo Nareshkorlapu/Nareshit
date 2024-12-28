@@ -1,0 +1,151 @@
+Question 1: 
+-----------
+Function to Calculate the Sum of Two Integers
+Write a C program with a function int add(int a, int b) that takes two integers as arguments and returns their sum.
+
+Valid Input:
+Input: a = 5, b = 10
+Expected Output: 15
+Invalid Input:
+Input: a = 2147483647 (maximum integer value), b = 1
+Expected Output: Undefined behavior (integer overflow).
+
+Sol:-
+--------------
+// Online C compiler to run C program online
+#include <stdio.h>
+int sumOfTwoNum(int,int);
+int main() {
+    int a,b;
+    printf("Enter the first number:");
+    scanf("%d",&a);
+    printf("Enter second number:");
+    scanf("%d",&b);
+    if(a<2147483647 && b<2147483647){
+    sumOfTwoNum(a,b);
+    
+    }
+    else{
+        printf("Undefined behaviour(integer overflow)");
+    }
+}
+int sumOfTwoNum(int a,int b){
+    int sum=a+b;
+    printf("Sum is:-%d",sum);
+}
+
+Question 2: 
+-----------
+Function to Find the Length of a String
+Write a C program with a function int stringLength(char str[]) that takes a string as an argument and returns its length.
+
+Valid Input:
+Input: "hello"
+Expected Output: 5
+Invalid Input:
+Input: NULL (null pointer)
+Expected Output: Program should handle null input gracefully (e.g., by returning -1 or displaying an error message).
+
+Sol:-
+-------------
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+void lengthOfString(int);
+int main() {
+    int a;
+    lengthOfString(a);
+    return 0;
+}
+void lengthOfString(int a)
+{
+    char str[100];
+    a=0;
+    printf("Enter a string:");
+    scanf("%[^\n]s",&str);
+    // str[0]='\0';
+    if(str[0]=='\0')
+    {
+        printf("Error! invalid string");
+    }
+    else
+    {
+        
+    for(int i=1;i<=strlen(str);i++){
+        a+=1;
+    }
+    printf("%d",a);
+    }
+}
+
+
+Question 3: 
+------------
+Function to Check if a Number is Prime
+Write a C program with a function int isPrime(int num) that takes an integer as an argument and returns 1 if the number is prime, and 0 otherwise.
+
+Valid Input:
+Input: num = 13
+Expected Output: 1 (13 is a prime number)
+Invalid Input:
+Input: num = -5
+Expected Output: 0 (Negative numbers are not prime)
+
+Sol:-
+--------------
+// Online C compiler to run C program online
+#include <stdio.h>
+int isPrime(int);
+int main() {
+    int n;
+    isPrime(n);
+
+    return 0;
+}
+int isPrime(int n){
+    printf("Enter the number:");
+    scanf("%d",&n);
+    int count=0;
+    for(int i=1;i<=n;i++){
+        if(n%i==0){
+        count++;
+        }
+        
+    }
+    if(n>0){
+    if(count==2)printf("Given %d number is a prime number",n);
+        else printf("Given %d number is not a prime number",n);
+    }
+    else{
+        printf("Negative numbers are not prime");
+    }
+}
+
+Question 4: 
+------------
+Function to find the maximum element in an array
+Write a C program with a function int findMax(int arr[], int size) that takes an array and its size as arguments and returns the maximum element.
+
+Valid Input:
+Input: arr = {3, 1, 7, 9, 5}, size = 5
+Expected Output: 9
+Invalid Input :
+Input: arr = {}, size = 0
+Expected Output: Error message or return a sentinel value like -1
+
+Question 2: 
+-----------
+Function to Calculate the Sum of All Elements in an Array
+Write a C program with a function int sumArray(int arr[], int size) that takes an array and its size as arguments and returns the sum of its elements.
+
+Valid Input:
+Input: arr = {4, 6, 8, 2}, size = 4
+Expected Output: 20
+Invalid Input:
+Input: arr = NULL, size = 4
+Expected Output: Error message or return -1.
+
+Lab Task:-
+=========
+Write a c program using function to check whether a number is Armstrong number.
+

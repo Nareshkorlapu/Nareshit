@@ -5,6 +5,10 @@ Dynamic Counter with Increment and Decrement Buttons
 
 A counter application where users can increment, decrement, or reset the count.
 
+Sol:-
+---------------------
+
+
 ==========================================================================
 
 Que 2 :
@@ -33,6 +37,34 @@ Expected Output
 	-> When a user clicks a button:
 	-> Feedback ("Correct!" or "Wrong!") is displayed immediately below the question.
 	-> The feedback is styled with appropriate colors (green or red).
+
+Sol:-
+--------------------
+function opt1()
+{
+    var r=document.getElementById('res')
+    document.getElementById('res').style.color="red"
+    r.textContent="Wrong!"
+}
+function opt2()
+{
+    var r=document.getElementById('res')
+        document.getElementById('res').style.color="red"
+    r.textContent="Wrong!"
+}
+function opt3()
+{
+    var r=document.getElementById('res')
+        document.getElementById('res').style.color="green"
+    r.textContent="Correct!"
+}
+function opt4()
+{
+    var r=document.getElementById('res')
+        document.getElementById('res').style.color="red"
+    r.textContent="Wrong!"
+}
+
 
 ==============================================================================
 
