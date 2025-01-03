@@ -1,0 +1,83 @@
+Que 1 :
+--------
+
+	Coffee Machine Simulator
+
+
+Simulate a coffee machine that:
+
+	-> Prepares coffee in 3 seconds.
+	-> Serves the coffee after preparation.
+	-> Cancels the process if the user decides not to wait.
+Requirements:
+	-> Use setTimeout to simulate the coffee preparation time.
+	-> Pass a callback function to serve the coffee after preparation.
+	-> Allow the user to cancel the coffee preparation using clearTimeout.
+
+====================================================================================================
+
+Que 2 :
+-------
+
+	Reminder System
+
+Create a reminder app where:
+
+	-> The user sets a task and a time delay (e.g., 5 seconds).
+	-> After the delay, remind the user about the task.
+	-> Allow the user to cancel the reminder before it triggers.
+Requirements:
+	-> Use setTimeout to delay the reminder.
+	-> Create a function to handle task reminders.
+	-> Implement clearTimeout to allow canceling the reminder.
+
+====================================================================================================
+
+Que 3 :
+-------
+
+	Traffic Light Simulation
+
+Simulate a traffic light system where:
+
+	-> The red light stays on for 3 seconds, yellow for 2 seconds, and green for 4 seconds.
+	-> The sequence repeats indefinitely.
+	-> Cancel the simulation after a set period (e.g., 15 seconds).
+Requirements:
+	-> Use setTimeout to switch between lights.
+	-> Use callbacks to create a sequence of events.
+	-> Use clearTimeout to stop the simulation after a specified time.
+
+====================================================================================================
+
+Que 4 :
+--------
+	Countdown Timer
+
+Create a countdown timer that:
+
+	-> Starts from a given number (e.g., 10).
+	-> Logs the countdown every second.
+	-> Cancels the countdown if a button is clicked.
+Requirements:
+	-> Use setTimeout to decrement the timer every second.
+	-> Use a callback to stop when the timer reaches 0.
+	-> Implement a button to cancel the countdown using clearTimeout.
+====================================================================================================
+
+Que 5 :
+-------
+
+	File Upload Simulator
+
+Simulate a file upload process where:
+
+	-> The upload progress updates every second.
+	-> The upload completes after 5 seconds.
+	-> The user can cancel the upload mid-process.
+Requirements:
+	-> Use setTimeout to update progress periodically.
+	-> Use callbacks to display a completion message after the upload.
+	-> Implement clearTimeout to allow canceling the upload.
+====================================================================================================
+

@@ -1,0 +1,78 @@
+Que 1 :
+--------
+
+You are working for a food delivery company. Your task is to create a program that simulates the food delivery process. The program will have three steps:
+
+Order Placed: Simulate a customer placing an order.
+Food Prepared: Simulate the kitchen preparing the order after a delay.
+Order Delivered: Simulate the delivery of the order to the customer after preparation.
+Write a JavaScript program using Promises to perform these steps sequentially. Each step should resolve after a certain time delay, and the final output should confirm the order is delivered.
+
+	-> create 3 arrow function with reference variable placeOrder, prepareFood, deliverOrder.
+	-> each function returns a new promise and logs the user with the steps given as follows with the delay of 3 seconds.
+
+	-> Use setTimeout to simulate delays.
+	-> The output for each step should be printed in the console.
+	-> Ensure that each step only begins after the previous one has been completed.
+
+Example Output:
+
+Order placed successfully.
+Food is being prepared.
+Order delivered to the customer.
+
+
+=====================
+
+Que 2 :
+--------
+
+You are building a social media application. When a user opens their profile, you need to fetch their name from the database. Simulate this process with a 2-second delay. If the user ID exists, return the user's name; otherwise, return an error.
+
+    -> create one object with name database and add some values like userId, password, and phoneNumber .
+    -> create one arrow function with reference variable named, fetchuserdata that returns a promise with the delay of 2 seconds.
+    -> if the given username present in the object database resolve the promise else reject.
+
+sample input:
+	userid : 1
+
+sample output :
+	user : admin
+
+
+sample input:
+	userid : 10
+	
+
+sample output :
+	user not found
+
+
+===============================
+
+Que 3 :
+---------
+
+	User Login
+
+	An online portal needs to verify user credentials. If the username and password are correct, resolve with a success message; otherwise, reject with an error.
+
+	-> create one arrow function with the reference variable loginUser and two parameters username and password.
+	-> return a new promise to arrow function which validates the username and password with the delay of 2 seconds.
+	-> promise will be resolved if the username and password matches else rejected.
+
+sample input:
+	username : admin
+	password : admin123
+
+sample output :
+	login successful
+
+
+sample input:
+	username : ravin
+	password : admin123
+
+sample output :
+	invalid username or password
+	

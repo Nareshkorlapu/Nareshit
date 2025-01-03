@@ -1,0 +1,52 @@
+Que 1 :
+-------
+
+	Multi-Step Food Preparation
+
+Simulate a sandwich preparation process where:
+
+	-> Gather ingredients (2 seconds).
+	-> Toast bread (3 seconds).
+	-> Assemble the sandwich (2 seconds).
+	-> Serve the sandwich.
+	-> Allow canceling the preparation at any step.
+Requirements:
+	-> Use setTimeout to simulate delays at each step.
+	-> Use nested callbacks for sequencing.
+	-> Allow users to cancel the process at any step using clearTimeout.
+
+===============================================================================================
+
+Que 2 :
+-------
+
+ 	Quiz with Delayed Feedback
+
+Create a quiz app where:
+
+	-> Display a question.
+	-> The user answers the question.
+	-> Show feedback (correct/incorrect) after a 2-second delay.
+	-> Cancel feedback if the user navigates away before it is displayed.
+Requirements:
+	-> Use setTimeout to delay feedback display.
+	-> Use a callback to process the answer.
+	-> Allow canceling the feedback using clearTimeout.
+
+===============================================================================================
+
+Que 3 :
+-------
+
+	 API Call Simulation
+
+Simulate API calls where:
+
+	-> Fetch user data (2 seconds).
+	-> Fetch user posts after user data is fetched (3 seconds).
+	-> Cancel the process if needed.
+Requirements:
+	-> Use setTimeout to simulate API delays.
+	-> Use nested callbacks for sequencing API calls.
+	-> Allow the process to be canceled using clearTimeout.
+===============================================================================================

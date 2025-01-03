@@ -1,0 +1,33 @@
+Que 1 :
+--------
+
+	Create an fetch request to get the data from an json file and display it in a <div> with the id result.
+
+	-> create a json file named userData.json.
+	-> create an div container and give the id as result.
+	-> create fetch to get the details from userData.json.
+	-> display the user names in the results div.
+
+==================================================================================
+
+Que 2 :
+--------
+	 Create a button to fetch user details and display the address in a <address>.
+
+	-> create a json file named userData.json.
+	-> create an div container and give the id as result.
+	-> create fetch to get the details from userData.json.
+	-> display the users address in the results div by appending the <address> element for each user.
+
+================================================================================
+
+Que 3 : 
+--------
+
+ 	Create a button to fetch user details and display the user details in a <table>.
+
+	-> create a json file named userData.json and add the 5 users records.
+	-> create a table and give the id as usertable.
+	-> create fetch to get the details from userData.json.
+	-> display the users details in the userresults table by appending the <tr> element for each user.
+	

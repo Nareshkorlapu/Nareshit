@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-family: cursive;
+    color: white;
+    margin: 50px 100px;
+}
+.status{
+    color: white;
+    margin: 30px 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 30px 100px;
+}
+button{
+    margin: 30px ;
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
