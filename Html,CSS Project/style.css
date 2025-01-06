@@ -4,6 +4,7 @@
     box-sizing: border-box;
     transition: all 1s ease;
     scroll-behavior: smooth;
+    font-family: cursive;
 }
 :root{
     --color1:rgb(11, 255, 255);
@@ -21,7 +22,7 @@ header{
     z-index: 100;
 }
 main{
-    background-color: burlywood;
+    background-color: #f0f0f0;
 }
 .logo{
     display: flex;
@@ -53,8 +54,8 @@ button{
     background-color:white;
     color: black;
     font-size: 24px;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 15px;
 }
 .navigation a:hover{
 color: var(--color1);
