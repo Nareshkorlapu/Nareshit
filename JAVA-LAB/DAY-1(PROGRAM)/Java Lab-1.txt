@@ -1,0 +1,22 @@
+1.Write a java program for checking the voting eligibility of the person by following few requirements:
+Requirement is =>If the age is greater than 18 eligible for voting else not eligible
+
+2.Write a java program to find out the biggest number among three number
+Input :int a=5,b=6,c=7
+output as "the biggest number is 7"
+
+Input: int a=5,b=16,c=7
+output as "the biggest number is 16"
+
+Input: int a=25,b=6,c=7
+output as "the biggest number is 25"
+
+3.Write a java program by round of the number by following few requirements:
+Requirement is =>If the last number is less than 5 round of the previous of its 10
+			=>If the last number is greater than 5 or equals to 5 round of to the next multiplication of 10.
+
+Input: a=34
+Output: 30
+
+Input: a=38
+Output: 40 

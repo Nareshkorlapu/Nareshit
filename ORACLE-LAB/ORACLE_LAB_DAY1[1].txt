@@ -1,0 +1,161 @@
+                          SUB LANGUAGES TASK
+                       -----------------------
+
+
+1.Create a STUDENT table with the following columns
+----->SNO 
+----->SNAME
+----->GENDER
+----->FEE
+----->DOB
+
+SOL()
+=======
+CREATE TABLE STUDENT(SNO NUMBER(4),SNAME VARCHAR2(10), GENDER VARCHAR2(5),FEE NUMBER(8,2),DOB DATE);
+
+2.What is the command to view the structure of the STUDENT table?
+SOL()
+=======
+DESC STUDENT;
+
+3.Insert records into the STUDENT table.
+SOL()
+=======
+INSERT INTO STUDENT VALUES(0001,'SMITH','M',25000,'25-MAY-2001');
+
+4.Write a query to display all the records from the STUDENT table.
+SOL()
+=======
+SELECT * FROM STUDENT;
+
+5.Write a query to add two columns (address, m1 (marks)) to
+  the STUDENT table.
+SOL()
+=======
+ ALTER TABLE STUDENT ADD ADDRESS VARCHAR2(50);
+ALTER TABLE STUDENT ADD M1_MARKS VARCHAR2(50);
+
+6.Write a query to increase the size of the datatype for 
+  the SNAME column.
+SOL()
+=======
+ ALTER  TABLE STUDENT MODIFY SNAME VARCHAR2(10);
+
+7.Write a query to drop two columns from the STUDENT table.
+SOL()
+=======
+ALTER TABLE STUDENT DROP COLUMN ADDRESS;
+ALTER TABLE STUDENT DROP COLUMN M1_MARKS;
+
+8.Write a query to rename the column SNAME to NAME.
+SOL()
+=======
+ALTER TABLE STUDENT RENAME COLUMN SNAME TO NAME;
+
+9.Write a query to drop the STUDENT table.
+SOL()
+=======
+DROP TABLE STUDENT;
+
+10.Write a query to restore the STUDENT table.
+SOL()
+=======
+FLASHBACK TABLE STUDENT TO BEFORE DROP;
+
+11.What is the command to permanently delete the data from 
+   the table in the database?
+SOL()
+=======
+TRUNCATE TABLE STUDENT;
+
+12.What is the command to rename the table STUDENT to STUDENTDATA?
+SOL()
+=======
+RENAME STUDENT TO STUDENTDATA;
+
+13.Write a query to display the employee names and salaries from 
+  the EMP table.
+SOL()
+=======
+SELECT ENAME,SAL FROM EMP;
+
+14.Write a query to display the EMPNO, ENAME, JOB, and HIREDATE 
+  from the EMP table.
+SOL()
+=======
+SELECT EMPNO, ENAME, JOB, HIREDATE FROM EMP;
+
+15.Write a query to display all the records from the EMP table.
+SOL()
+=======
+SELECT * FROM EMP;
+-----------------------------------------------------------------------------------
+1.What is oracle?
+    Oracle is a relational database product which is used to
+store data perminently in secondary storage devices.
+
+--------------------------------------------------------------------------
+2.What is SQL?
+  SQL is structured query language.in sql we are writing queries.
+with the help of queries we are communicating with the database.
+
+  Sql language was intodused by E.F codd.he is mathametician that's
+why he represented data in the format of matrix rows and columns.
+
+-----------------------------------------------------------------------------------
+3.What are DDL commands?What is the purpose of create command?
+
+.DDL stands for Data Defination Language
+.DDL command are used to define structure of the 
+ table.
+.The following are the DDL commands.
+1)Create                   
+2)Alter
+3)Drop                     
+4)Flashback                
+5)Truncate
+6)Purge
+7)Rename (orace 9i)
+
+1)Create:- it is used to create database objects like 
+  =======  tables, views,sequences,indexes,procedures,
+            functions...etc 
+
+NOTE:-By default DDL commands are auto commited.
+====
+-----------------------------------------------------------------------------------
+4.What are DML commands
+.DML stands for Data Manipulation Language.
+.DML commands are used to manipulate data in a table.
+.Simply in DML we are dealing on data.
+.The following are the DML commands.
+1.Insert
+2.Update
+3.Delete
+4.Merge (oracle 9i)
+5.insert all
+
+
+1)Insert: It is used to insert data into a table.
+  ======
+Method1:-
+========
+insert into tablename values(value1,value2,.......);
+
+Method2:-(Using Substitutional operator)
+========
+
+&------>Enter value for
+
+Same like scanf function '&' is there in C language.i.e is used to read
+the values from the keyboard.
+
+Here also it is used to read the values from the keyboard.
+
+insert into tablename values(&col1,&col2.....);
+
+Method3:-(Skipping columns)
+========
+insert into tablename(col1,col2....)values(value1,value2....);
+
+-----------------------------------------------------------------------------------

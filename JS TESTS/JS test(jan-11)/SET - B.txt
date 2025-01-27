@@ -1,0 +1,39 @@
+										SET-B
+									----------------------
+
+Note : 	All questions Compulsory
+	
+	15 marks each
+--------------------------------------------
+
+Que 1 :
+--------
+
+Image Gallery
+
+Description: Create an image gallery where clicking on a thumbnail displays the full-sized image.
+
+Requirements:
+
+A row of thumbnail images.
+
+A larger display area for the full-sized image.
+
+Clicking a thumbnail should display the corresponding full-sized image in the display area.
+
+=======================================================================================================
+
+Que 2 :
+--------
+
+Live Character Counter
+
+Build a Character Counter where:
+
+	-> Users type into a textarea.
+	-> The app displays the number of characters typed and the maximum allowed.
+	-> Highlight the text area when the character count is near the limit.
+
+-> Using input events to detect changes in real-time.
+-> Dynamically updating DOM elements.
+-> Adding conditional styles for warnings.

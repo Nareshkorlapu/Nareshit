@@ -1,0 +1,41 @@
+										SET-C
+									----------------------
+
+Note : 	All questions Compulsory
+	15 marks each
+	
+--------------------------------------------
+
+
+
+Que 1 :
+--------
+Countdown Timer
+Description: Build a countdown timer that counts down from a specified time.
+
+Requirements:
+
+An input field to set the countdown time.
+
+A start button to begin the countdown.
+
+A display area to show the remaining time in minutes and seconds.
+
+An alert when the countdown reaches zero.
+
+=====================================================================================================
+
+Que 2 :
+--------
+
+	Change Body Color with Random Colors on Button Click
+
+You are creating a webpage where users can click a button to change the background color of the entire page to a random color. This can be useful for creating interactive and visually appealing web applications.
+
+Steps:
+
+	-> Create an HTML file with a button.
+
+	-> Add a JavaScript function that generates a random color.
+
+	-> Attach an event listener to the button to change the background color when clicked.

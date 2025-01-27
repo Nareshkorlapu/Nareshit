@@ -1,0 +1,67 @@
+										SET-B
+									----------------------
+
+Note : 	All questions Compulsory
+	Question 1 and 2 ( 5 marks each)
+	Question 3 and 4 ( 10 marks each) 
+--------------------------------------------
+
+
+
+Que 1 : Write a 'JavaScript' program to Filter Even and Odd Numbers from array in separate arrays.
+
+Sample Input :
+	 [12, 25, 47, 18, 30, 55];
+
+Sample output :
+	Even Array : [12, 18, 30]
+	Odd Array :  [25, 47, 55]
+
+
+======================================================================================================== 
+
+Que 2 : write a 'JavaScript' program to print Sum of All elements.
+
+Sample Input :
+	 [10, 20, 30, 40, 50];
+
+Sample output:
+	Sum of Array element is : 150
+
+======================================================================================================== 
+
+Que 3 : 
+---------
+Write a JavaScript program that finds and prints all pairs of numbers from a given array whose sum is equal to a specified target value. 
+The program should iterate through the array, compare every pair of numbers, and print each pair that meets the condition.
+
+Example:
+Sample input:
+	Array: {1, 5, 7, -1, 5}
+	Target Sum: 6
+
+Sample output:
+	Pair found: (1, 5)
+	Pair found: (7, -1)
+	Pair found: (1, 5)
+
+
+======================================================================================================== 
+
+Que 4 :
+=======
+	Write a JavaScript program to print all Nth digit Armstrong numbers :
+	
+	Definition :
+		Armstrong numbers are special numbers that are equal to the sum of their digits raised to the power of the number of digits. 
+	
+	Description :
+		if user enter 3 as a input the program should print all 3 digit Armstrong numbers.
+
+	Sample Input : 
+		Enter a Number : 1
+	Sample Output : All 1 digits Armstrong numbers are : 1 2 3 4 5 6 7 8 9
+
+	Sample Input :
+		Enter a Number : 3
+	Sample Output : All 3 digits Armstrong numbers are : 153 370 371 407
