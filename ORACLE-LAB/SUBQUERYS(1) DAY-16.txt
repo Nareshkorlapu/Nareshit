@@ -1,0 +1,159 @@
+                                 SUB QUERYS 
+                              ===============
+
+    Query within another query is called as Subquery or Nested query.
+Subquerys are used to retrive data from single or multiple tables by using
+more than one step process. 
+
+All relational databases having two types of sub querys.
+These are
+
+   1. Non- Correlated sub querys
+   2. Correlated sub querys
+
+  In Non-correlated sub querys child query is executed first then
+only parent query is executed, whereas in correlated sub querys 
+parent query is executed first then only child query is executed.
+
+1. Non-Correlated sub querys:-
+==============================
+Non Corelated subquerys having two parts.
+1)Child query
+2)Parent query
+
+1. Child Query:- A query which provides values to the another query
+==============   is called Child Query or Inner Query.
+
+2. Parent Query:- A query which receiving values from another query 
+=================    is called Parent Query or Outer Query.
+
+.In non-correlated sub query maximum limit is up to 255 querys.
+
+NON-CORRELATED SUB QUERY:-
+=========================
+        |
+        |----------->1)single row sub querys
+        |----------->2)multiple row sub querys
+        |----------->3)multiple column sub querys
+        |----------->4)inline views (or)subquery are used in from
+                       clause.
+
+1)single row sub querys
+=======================
+   This is a single row sub query because here child query
+returns single value. In single row sub query's we are
+using =,<,>,<=,>=, between operators.
+
+RULES:-
+=======
+1)90%    --------->same column
+2)5%     --------->group function
+3)3%     --------->expressions
+4)2%     --------->different column
+
+
+select * from emp where condition=(select ............)
+      
+EG:-
+===
+SQL> select max(sal) from emp where sal<(select max(sal) from emp);
+
+        Display mechanism in              Task in right hand
+         left hand side                        side  
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.Write a query to display senior most employee details
+   from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE HIREDATE=(SELECT MIN(HIREDATE) FROM EMP);
+==============================================================================
+2.Write a query to display the employees who are working in
+   SMITH department number from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE DEPTNO=(SELECT DEPTNO FROM EMP WHERE ENAME='SMITH');
+===============================================================================================
+3.Write a query to display the employees who are getting
+      more sal than the highest paid employee in 20th
+           department from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT MAX(SAL) FROM EMP WHERE DEPTNO=20);
+================================================================
+4.Write a query to display the employees who are getting
+      more sal than the lowest paid employee in 10th
+           department from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT MIN(SAL) FROM EMP WHERE DEPTNO=10);
+==================================================================
+5.Write a query to display second maximum salary or second
+        highest salary from emp table?
+Sol:
+SQL> SELECT MAX(SAL) FROM EMP WHERE SAL
+  2  <
+  3  (SELECT MAX(SAL) FROM EMP);
+=============================================
+6.Write a query to display second highest sal employee 
+            details from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL<
+  3  (SELECT MAX(SAL) FROM EMP));
+================================================================
+7.Write a query to display the employees who are getting 
+       more salary than the avg(sal)from emp?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT AVG(SAL) FROM EMP);
+=====================================================================
+8.Write a query to display the employee records who are 
+        earning more salary than the BLAKE salary?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT SAL FROM EMP WHERE ENAME='BLAKE');
+===============================================
+9.Write a query to display the employee records whose job 
+            title is same as ALLEN?
+Sol:
+SQL> SELECT * FROM EMP WHERE JOB=
+  2  (SELECT JOB FROM EMP WHERE ENAME='ALLEN');
+===================================================================
+10.find the employee name who is earning max salary from emp table?
+Sol:
+SQL> SELECT ENAME FROM EMP WHERE SAL
+  2  =
+  3  (SELECT MAX(SAL) FROM EMP);
+==================================================================
+11.Write a query to display the employees who are working in sales 
+   department from emp,dept tables.
+Sol:
+SQL> SELECT E.ENAME,D.DNAME FROM EMP E JOIN DEPT D
+  2  ON E.DEPTNO=D.DEPTNO WHERE D.DEPTNO=
+  3  (SELECT DEPTNO FROM DEPT WHERE DNAME='SALES');
+==================================================================
+12,13,14,15 try this querys.if we are not getting means tomorrow I will explain.
+------------------------------------------------------------------------------------------------------------------------
+12.Display the employee records who are senior to blake?
+Sol:
+SQL> SELECT E1.ENAME,E1.SAL,E1.HIREDATE FROM EMP E1 JOIN EMP E2
+  2  ON E1.HIREDATE<E2.HIREDATE WHERE E2.HIREDATE=
+  3  (SELECT HIREDATE FROM EMP WHERE ENAME='BLAKE');
+==================================================================
+13.Write a query to display the employees who are getting more
+  salary than the Allen salary and job same as Jones job?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT SAL FROM EMP WHERE ENAME='ALLEN')
+  3  AND
+  4  JOB=(SELECT JOB FROM EMP WHERE ENAME='JONES');
+==================================================================
+14.Write a query to display the employees who are working
+     under Blake as a Manager from emp table by using
+                 empno,mgr columns?
+Sol:
+SQL> SELECT * FROM EMP WHERE MGR=(SELECT EMPNO FROM EMP WHERE ENAME='BLAKE');
+====================================================================================
+15.Write a query to display longest ename from emp table?
+Sol:
+SQL> SELECT ENAME FROM EMP WHERE LENGTH(ENAME)=(SELECT MAX(LENGTH(ENAME)) FROM EMP);

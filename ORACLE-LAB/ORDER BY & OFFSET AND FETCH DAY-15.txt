@@ -1,0 +1,145 @@
+10-02-25
+------------  
+                     ORDER BY & OFFSET AND FETCH
+                    =================================
+
+Order by:-order by clause is used to sorting data either assending 
+========  order or desending order.
+     
+order by clause having two keywords.
+1)asc
+2)desc
+syntax:-
+=======
+    select * from tablename
+    order by columnname[asc/desc];
+
+1.Display the all employee records and arrange them in desending order
+   according to salary
+sol:
+SQL> SELECT * FROM EMP ORDER BY SAL DESC;
+----------------------------------------------------------------------------------
+
+2.display the all employee records and arrange them according to
+   seniority
+sol:
+SQL> SELECT * FROM EMP ORDER BY HIREDATE;
+-------------------------------------------------------------------------------------------
+
+3.display the employee records and display salaries in ascending order
+   according to deptno
+
+SQL>select ename,deptno,sal
+    from emp
+    order by deptno,sal desc;
+
+
+4.check the following order by clause outputs
+1)SQL>select ename,comm 
+         from emp
+         order by comm desc;
+Output:
+ENAME            COMM
+---------- ----------
+SMITH
+CLARK
+FORD
+JAMES
+ADAMS
+JONES
+BLAKE
+MILLER
+SCOTT
+KING
+MARTIN           1400
+WARD              500
+ALLEN             300
+TURNER              0
+========================
+2)SQL>select ename,comm
+     from emp
+     order by comm desc nulls last;
+Output:
+ENAME            COMM
+---------- ----------
+MARTIN           1400
+WARD              500
+ALLEN             300
+TURNER              0
+SCOTT
+KING
+ADAMS
+JAMES
+FORD
+MILLER
+BLAKE
+JONES
+SMITH
+CLARK
+------------------------------------------------------------------------------------
+Offset:-
+========
+• introduced in ORACLE 12C.
+• it is used to specify no of rows to be skipped.
+
+syntax:-
+=======
+OFFSET <number> ROW/ROWS
+
+FETCH:-
+======
+• introduced in ORACLE 12C.
+• it is used to specify no of rows to be fetched.
+• it is used to display top n rows
+
+syntax:-
+=======
+FETCH <FIRST/NEXT> <number> ROW/ROWS ONLY
+
+
+1.Display first 5 rows only from emp table?
+Sol:
+SQL> SELECT * FROM EMP
+  2  FETCH FIRST 5 ROWS ONLY;
+===================================
+2.Display all emp records except first 5 rows?
+Sol:
+SQL> SELECT * FROM EMP
+  2  OFFSET 5 ROWS
+  3  ;
+=======================================
+3.Display 6th row to 10th row?
+Sol:
+SQL> SELECT * FROM EMP
+  2  OFFSET 5 ROWS
+  3  FETCH FIRST 5 ROWS ONLY;
+==============================================
+4.Display top 3 salaried emp records?
+Sol:
+SQL> SELECT DISTINCT SAL
+  2  FROM EMP
+  3  ORDER BY SAL DESC
+  4  FETCH FIRST 3 ROWS ONLY;
+=================================================
+5.Display the most seniour employee record by using
+  fetch first clause?
+NOTE:-By default calender order is asending order
+Sol:
+SQL> SELECT * FROM EMP
+  2  ORDER BY HIREDATE
+  3  FETCH FIRST 1 ROW ONLY;
+===============================================
+6.Write a query to display 2nd maximum salary by using
+   offset and fetch clauses?
+Sol:
+SQL> SELECT ENAME,SAL
+  2  FROM EMP
+  3  ORDER BY SAL DESC
+  4  OFFSET 1 ROW
+  5  FETCH FIRST 1 ROW ONLY;
+================================================
+7.display job column from emp table by using distinct
+   clause?
+  Sol:
+SQL> SELECT DISTINCT JOB FROM EMP;
+================================================================

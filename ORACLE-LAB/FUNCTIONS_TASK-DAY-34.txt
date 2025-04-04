@@ -1,0 +1,175 @@
+                                   FUNCTIONS TASK
+                                 ------------------
+                            FUNCTION
+                        ==================
+   Function is an named pl/sql block which is used to solve particular task and also function must return a value.
+
+in oracle function having 2 parts.these are
+1.function specification
+2.function body
+
+     in function specification we are specifying name of the function and type of the parameters. Whereas in function body we are solving actual task.
+
+syntax:-
+========     
+create [or replace] function functionname(formal parameters)
+return datatype
+    is/as
+variable declaration,cursor,user defined exception;
+ begin
+ -----
+ -----
+return expression;
+ [exception]
+ -----
+ -----
+end [procedurename];
+
+Executing a function:-
+=====================
+method1:-(by using select statement)
+=======
+     
+       in oracle when a function having all parameters are in
+parameters or when a function does not have any parameters then those type of functions are allowed to execute by using select satements.
+
+syntax:-
+========
+select functionname(actual parameters) from dual;
+
+--------------------------------------------------------------------------
+
+
+1.Write a PL/SQL stored function for passing number as a parameter then return a message either even or odd based on passed number
+
+CREATE OR REPLACE FUNCTION SF1(NUM NUMBER)
+RETURN VARCHAR2
+AS
+NUMTYPE VARCHAR2(10);
+BEGIN
+IF(MOD(NUM,2)=0) THEN
+NUMTYPE:='EVEN';
+ELSE
+NUMTYPE:='ODD';
+END IF;
+RETURN NUMTYPE;
+END;
+/
+
+Function created.
+
+SQL> SELECT SF1(7854) FROM DUAL;
+
+SF1(7854)
+-----------------------------------------------------------------
+EVEN
+
+2.Write a PL/SQL stored function to display balance of customer based  on passed accno
+
+                    (OR)
+
+
+Write a PL/SQL function  that takes an account number  as input and returns the balance for that account.
+
+Accno          Name          Bal
+------        -------     ---------
+1001          subbarao       3000
+1002          gowtham        4000
+
+CREATE OR REPLACE FUNCTION SF2(P_ACCNO NUMBER)
+RETURN NUMBER
+AS
+V_BAL NUMBER(8,2);
+BEGIN
+SELECT BAL INTO V_BAL FROM PTABLE WHERE ACCNO=P_ACCNO;
+RETURN V_BAL;
+END;
+/
+
+Function created.
+
+SQL> SELECT SF2(1001) FROM DUAL;
+
+ SF2(1001)
+----------
+      3000
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a pl/sql stored function for passing sal as a parameter then calculate bonus based on following condition.(This question is not from emp table outside data)
+
+1.if salary<1000 then bonus is 5% of the sal
+2.if salary>=1000 then salary<2000 then bonus is 10% of the salary
+3.if salary>=2000 and salary<3000 then bonus is 20% of the sal
+4.if salary>=3000 and salary<5000 then bonus is 30% of the sal 
+5.else bonus is 40% of the salary
+
+CREATE OR REPLACE FUNCTION SF3(P_SAL NUMBER)
+RETURN NUMBER
+AS
+BONUS NUMBER(8,2);
+BEGIN
+IF(P_SAL<1000) THEN
+BONUS:=P_SAL*0.05;
+ELSIF(P_SAL>=1000 OR P_SAL<2000) THEN
+BONUS:=P_SAL*0.1;
+ELSIF(P_SAL>=2000 OR P_SAL<3000) THEN
+BONUS:=P_SAL*0.2;
+ELSIF(P_SAL>=3000 OR P_SAL<5000) THEN
+BONUS:=P_SAL*0.3;
+ELSE
+BONUS:=P_SAL*0.4;
+END IF;
+RETURN BONUS;
+END;
+/
+
+Function created.
+
+SQL> SELECT SF3(999) FROM DUAL;
+
+  SF3(999)
+-----------------------------------------------
+
+4.write a PL/SQL stored function that calculates the work experience of an employee based on their hire date.
+
+NOTE:- The function should take the employee number (empno) as input,fetch the corresponding  hiredate from the emp table, 
+       and return the experience in years.
+
+CREATE OR REPLACE FUNCTION SF4(P_EMPNO NUMBER)
+RETURN NUMBER
+AS
+V_EXP NUMBER(8,2);
+BEGIN
+SELECT TRUNC(TO_CHAR((SYSDATE-HIREDATE)/365)) INTO V_EXP FROM EMP WHERE EMPNO=P_EMPNO;
+RETURN V_EXP;
+END;
+/
+
+Function created.
+
+SQL> SELECT SF4(7788) FROM DUAL;
+
+ SF4(7788)
+----------
+        42
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+5.write a PL/SQL stored function to check whether the given string is palindrome or not
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+6.Write a PL/SQL stored function for adding or substract or 
+  multiplication or divide of two numbers depends operator
+  passed to the function
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

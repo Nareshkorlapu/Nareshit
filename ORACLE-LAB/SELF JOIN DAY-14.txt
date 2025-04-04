@@ -1,0 +1,165 @@
+                          SELF JOIN
+                        =============
+
+
+Self join:-joining a table to itself is called self join.here 
+=========  joining joining conditional columns must belongs to
+           same data type.
+
+Method1:-compare one table one column any value with all other values
+========  in same table.
+
+Method2:-compare two different column values in a same table(these
+========  columns belong to same data type).
+
+
+Whenever we are using self joins then we must create table aliasnames in from clause.these aliasnames must be different names.These aliasnames internally 
+behave like exact tables when query execution time.
+
+-----------------------------------------------------------------------------------
+1. Write a query to display the employees who are getting same salary
+    as SCOTT salary from emp table using self join?
+
+NOTE:-when we are comparing one column any value with all
+====   other values in same column by using self join then
+       we must display data from second alias table only.
+SOL:
+SQL> SELECT E1.ENAME,E1.SAL FROM EMP E1 JOIN EMP E2 ON E1.SAL=E2.SAL WHERE E2.ENAME='SCOTT';
+
+ENAME             SAL
+---------- ----------
+SCOTT            3000
+FORD             3000
+-------------------------------------------------------------------------------------------------------------------
+
+2.Write a query to display the employee names and their manager names
+  from emp table by using self join
+SOL:
+SQL> SELECT E1.ENAME AS EMPLOYEES,E2.ENAME AS MANAGERS FROM EMP E1,EMP E2 WHERE E1.MGR=E2.EMPNO;
+
+EMPLOYEES  MANAGERS
+---------- ----------
+SCOTT      JONES
+FORD       JONES
+ALLEN      BLAKE
+WARD       BLAKE
+MARTIN     BLAKE
+TURNER     BLAKE
+JAMES      BLAKE
+MILLER     CLARK
+ADAMS      SCOTT
+JONES      KING
+BLAKE      KING
+CLARK      KING
+SMITH      FORD
+----------------------------------------------------------------------------------------------------------------------
+
+3.Write a query to display the employee records who are reporting
+   to BLAKE as a manager by using self join?
+SOL:
+SQL> SELECT E1.ENAME AS EMPLOYEE,E2.ENAME AS MANAGER FROM EMP E1,EMP E2 WHERE E1.MGR=E2.EMPNO AND E2.ENAME='BLAKE';
+
+EMPLOYEE   MANAGER
+---------- ----------
+ALLEN      BLAKE
+WARD       BLAKE
+MARTIN     BLAKE
+TURNER     BLAKE
+JAMES      BLAKE
+------------------------------------------------------------------------------------------------------------------------
+
+
+4.Write a query to display the employees who are getting more salary 
+   than their manager salary from emp table using self join?
+SOL:
+SQL> SELECT E1.ENAME AS EMPLOYEE,E1.SAL AS SALARY,E2.ENAME AS MANAGER,E2.SAL AS MANAGER_SALARY FROM EMP E1,EMP
+E2 WHERE E1.MGR=E2.EMPNO AND E1.SAL>E2.SAL;
+
+EMPLOYEE       SALARY MANAGER    MANAGER_SALARY
+---------- ---------- ---------- --------------
+SCOTT            3000 JONES                2975
+FORD             3000 JONES                2975
+------------------------------------------------------------------------------------------------------------------------
+
+5.Write a query to display BLAKE'S manager name from emp table by
+  using self join?
+SOL:
+SQL> SELECT E1.ENAME AS EMPLOYEE,E2.ENAME AS MANAGER FROM EMP E1,EMP E2 WHERE E1.MGR=E2.EMPNO AND E1.ENAME='BLA
+KE';
+
+EMPLOYEE   MANAGER
+---------- ----------
+BLAKE      KING
+------------------------------------------------------------------------------------------------------------------------
+
+6.Write a query to display the employees who are joining
+         before their managers from emp table
+                by using self join?
+SOL:
+SQL> SELECT E1.ENAME AS EMPLOYEE,E1.HIREDATE AS EMP_JOIN,E2.ENAME AS MANAGER,E2.HIREDATE AS MG_JOIN FROM EMP E1
+,EMP E2 WHERE E1.MGR=E2.EMPNO AND E1.HIREDATE<E2.HIREDATE;
+
+EMPLOYEE   EMP_JOIN  MANAGER    MG_JOIN
+---------- --------- ---------- ---------
+ALLEN      20-FEB-81 BLAKE      01-MAY-81
+WARD       22-FEB-81 BLAKE      01-MAY-81
+JONES      02-APR-81 KING       17-NOV-81
+BLAKE      01-MAY-81 KING       17-NOV-81
+CLARK      09-JUN-81 KING       17-NOV-81
+SMITH      17-DEC-80 FORD       03-DEC-81
+------------------------------------------------------------------------------------------------------------------------
+
+7.Write a query to display those doctors which are working
+  in same hospital with different specality from the below
+  table?
+
+note:-Here h1 or h2 any table we can use in select why because of
+=====  condition is not there direct comparing.
+
+SQL>select * from hospital;
+
+         ID      NAME    HOSPITALNAME     SPECALITY
+      ------ ----------  -------------    ----------
+         1     SMITH        APPOLO        PHYSICIAN
+         2     ALLEN        APPOLO        HOMEOPATHY
+         3     WARD         KIMS          PHYSICIAN
+         4     JONES        PRIME         PHYSICIAN 
+SOL:
+SQL> SELECT H2.NAME AS DOC,H2.HOSPITAL_NAME AS H_NAME FROM HOSPITAL H1,HOSPITAL H2
+  2  WHERE H1.HOSPITAL_NAME=H2.HOSPITAL_NAME
+  3  AND H1.SPECALITY!=H2.SPECALITY;
+
+DOC   H_NAME
+----- ------
+SMITH APPOLO
+ALLEN APPOLO
+
+-----------------------------------------------------------------------------------
+
+8.WRITE A QUERY TO FETCH STUDENT_NAME AND COURSE_NAME,ORDER BY STUDENT ID.DISPLAY ONLY FIRST 20 RECORDS FROM THE FOLLOWING TABLES?(HCL INTERVIEW QUESTION LATEST)
+
+            STUDENT TABLE
+   |-------------------------|--------------------------------|
+   |  STUDENT_ID     |    STUDENT_NAME   |
+   |--------------------------|--------------------------------|
+
+
+           		 FEE TABLE
+   |-------------------------|----------------------------|
+   |    STUDENT_ID   |     COURSE_FEE    |
+   |-------------------------|-----------------------------|
+
+
+              		COURSE TABLE
+   |--------------------------|--------------------------------|
+   |    COURSE_FEE   |     COURSE_NAME   |
+   |---------------------------|-------------------------------|
+
+SOL:
+SELECT s.STUDENT_NAME, c.COURSE_NAME
+FROM STUDENT s
+JOIN FEE f ON s.STUDENT_ID = f.STUDENT_ID
+JOIN COURSE c ON f.COURSE_FEE = c.COURSE_FEE
+ORDER BY s.STUDENT_ID
+LIMIT 20;
+

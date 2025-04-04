@@ -1,0 +1,88 @@
+      07-03-25
+**************
+                                 VIEWS
+                                =========
+
+1.What is view? View store data or not? How can you give the guarantee
+  view does not store the data?
+
+1)It is a subset/virtual table of base table.
+2)It does not store data/Information but store 'SELECT query'.
+3)Data is only calculated and presented on demand, not physically stored within the view itself.
+============================================================================
+2.Create a view from emp table with following columns
+  empno,ename,sal,deptno
+  After creating the view insert the records
+  into view?
+
+SQL> CREATE VIEW V1 AS SELECT EMPNO,ENAME,SAL,DEPTNO FROM EMP;
+SQL> INSERT INTO V1 VALUES(1111,'YUVIN',1000,20);
+============================================================================
+
+3.After creating the view v1 on empno,ename,sal,deptno.give the access 
+  on view v1 to other user?
+
+SQL> CREATE TABLE V2 AS SELECT * FROM V1;
+
+============================================================================
+3.Create view from emp table and store only department 10th details?
+
+SQL> CREATE VIEW V3 AS SELECT * FROM EMP WHERE DEPTNO=10;
+=================================================================================
+4.What is comlex view ? Create a complex view from the following 
+  two tables ?Can you perform DML operations through complex view 
+  to base table possible or not possible? 
+
+SQL>create table test1(name varchar2(10));
+SQL>create table test2(sub varchar2(10));
+
+
+SQL> CREATE VIEW V4 AS SELECT NAME,SUB FROM TEST1 JOIN TEST2 ON TEST1.NAME=T
+EST2.SUB;
+				(OR)
+SQL> CREATE VIEW V5 AS SELECT NAME,SUB FROM TEST1,TEST2;
+
+NO, you cannot perform DML operations through complex view 
+ to base table possible or not possible.
+===============================================================================
+5.What is Materialized view? MVIEWS stores data or not?What is the 
+  Purpose of MVIEWS?
+
+A Materialized View (MV) is a database object that stores the results of a query as a physical object (table), which can be periodically refreshed or updated. It is similar to a regular view, but the main difference is that while a regular view just stores a query definition, a materialized view stores the query results as actual data.
+Does MVIEWS store data?
+
+Yes, Materialized Views do store data. When a materialized view is created, the results of the underlying query are stored physically in the database. This data is materialized, meaning it is saved in the database rather than being dynamically computed each time the view is accessed, like a regular view.
+
+Purpose of Materialized Views:
+
+    Performance Improvement:
+    Reduced Query Load:
+    Data Availability:
+    Precomputation:
+    Faster Refresh Mechanisms:
+    Refreshing Materialized Views:
+    Complete refresh: ================================================================================
+6.What are the differences b/w View and Materialized VIEW?
+
+ *
+***Differnce b/w view & materialized view(V.V.I.M.P)
+ * ======================================
+
+          View                              Materialized view
+-----------------------------------------------------------------------------------
+1.view does not stores any data     |1.M.views stores data
+                                    |
+2.security purpose                  |2.improves performance(for joins,aggrigate
+                                    |  functions)purpose.
+                                    |
+3.when we are dropping a base table |3.when we are dropping a base table  
+  then view can not be accessable.  |  also. M.view can be accessable. 
+                                    |
+4.we can perform dml operations on  |4.we can not perform dml operations on
+  views                             |  M.views
+
+===========================================================================
+
+7.What are the uses of the views?
+
+Views can be used as security mechanisms by letting users access data through the view, without granting users permissions to directly access the underlying tables of the query. Views can be used to provide a backward compatible interface to emulate a table that used to exist but whose schema has changed.

@@ -1,0 +1,20 @@
+1) Write a java program that accepts a number as a command-line argument and prints its multiplication table.
+- if number is negative print "Error" message on console. 
+
+
+2)Write a Java program that accepts three numbers as command-line arguments and calculates their average.
+- if any number is negative print "Error" message on console.
+
+
+3)Write a Java program that accepts a single integer as a command-line argument and checks whether it is a prime or not.
+- if number is negative print "Error" message on console.
+
+4)Write a Java program that accepts a single integer as a command-line argument and prints the first n numbers of the Fibonacci series.
+- if arguments length is 0 print "Error" message on console.
+
+5)Write a Java program that accepts a single integer n as a command-line argument and calculates the sum of all odd and even numbers from 1 to n (inclusive). Display the results separately for odd and even sums. 
+
+input : 10 
+output :
+Sum of even numbers from 1 to 10: 30
+Sum of odd numbers from 1 to 10: 25

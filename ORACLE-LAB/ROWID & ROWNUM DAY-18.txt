@@ -1,0 +1,100 @@
+14-02-25
+--------------        
+                        ROWID
+                              ========
+
+ *
+***Delete duplicate rows from a table
+ * =================================
+
+ *
+*Q*Write a query to delete duplicate rows from following table
+ *
+SQL>create table test(deptno number(10));
+SQL>insert into test values(.......);
+SQL>select * from test;
+          
+          deptno
+      ----------
+           10
+           10
+           10
+           20
+           20
+           20
+           30
+           30
+           40
+           50
+Sol:
+SQL> DELETE FROM TEST WHERE ROWID NOT IN (SELECT MIN(ROWID) FROM TEST GROUP BY DEPTNO);
+-----------------------------------------------------------------------------------
+
+                               ROWNUM
+                             ==========
+
+1.Write a query to display first row from emp table using rownum?
+USING SUB-QUERY
+------------------------------
+SQL> SELECT * FROM(SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R=1;
+
+USING TABLE NAME WITH WHERE:
+----------------------------------------------------
+SQL> SELECT * FROM EMP WHERE ROWNUM=1;
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+NOTE:-Generally, rownum doesn't work with more than 1 +ve integer, 
+=====  i.e.,it works with <, <= operators.
+-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+ *
+***Write a query to display last 2 rows from emp table by using
+ *     rownum aliasname?
+ Sol:
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R IN ((SELECT COUNT(*) FROM EMP),(SELECT COUNT(*)
+-1 FROM EMP));
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ *
+***Note:-in oracle we are creating rownum alliasnames in inline views 
+ * ====  then that aliasname work with all sql operators.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.Write a query to display second record from emp table using  
+   rownum aliasname?
+Sol:
+SQL> SELECT * FROM(SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R=2;
+-----------------------------------------------------------------------------------------------------------------------------
+4.Write a query to display rows between 4 to 8 from emp
+  table by using rownum aliasname?
+Sol:
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R BETWEEN 4 AND 8;
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+5.Write a query to display 2,3,5,6,9th records from emp
+  table by using rownum aliasname?
+Sol:
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R IN(2,3,5,6,9);
+----------------------------------------------------------------------------------------------------------------------------------------------
+6.Write a query to display even no of records from emp 
+  table by using rownum aliasname?
+Sol:
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE MOD(R,2)=0;
+------------------------------------------------------------------------------------------------------------------------------------------
+7.Write a quey to display first row,last row from emp table by
+  using rownum aliasname?
+Sol:
+SQL> SELECT * FROM(SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R IN((SELECT MAX(ROWNUM) FROM EMP),(SELECT MIN(ROW
+NUM) FROM EMP));
+										(or)
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R IN(1,(SELECT COUNT(*) FROM EMP));
+										(or)
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R=1 OR R=(SELECT COUNT(*) FROM EMP);
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+8.Write a query to skip 3 rows and then display remaing all rows from
+  emp table by using rownum aliasname?
+Sol:
+SQL> SELECT * FROM (SELECT ROWNUM R,ENAME,SAL FROM EMP) WHERE R>3;
+										(or)
+SQL> SELECT * FROM(SELECT ROWNUM R,ENAME,SAL FROM EMP) OFFSET 3 ROWS;

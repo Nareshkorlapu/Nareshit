@@ -1,0 +1,66 @@
+
+                               Date Functions Task
+                            ========================
+
+1.Write a query to display current system date?
+Ans:
+SQL> SELECT SYSDATE FROM DUAL;
+================================================
+2.Display the current system date and time?
+Ans:
+SQL> SELECT TO_CHAR(SYSDATE,'DDMONYYYY HH-MI-SS AM') AS CURRENT_DATE_AND_TIME FROM DUAL;
+=============================================================================================
+3.Find the last date from sysdate?
+Ans:
+SQL> SELECT LAST_DAY(SYSDATE) FROM DUAL;
+=================================================
+4.Find the last date from given date 16-APR-2024?
+Ans:
+SQL> SELECT LAST_DAY('16-APR-2024') FROM DUAL;
+===================================================
+5.Find next month first date?
+Ans:
+SQL> SELECT LAST_DAY(SYSDATE)+1 FROM DUAL;
+=================================================
+6.Find current month 1st date?
+Ans:
+SQL> SELECT LAST_DAY(ADD_MONTHS(SYSDATE,-1))+1 FROM DUAL;
+=============================================================
+7.Find next friday date?
+Ans:
+SQL> SELECT NEXT_DAY(SYSDATE,'FRIDAY') FROM DUAL;
+==================================================
+8.Find next month first sunday date?
+Ans:
+SQL> SELECT NEXT_DAY(LAST_DAY(SYSDATE)+1,'SUNDAY') FROM DUAL;
+===============================================================
+9.Find the experience of all employees from emp table by using 
+   months_between()?
+Ans:
+SQL> SELECT ROUND(MONTHS_BETWEEN(SYSDATE,HIREDATE) AS EXPERIENCE FROM EMP;
+=======================================================================
+10.Calulate age( in the form of years and months) of kiran. if dob of
+   kiran is 31-DEC-1997?
+Ans:
+SQL> SELECT FLOOR(MONTHS_BETWEEN(SYSDATE,'31-DEC-1997')/12) AS YEARS,
+  2  MOD(FLOOR(MONTHS_BETWEEN(SYSDATE,'31-DEC-1997')),12) AS MONTHS FROM DUAL;
+===============================================================================
+
+11.display the employee records who are joined today?
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q)Write the query to  display the emp_first_name and emp_last_name as emp_fullname and year of birth
+  and sort them based on their desending age
+
+emp_id        emp_first_name        emp_last_name     birth date
+-----------       ----------------------       ----------------------      ------------
+  1            	john                  	doe               	      23-apr-1985
+  2            	jill                  		davis             	      15-jun-1999
+  3            	jack                  	Johnson                 25-oct-1992
+  4            	james                 	Wilson            	       12-sep-1983
+Ans:
+SQL> SELECT EMP_FIRST_NAME,
+  2  EMP_LAST_NAME,
+  3  EMP_FIRST_NAME||' '||EMP_LAST_NAME AS EMP_FULLNAME,
+  4  TO_CHAR(BIRTH_DATE,'YYYY') AS YEAR_OF_BIRTH FROM EMPLOYEE ORDER BY YEAR_OF_BIRTH DESC;

@@ -1,0 +1,105 @@
+26-02-25
+------------ 
+                                SUB QUERYS 
+                              ===============
+
+
+1.Write a query to display senior most employee details
+   from emp table?
+
+Sol:
+SQL> SELECT * FROM EMP WHERE HIREDATE=
+  2  (SELECT MIN(HIREDATE) FROM EMP);
+------------------------------------------------------------------------------------------------------------------------
+2.Write a query to display the employees who are working in
+   SMITH department number from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE DEPTNO=
+  2  (SELECT DEPTNO FROM EMP WHERE ENAME='SMITH');
+------------------------------------------------------------------------------------------------------------------------
+3.Write a query to display the employees who are getting
+      more sal than the highest paid employee in 20th
+           department from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT MAX(SAL) FROM EMP WHERE DEPTNO=20);
+------------------------------------------------------------------------------------------------------------------------
+4.Write a query to display the employees who are getting
+      more sal than the lowest paid employee in 10th
+           department from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL<
+  2  (SELECT MIN(SAL) FROM EMP WHERE DEPTNO=10);
+------------------------------------------------------------------------------------------------------------------------
+5.Write a query to display second maximum salary or second
+        highest salary from emp table?
+Sol:
+SQL> SELECT MAX(SAL) FROM EMP WHERE SAL<
+  2  (SELECT MAX(SAL) FROM EMP);
+------------------------------------------------------------------------------------------------------------------------
+6.Write a query to display second highest sal employee 
+            details from emp table?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (
+  3  SELECT MAX(SAL) FROM EMP WHERE SAL<
+  4  (
+  5  SELECT MAX(SAL) FROM EMP));
+------------------------------------------------------------------------------------------------------------------------
+7.Write a query to display the employees who are getting 
+       more salary than the avg(sal)from emp?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (
+  3  SELECT AVG(SAL) FROM EMP
+  4  );
+------------------------------------------------------------------------------------------------------------------------
+8.Write a query to display the employee records who are 
+        earning more salary than the BLAKE salary?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT SAL FROM EMP WHERE ENAME='BLAKE');
+------------------------------------------------------------------------------------------------------------------------
+9.Write a query to display the employee records whose job 
+            title is same as ALLEN?
+Sol:
+SQL> SELECT * FROM EMP WHERE JOB=
+  2  (SELECT JOB FROM EMP WHERE ENAME='ALLEN');
+------------------------------------------------------------------------------------------------------------------------
+10.find the employee name who is earning max salary from emp table?
+Sol:
+SQL> SELECT ENAME FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP);
+------------------------------------------------------------------------------------------------------------------------
+11.Write a query to display the employees who are working in sales 
+   department from emp, dept tables.
+Sol:
+SQL> SELECT * FROM EMP WHERE DEPTNO=
+  2  (SELECT DEPTNO FROM DEPT WHERE DNAME='SALES');
+------------------------------------------------------------------------------------------------------------------------
+12.Display the employee records who are senior to blake?
+Sol:
+SQL> SELECT * FROM EMP WHERE HIREDATE<
+  2  (SELECT HIREDATE FROM EMP WHERE ENAME='BLAKE');
+------------------------------------------------------------------------------------------------------------------------
+13.Write a query to display the employees who are getting more
+  salary than the Allen salary and job same as Jones job?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>
+  2  (SELECT SAL FROM EMP WHERE ENAME='ALLEN')
+  3  AND
+  4  JOB=
+  5  (SELECT JOB FROM EMP WHERE ENAME='JONES');
+------------------------------------------------------------------------------------------------------------------------
+14.Write a query to display the employees who are working
+     under Blake as a Manager from emp table by using
+                 empno,mgr columns?
+Sol:
+SQL> SELECT * FROM EMP WHERE MGR=
+  2  (SELECT EMPNO FROM EMP WHERE ENAME='BLAKE');
+------------------------------------------------------------------------------------------------------------------------
+15.Write a query to display longest ename from emp table?
+Sol:
+SQL> SELECT ENAME FROM EMP WHERE LENGTH(ENAME)=
+  2  (SELECT MAX(LENGTH(ENAME)) FROM EMP);
+------------------------------------------------------------------------------------------------------------------------

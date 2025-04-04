@@ -25,7 +25,7 @@ new   1: INSERT INTO STUDENT VALUES(01,'SMITH','MALE','05-OCT-1981')
 
 SQL> /
 Enter value for sno: 02
-Enter value for sname: MILLER
+Enter value for sname: MILLER 
 Enter value for gender: FEMALE
 Enter value for dob: 05-SEP-1982
 old   1: INSERT INTO STUDENT VALUES(&SNO,'&SNAME','&GENDER','&DOB')

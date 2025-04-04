@@ -1,0 +1,204 @@
+                            Functions TASK
+                         ---------------------
+
+1.check the outputs of following instr() queries
+
+
+NOTE:-Always instr() returns position based on last two parameters 
+---- but oracle server counts no of characters left side first 
+     position onwards
+
+
+
+SQL> select instr('ABC*D','*') from dual;
+INSTR('ABC*D','*')
+------------------
+                 4
+SQL> select instr('ABCDEFGHCDKMNBCDJ','CD',1,1) from dual;
+INSTR('ABCDEFGHCDKMNBCDJ','CD',1,1)
+-----------------------------------
+                                  3
+
+SQL> select instr('ABCDEFGHCDKMNBCDJ','CD',-5,2) from dual;
+INSTR('ABCDEFGHCDKMNBCDJ','CD',-5,2)
+------------------------------------
+                                   3
+
+SQL>select instr('krishna stami lord krishna jai krishna',
+                 'krishna',1,2) from dual;
+INSTR('KRISHNASTAMILORDKRISHNAJAIKRISHNA','KRISHNA',1,2)
+--------------------------------------------------------
+                                                      20
+
+SQL>select instr('krishna stami lord krishna jai krishna',
+                  'krishna',-1,3) from dual;
+INSTR('KRISHNASTAMILORDKRISHNAJAIKRISHNA','KRISHNA',-1,3)
+---------------------------------------------------------
+                                                        1
+SQL>select instr('gowtham raj','raj') from dual;
+INSTR('GOWTHAMRAJ','RAJ')
+-------------------------
+                        9
+SQL>select instr('gowtham raj','sai') from dual;
+INSTR('GOWTHAMRAJ','SAI')
+-------------------------
+                        0
+-------------------------------------------------------------------------------------------------------------------------------------
+
+2.Find 4th appearence of 'a' in the string 'Maharashtraa'
+Ans:
+SQL> SELECT INSTR('MAHARASHTRAA','A',1,4) FROM DUAL;
+-------------------------------------------------------------------------------------------------------------------------------------
+3.Set mailids to all the employees by taking ename first 3 characters and
+  empno last 3 digits as username for the domain tcs.com 
+Ans:
+SQL> UPDATE EMP SET MAILIDS=SUBSTR(ENAME,1,3)||SUBSTR(EMPNO,2,4)||'tcs.com';
+-------------------------------------------------------------------------------------------------------------------------------------
+
+4.Check the following lpad() and rpad() queries output
+
+SQL>select lpad('kiran',10,'#") from dual;
+LPAD('KIRA
+----------
+#####KIRAN
+
+SQL>select lpad('X',4,'X') from dual;
+LPAD
+----
+XXXX
+
+SQL> select rpad('ABCD',10,'#')from dual;
+RPAD('ABCD
+----------
+ABCD######
+-------------------------------------------------------------------------------------------------------------------------------------
+
+5.genarate the message if the account no is 1234567473 
+  output---amount debited from XXXXXX7473
+Ans:
+SQL> SELECT 'amount debited from '||REPLACE('1234567473','123456','XXXXXX') AS DEBITED_RECIEPT FROM
+DUAL;
+
+DEBITED_RECIEPT
+------------------------------
+amount debited from XXXXXX7473
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+6.Example
+  -------
+Create the following TEST table as below
+    SQL> CREATE TABLE TEST(NAME VARCHAR2(15)); 
+           NAME      
+     -----------------
+       RADHA KRISHNA
+       GOWTHAM RAJ
+       SUBBA RAO
+       NAGA RAJU
+       MADAM SIR
+
+---->after inserting the records.add two columns FNAME and LNAME  by
+     using alter with add command. 
+  SQL> ALTER TABLE TEST ADD FNAME VARCHAR2(10);
+  SQL> ALTER TABLE TEST ADD LNAME VARCHAR2(8);
+
+      SQL> INSERT INTO TEST VALUES('&NAME');
+Enter value for name: RADHA KRISHNA
+old   1: INSERT INTO TEST VALUES('&NAME')
+new   1: INSERT INTO TEST VALUES('RADHA KRISHNA')
+
+1 row created.
+
+SQL> /
+Enter value for name: GOWTHAM RAJ
+old   1: INSERT INTO TEST VALUES('&NAME')
+new   1: INSERT INTO TEST VALUES('GOWTHAM RAJ')
+
+1 row created.
+
+SQL> /
+Enter value for name: SUBBA RAO
+old   1: INSERT INTO TEST VALUES('&NAME')
+new   1: INSERT INTO TEST VALUES('SUBBA RAO')
+
+1 row created.
+
+SQL> /
+Enter value for name: NAGA RAJU
+old   1: INSERT INTO TEST VALUES('&NAME')
+new   1: INSERT INTO TEST VALUES('NAGA RAJU')
+
+1 row created.
+
+SQL> /
+Enter value for name: MADAM SIR
+old   1: INSERT INTO TEST VALUES('&NAME')
+new   1: INSERT INTO TEST VALUES('MADAM SIR')
+
+1 row created. 
+---->And set the output for FNAME,LNAME by using
+     substr(),instr() as follows. 
+SQL> UPDATE TEST SET FNAME=SUBSTR(NAME,1,INSTR(NAME,' ',-1));
+SQL> UPDATE TEST SET LNAME=SUBSTR(NAME,INSTR(NAME,' ',1),LENGTH(NAME));
+ 
+       FNAME            LNAME
+        ---------        	    ----------
+        RADHA            KRISHNA 
+        GOWTHAM         RAJ
+        SUBBA                RAO
+        NAGA                 RAJU
+        MADAM              SIR      
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+7.Check the following query outputs
+
+ *
+***Translate() and Replace():-
+ * =========================
+
+
+SQL> select translate('india','in','xy'),replace('india','in','xy')
+     from dual;
+TRANS REPLA
+----- 		-----
+xydxa xydia
+
+SQL> select translate('ABCDEF','FEDCBA','123456') from dual;
+TRANSL
+------
+654321
+
+SQL> select replace('ABC',' ','india')from dual;
+REP
+---
+ABC
+
+SQL> select replace('SSMISSTHSS','S') from dual;
+REPL
+----
+MITH
+
+SQL>select replace('SSMISSTHS','THS') from dual;
+REPLAC
+------
+SSMISS
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. Write a query to count number of times that particular I occurred
+    within given string INDIA by using length(),replace()function?
+
+
+NOTE:-If you want to count number of times particular character
+      occurs within a given string then also we are using 
+      replace function along with length function.
+SQL> SELECT LENGTH('INDIA')-LENGTH(REPLACE('INDIA','I')) FROM DUAL;
+
+LENGTH('INDIA')-LENGTH(REPLACE('INDIA','I'))
+--------------------------------------------
+                                           2
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+

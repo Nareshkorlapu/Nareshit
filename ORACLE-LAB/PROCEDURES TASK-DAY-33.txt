@@ -1,0 +1,262 @@
+24-03-25
+********     
+                    	 SUB PROGRAMS
+                      ===================
+
+     Sub programs are named pl/sql blocks. Which is used to solve
+particular task. Oracle having 2 types of sub programs.
+
+1.PROCEDURES
+2.FUNCTIONS
+  
+                         SUB PROGRAMS
+                            /     \
+                           /       \
+                     procedure     function
+                  (May or may not  (Must return value)
+                   return values)
+       
+                           PROCEDURES
+                         =============
+
+   Procedures is named PL/SQL block which is used to solve particular task and also procedure may or may not return values
+
+   in oracle whenever we are using create or replace keyword infront of the procedure then those procedures are internally automatically perminently stored in oracle database. that's why those procedures are also called as stored as stored procedures.
+
+Oracle Procedure having 2 parts. those are
+1.Procedure Specification
+2.Procedure Body
+
+    In procedure specification we are specifying name of the procedure and type of the parameters. Whereas in procedure body we are solving actual task.
+
+syntax:-
+========     
+create [or replace] procedure procedurename(formal parameters)
+is/as
+variable declaration, cursor, user defined exception;
+ begin
+ -----
+ -----
+ [exception]
+ -----
+ -----
+end [procedurename];
+
+To view errors:-
+==============
+syntax:-
+=======
+SQL>show errors;
+
+Executing procedure:-
+====================
+Method1:-
+=======
+syntax:-
+=======
+SQL>exec procedurename(actual parameters);
+
+
+
+1.in mode:-In oracle by default procedure parameter mode is IN
+========== mode is used to pass the values in procedure body.IN mode internally behaves like a constant in procedure body.
+
+syntax:-
+=======
+parametername in datatype
+
+
+ *
+*** Out Mode:-out mode is used to  return values from the
+============ procedure. out parameter internally behaves like a unintialized variable in procedure body.here explicitly we must
+specify out keyword.
+
+syntax:-
+=======
+parameter out datatype
+
+create or replace procedure p1(a in number,b out number)
+is                                            |
+begin                                  .out parameter always
+b:=a*a;                                 behaves like a variable
+end;                                   .when you specify out keyword 
+/                                       no need to declare variable
+
+    in oracle when a procedure having OUT or INOUT parameters 
+then those type of procedures are allowed to execute by using
+following 2 methods. thOse are
+
+Method1:-using bind variable
+Method2:-using anonymous block
+
+NOTE:-catch the return values from server->bind variable
+
+exec method1:-(using bind variable)
+============
+SQL>variable z number;
+SQL>exec p1(8,:z);
+SQL>print z;
+
+      Z
+   ------
+      64
+
+-----------------------------------------------------------------------------------
+
+                        PROCEDURES
+                     ===============
+
+1.Write a pl/sql stored procedure for passing empno as a IN
+     parameter then display name of the employee and 
+             his salary from emp table?
+
+CREATE OR REPLACE PROCEDURE P1(P_EMPNO IN NUMBER)
+IS
+V_ENAME VARCHAR2(10);
+V_SAL NUMBER(8,2);
+BEGIN
+SELECT ENAME,SAL INTO V_ENAME,V_SAL FROM EMP WHERE EMPNO=P_EMPNO;
+DBMS_OUTPUT.PUT_LINE(V_ENAME||','||V_SAL);
+END;
+/
+
+Procedure created.
+
+SQL> EXECUTE P1(7788);
+SCOTT,3000
+-----------------------------------------------------------------------------------
+2.write a pl/sql stored procedure for passing deptno as a IN  
+     parameter then display employee details from emp table 
+           based on passed department number?
+
+CREATE OR REPLACE PROCEDURE P2(P_DEPTNO IN NUMBER)
+IS
+CURSOR C1 IS SELECT * FROM EMP WHERE DEPTNO=P_DEPTNO;
+BEGIN
+FOR I IN C1
+LOOP DBMS_OUTPUT.PUT_LINE(I.EMPNO||','||I.ENAME||','||I.SAL||','||I.HIREDATE);
+END LOOP;
+END;
+/
+
+Procedure created.
+-----------------------------------------------------------------------------------
+3.write a pl/sql stored procedure which is used to insert a record into dept table by using in parameter
+
+CREATE OR REPLACE PROCEDURE P3(P_DEPTNO IN NUMBER,P_DNAME IN VARCHAR2,P_LOC IN VARCHAR2)
+IS
+BEGIN
+INSERT INTO DEPT VALUES(P_DEPTNO,P_DNAME,P_LOC);
+END;
+/
+
+Procedure created.
+
+SQL> EXEC P3(60,'MANAGER','AMERICA');
+
+PL/SQL procedure successfully completed.
+-----------------------------------------------------------------------------------
+4.Write a PL/SQL stored procedure for passing ename as IN
+     parameter then return sal of the employee from
+          emp table by using out parameter?
+
+CREATE OR REPLACE PROCEDURE P4(P_ENAME IN VARCHAR2,P_SAL OUT NUMBER)
+AS
+BEGIN
+SELECT SAL INTO P_SAL FROM EMP WHERE ENAME=P_ENAME;
+END;
+/
+
+Procedure created.
+
+SQL> VAR R NUMBER;
+SQL> EXECUTE P4('SMITH',:R);
+
+PL/SQL procedure successfully completed.
+
+SQL> PRINT R;
+
+         R
+----------
+       800
+-----------------------------------------------------------------------------------
+5.Write a pl/sql stored procedure which is used to converts
+   following group by clause report into in,out parameters
+                 from emp table?
+
+SQL>select deptno,count(*)
+    from emp
+    group by deptno;
+
+    DEPTNO        COUNT(*)
+   --------      ----------
+      30             6
+      10             3
+      20             5
+
+
+-----------------------------------------------------------------------------------
+6.write a pl/sql stored procedure for passing deptno is in 
+   parameter then return dname,location from dept table
+          by using out parameter?
+
+CREATE OR REPLACE PROCEDURE P6(P_DEPTNO IN NUMBER,P_DNAME OUT VARCHAR2,P_LOC OUT VARCHAR2)
+AS
+BEGIN
+SELECT DNAME,LOC INTO P_DNAME,P_LOC FROM DEPT WHERE DEPTNO=P_DEPTNO;
+END;
+
+Procedure Created.
+
+SQL> VAR RNAME VARCHAR2(20);
+SQL> VAR RLOC VARCHAR2(20);
+SQL> EXECUTE P6(10,:RNAME,:RLOC);
+
+PL/SQL procedure successfully completed.
+
+SQL> PRINT RNAME RLOC;
+-----------------------------------------------------------------------------------
+7.Write PL/SQL stored procedure for withdraw
+
+Accno          Name          Bal
+------        -------     ---------
+1001          subbarao       3000
+1002          gowtham        4000
+
+
+if user entered amount is more than avaliable
+ balance than---->insuffiencient funds
+
+if user entered amount is less than avaliable 
+ balance than ---->update his bal
+
+
+CREATE OR REPLACE PROCEDURE WITHDRAW(P_ACCNO IN NUMBER,P_AMOUNT IN NUMBER)
+IS
+V_BAL NUMBER(10);
+BEGIN
+SELECT BAL INTO V_BAL FROM PTABLE WHERE ACCNO=P_ACCNO;
+IF P_AMOUNT<=V_BAL THEN
+UPDATE PTABLE SET BAL=BAL-P_AMOUNT;
+ELSE
+DBMS_OUTPUT.PUT_LINE('INSUFFICIANT FUNDS');
+END IF;
+END;
+/
+Procedure created.
+
+SQL> EXEC WITHDRAW(1001,9000);
+INSUFFICIANT FUNDS
+
+PL/SQL procedure successfully completed.
+
+SQL> EXEC WITHDRAW(1001,2000);
+
+PL/SQL procedure successfully completed.
+
+SQL> SELECT * FROM PTABLE;
+
+
+
+
+

@@ -1,0 +1,215 @@
+SET OPERATORS
+                           =====================
+
+Set operators are used to retriew data from single or multiple
+tables.
+
+Set operators are also called as virtical joins.oracle having following
+set operators. These are
+
+1.UNION       ---------->return values unique time + sorting
+2.UNION ALL   ---------->unique duplicates
+3.INTERSECT   ---------->common values
+4.MINUS       ---------->values are in first query and those values are not
+                         in second query
+
+1.UNION:-Returns the values unique+sorting
+========
+
+eg:-
+===
+SQL>select job from emp where deptno=10 union select job from emp where deptno=20;
+
+JOB
+---------
+ANALYST
+CLERK
+MANAGER
+PRESIDENT
+
+2.UNION ALL:-unique duplicates
+===========
+
+eg:-
+===
+SQL>select job from emp where deptno=10 union all select job from emp where deptno=20;
+
+JOB
+---------
+MANAGER
+PRESIDENT
+CLERK
+CLERK
+MANAGER
+ANALYST
+CLERK
+ANALYST
+
+3.INTERSECT:-common values
+===========
+eg:-
+===
+SQL>select job from emp where deptno=10 intersect select job from emp where deptno=20;
+
+JOB
+---------
+CLERK
+MANAGER
+
+4.MINUS:-values are in first query and those values are not
+=======   in second query
+
+
+eg:-
+===
+SQL>select job from emp where deptno=10 minus select job from emp where deptno=20;
+
+JOB
+---------
+PRESIDENT
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                   MCQ'S
+                                               ============
+
+1.What is the full form of DDL command
+A.Data deleting language            B.Data defination language
+C.Data delegating language          D.Dummy data language
+
+ANS:-B
+
+2.Which is not a DML command?
+A.DROP              B.DELETE
+C.SELECT            D.INSERT
+
+ANS:-   A&C
+
+3.On which commands Rollback is supported?
+A.DDL               B.DDL & DML
+C.DML               D.none of the above
+
+ANS:-C
+
+4.DELETE command is
+A.Deletes all records perminently
+B.Delete all records or specified records temporarly
+C.Delete all records or specified record perminently
+D.Deletes all records temporarly
+
+ANS:-B
+
+5.Which of the following statements contains an error?
+A.select * from emp where empid=1003;
+B.select empid from emp where empid=1006;
+C.select empid from emp;
+D.select empid where empid=1009 and lastname='GELLER'; 
+
+ANS:-D
+
+6.The command to eliminate a table from a table from a database
+A.REMOVE TABLE CUSTOMERS;
+B.DROP TABLE CUSTOMERS;
+C.DELETE TABLE CUSTOMERS;
+D.UPDATE TABLE CUSTOMERS;
+
+ANS:-B
+
+7.What is the syntax for creating a table?
+
+A.create table [schema]table(column datatype [default.expr][...]);
+B.create table into [schema]table(column datatype [default.expr][...]);
+C.create table values [schema]table(column datatype[default.expr][...]);
+D.none of the above
+
+ANS:A
+
+8.What is the output of the following statement?
+  select * from emp where sal between 4000 and 2000
+A.it returns who are getting the salaries from 4000 to 2000
+B.it returns who are getting the salaries from 2000 to 4000
+C.both A and B
+D.None of the above
+
+ANS:-D
+
+9.SELECT * FROM EMPLOYEE WHERE SALARY>10000 
+  AND DEPT_ID=101;
+WHICH OF THE FOLLOWING FEILDS ARE DISPLAYED AS OUTPUT
+A.SALARY,DEPT_ID
+B.EMPLOYEE
+C.SALARY
+D.ALL THE FEILDS OF THE EMPLOYEE
+
+ANS:-D
+
+10.in oracle which datatypes are supported to store images,
+   audio,vedios?
+A.varchar2        B.date
+C.LOB,BLOB,CLOB   D.none of the above
+
+ANS:-C
+
+11.Null means
+A.Zero
+B.-1
+C.1
+D.Empty
+
+ANS:-D
+
+12.Which of the following are the five built-in functions
+  provided by SQL?
+A.COUNT,SUM,AVG,MAX,MIN
+B.SUM,AVG,MIN,MAX,MULT
+C.SUM,AVG,MULT,DIV,MIN
+D.SUM,AVG,MIN,MAX,NAME
+
+ANS:-A
+
+13.select ----- from instructor where deptname='Comp.Sci';
+Which of the following should be used to find the mean
+of the salary?
+A.Mean(salary)
+B.Avg(salary)
+C.Sum(salary)
+D.Count(salary)
+
+ANS:-B
+
+14.select ROUND(89.4),TRUNC(89.8) from dual;
+which values are displayed
+A.89,89              B.90,90
+C.90,89              D.89,90
+
+ANS:-A
+
+15.What is the output of the following satement
+select Max(100,200) from dual;
+A.100           B.100,200
+C.200           D.Error
+
+ANS:-D
+
+16.A table T_COUNT has 12 number values as 1,2,3,32,1,1,null,
+  24,12,null,32,null
+predict the output of the below query
+
+select count(*) from T_count;
+A.12                    B.6                 C.9
+C.Throws exception because COUNT function doesn't work with null values
+
+ANS:-C
+
+17.select round(45.95),trunc(45.95) from dual;
+which values are displayed
+A.46 and 45            B.45 and 46
+C.46 and 46            D.none
+
+
+ANS:-A
+
+18.select SUBSTR('NARESH IT,HYDERABAD',1,9) from dual;
+A.NARESH                B.IT
+C.NARESH IT             D.HYDERABAD
+
+ANS:-C

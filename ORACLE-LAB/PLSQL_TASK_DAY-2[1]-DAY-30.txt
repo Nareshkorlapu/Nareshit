@@ -1,0 +1,147 @@
+18-03-25
+********
+                                  PL/SQL
+                                =========
+
+1.Write a PL/SQL program eligible for voting system 
+
+if age is>=18 then display a msg :u r eligible for voting
+if age is<18 then display a msg  :u not eligible for voting or
+                                 better luck next time
+
+DECLARE
+AGE NUMBER(2);
+BEGIN
+AGE := &AGE;
+IF(AGE>=18) THEN
+DBMS_OUTPUT.PUT_LINE('U R ELIGIBLE FOR VOTING');
+ELSE
+DBMS_OUTPUT.PUT_LINE('U R NOT ELIGIBLE FOR VOTING');
+END IF;
+END;
+/
+
+-----------------------------------------------------------------------------------
+
+
+2.Write a PL/SQL program from dept table by using
+   conditional statements 
+
+if deptno=10 then display a msg ---->ten
+if deptno=20 then display a msg ---->twenty
+if deptno=30 then display a msg ---->thirty
+if deptno=40 then display a msg ---->others 
+
+DECLARE
+V_DEPTNO DEPT.DEPTNO%TYPE := &DEPTNO;
+BEGIN
+SELECT DEPTNO INTO V_DEPTNO FROM DEPT WHERE DEPTNO =     	  V_DEPTNO;
+IF(V_DEPTNO = 10) THEN
+DBMS_OUTPUT.PUT_LINE('TEN');
+ELSIF(V_DEPTNO = 20) THEN
+DBMS_OUTPUT.PUT_LINE('TWENTY');
+ELSIF(V_DEPTNO = 30) THEN
+DBMS_OUTPUT.PUT_LINE('THIRTY');
+ELSE
+DBMS_OUTPUT.PUT_LINE('OTHERS');
+END IF;
+END;
+/
+Enter value for deptno: 10
+TEN
+----------------------------------------------------------------------------------
+
+3.Write a PL/SQL program to print 2024 calendar?
+
+01-JAN-24
+02-JAN-24
+.........
+.........
+31-DEC-24
+
+DECLARE
+start_date DATE := TO_DATE('01-JAN-2025', 'DD-MON-YYYY');
+end_date DATE := TO_DATE('31-DEC-2025', 'DD-MON-YYYY');
+current_date DATE;
+BEGIN
+current_date := start_date;
+WHILE current_date <= end_date LOOP
+DBMS_OUTPUT.PUT_LINE(TO_CHAR(current_date, 'DD-MON-YY'));
+current_date := current_date + 1;
+END LOOP;
+END;
+/
+-----------------------------------------------------------------------------------
+
+4.Write a PL/SQL program to print 1..10 numbers by using
+   for loop
+
+DECLARE
+NUM NUMBER;
+BEGIN
+NUM := 0;
+FOR NUM IN 0..12
+LOOP
+DBMS_OUTPUT.PUT_LINE(NUM);
+END LOOP;
+END;
+/
+
+				(OR)
+BEGIN
+FOR N IN 0..12
+LOOP
+DBMS_OUTPUT.PUT_LINE(N);
+END LOOP;
+END;
+/
+-----------------------------------------------------------------------------------
+
+5.Write a PL/SQL program to print 10..1 numbers reverse by
+   using for loop
+
+DECLARE
+NUM NUMBER;
+BEGIN
+NUM := 10;
+FOR N IN 1..10
+LOOP
+DBMS_OUTPUT.PUT_LINE(NUM);
+NUM := NUM-1;
+END LOOP;
+END;
+/
+				(OR)
+BEGIN
+FOR N IN REVERSE 1..10
+LOOP
+DBMS_OUTPUT.PUT_LINE(N);
+END LOOP;
+END;
+/
+-----------------------------------------------------------------------------------
+6.Write a PL/SQL program to increase salary of the given empno
+  with given amount.after increasing the sal display the salary
+  of the employee?
+
+enter empno:7499
+enter amount:2000
+salary increased(msg i want to display)
+sal is:3600
+
+ DECLARE
+ E_EMPNO EMP.EMPNO%TYPE := &EMPNO;
+ E_AMOUNT NUMBER := &E_AMOUNT;
+ E_SAL EMP.SAL%TYPE;
+ BEGIN
+ SELECT SAL INTO E_SAL FROM EMP WHERE EMPNO = E_EMPNO;
+ E_SAL := E_SAL+E_AMOUNT;
+ DBMS_OUTPUT.PUT_LINE('SAL IS:'||E_SAL);
+ END;
+ /
+Enter value for empno: 7499
+Enter value for e_amount: 2000
+SAL IS:3600
+
+===================================================================================
+

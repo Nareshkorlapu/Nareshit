@@ -1,0 +1,85 @@
+2)MULTIPLE ROW SUB QUERYS:-
+=========================
+
+Write a query to display employee details who are getting 
+maximum sal in each department from emp table.
+
+SQL>select * from emp
+    where sal=(select max(sal) from emp group by deptno);
+                       2850
+                       3000
+                       5000
+
+error:single row subquery returns more than one row.
+  
+   When child query returns multiple values then those querys are
+called Multiple row Sub Querys.in multiple row subquery we are
+using in,all,any operators.
+
+   Whenever we are using sub query special operator ALL database server
+internally uses logical operator AND whereas when we are using subquery 
+special operator ANY then database server internally uses logical 
+operator OR.
+
+  all---->it satisfies all values in the list
+  any---->it satisfies any value in the list
+
+
+------------------------------------------------------------------------------------
+1.Write a query to display employee details who are getting 
+      maximum sal in each department from emp table.
+Sol:
+SQL> SELECT * FROM EMP
+  2  WHERE SAL IN
+  3  (SELECT MAX(SAL) FROM EMP GROUP BY DEPTNO);
+----------------------------------------------------------------------------------------------------------------------
+
+2.Write a query to display the employees who are working in sales
+   or research department from emp,dept?
+Sol:
+SQL> SELECT * FROM EMP E JOIN DEPT D ON E.DEPTNO=D.DEPTNO WHERE E.DEPTNO =ANY
+  2  (SELECT DEPTNO FROM DEPT WHERE DNAME IN('SALES','RESEARCH'));
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a query to display the male employees who are getting more
+   salary than the all the salaries of female employees?
+
+SQL> select * from employee;
+
+       EMPNO      ENAME       GENDER         SAL
+      -------  ----------    --------     --------
+         1      Bhargavi        f           4000
+         2      subbarao        m           5000
+         3      Radhika         f           3000
+         4      gowtham         m           2000
+         5      kavya           f           2000
+
+Sol:
+SQL> SELECT * FROM EMPLOYEE_GENDER WHERE GENDER='m' AND
+  2  SAL>(SELECT MAX(SAL) FROM EMPLOYEE_GENDER WHERE GENDER='f');
+--------------------------------------------------------------------------------------------------------------------------
+
+4.Write a query to display the employee records whose job title is 
+            same as SMITH,BLAKE?
+Sol:
+SQL> SELECT * FROM EMP WHERE JOB IN
+  2  (SELECT JOB FROM EMP WHERE ENAME IN('SMITH','BLAKE'));
+-------------------------------------------------------------------------------------------------------------------------
+5.Write a query to display the employee records who are earning
+  more than all managers?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>ALL
+  2  (SELECT SAL FROM EMP WHERE JOB='MANAGER');
+NOTE:-if sal> all list of values then condition is true
+
+------------------------------------------------------------------------------------------------------------------------
+6.Write a query to display the employee records  who are earning
+  more than any of the managers?
+Sol:
+SQL> SELECT * FROM EMP WHERE SAL>ANY
+  2  (SELECT SAL FROM EMP WHERE JOB='MANAGER');
+NOTE:-if sal>any one of the list of values.
+
+-----------------------------------------------------------------------------------
+
+

@@ -1,0 +1,47 @@
+Program Questions
+EmployeeInfo
+
+Create a class Employee (Business Logic Class)
+Instance Variables:
+employeeId :private-int
+employeeName : private-String
+employeeSalary: private-double
+
+Create a parameterized constructor with the parameters: eid, ename, salary of type int,String,double respectively to initialize the instance variable of the class.
+
+Create a static method getEmployeeObject() in the Employee class
+Method Name : getEmployeeObject()
+  Parameter : no parameter
+Return type : Employee
+Access modifier : public
+
+getEmployeeObject() method of Employee class should take employeeId, employeeName,
+employeeSalary from the keyboard to initialize the instance variables, Create and return the
+Employee object from this method.
+
+Override toString() from Object class to print Employee class properties.
+Create another class Main which contains main method (ELC class). 
+
+Note :-  
+Based on given input scenario take input using scanner class
+
+Enter Employee ID: 103
+Enter Employee Name: Rajesh
+Enter Employee Salary: 45000
+
+Output :-
+----------------
+
+Employee Details:
+Employee ID: 103
+Employee Name: Rajesh
+Employee Salary: 45000.0
+Sample Input
+101
+Rajesh
+45000
+Sample Output
+Employee Details:
+Employee ID: 101
+Employee Name: Rajesh
+Employee Salary: 45000.0

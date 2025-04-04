@@ -1,0 +1,220 @@
+                                  CONSTRAINTS
+                               =================
+
+1.What is constraint ? What are different types of constraints? Read each
+  constraint definition ? 
+
+2.What are the differences b/w primary key and foreign key ?
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.Establish the relation b/w course and student table by using
+  Primary key, Foreign key
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+COURSE                         STUDENT
+=======                        ========
+PK                            PK                FK
+CID    CNAME                  SID     SNAME     CID
+
+QUERY:
+------------
+SQL> CREATE TABLE COURSE1(CID NUMBER(4) PRIMARY KEY,CNAME VARCHAR2(10));
+
+Table created.
+
+SQL> CREATE TABLE STUDENT3(SID NUMBER(3) PRIMARY KEY,SNAME VARCHAR2(10),CID NUMBER(4) REFERENCES COURSE1(CID));
+
+Table created.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Establish the relation b/w DOCTORS and PATIENTS table by using
+  Primary key, Foreign key
+
+
+DOCTORS                                       PATIENTS
+=======                                      ==========
+    PK                                           PK                  FK
+ DOCTORID     NAME    SPECIALTY                PATIENTID    NAME    DOCTORID 
+
+ QUERY:
+-------------
+SQL> CREATE TABLE DOCTORS(DOCTORID NUMBER(4) PRIMARY KEY,NAME VARCHAR2(10),SPECIALITY VARCHAR2(10));
+
+Table created.
+
+SQL> CREATE TABLE PATIENTS(PATIENTID NUMBER(3) PRIMARY KEY,NAME VARCHAR2(10),DOCTORID NUMBER(4) REFERENCES DOCT
+ORS(DOCTORID));
+
+Table created.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Create mas table,child table and establish relation b/w tables.
+
+--->after creating the tables insert the records.delete the mas table
+    records and observe the outputs in child table.
+
+mas
+---
+sno ---->primary key 
+
+child
+----
+sno ---->foreign key along with on delete cascade 
+                         
+QUERY:
+------------
+SQL> CREATE TABLE MAS(SNO NUMBER(2) PRIMARY KEY);
+
+Table created.
+
+SQL> CREATE TABLE CHILD(SNO NUMBER(2) REFERENCES MAS(SNO) ON DELETE CASCADE);
+
+Table created.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Default -in all relational databases if we want to provide
+=======  default values into a table column then we are using
+         default clause.
+
+.it is used to apply default value to table column.
+.if we pass the value, it takes that value. if we don't pass the value
+ it takes default value.
+
+
+syntax:-
+======
+columnname datatype(size) default default value
+
+SQL>create table test4(name varchar2(10), sal number(10) default 3000);
+
+SQL>insert into test4(name)values('GOWTHAM');
+
+SQL>insert into test4 values('KIRAN',5000);
+
+SQL>select * from test4;
+   
+    NAME        SAL
+  -------    ---------
+  GOWTHAM      3000
+  KIRAN        5000
+
+
+
+4.Create a student10 table with 4 columns and apply following constraints.
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+SID           PK
+SNAME         NOTNULL
+INAME         default ---->NARESHIT
+CITY          default ---->AMMERPET 
+fee           default ---->30000
+
+QUERY:
+-----------
+
+SQL> CREATE TABLE STUDENT10(SID NUMBER(4) PRIMARY KEY,SNAME VARCHAR2(10) NOT NULL,INAME VARCHAR2(10) DEFAULT 'N
+ARESHIT',CITY VARCHAR2(10) DEFAULT 'AMMERPET',FEE NUMBER(6) DEFAULT 30000);
+
+Table created.
+
+SQL> INSERT INTO STUDENT10 VALUES(1001,'NARESH','SATYAMIT','MADHAPUR',25000);
+
+SQL> INSERT INTO STUDENT10(SID,SNAME) VALUES(1002,'HANUMAN');
+=================================================================
+5.Create the emp4 table with following columns. and you only 
+   think which constraint is suitable at table creation 
+   it self and use all constraints(SQL SERVER MOCK INTERVIEW QUESTION)
+
+NOTE:-for this question just create the table with constraints
+       is enough.
+
+EMPNO     ENAME     SAL     MGRNO     AGE     ADDRESS    PHONO
+
+QUERY:
+------------
+SQL> CREATE TABLE EMP4(EMPNO NUMBER(4) PRIMARY KEY,ENAME VARCHAR2(10) NOT NULL,SAL NUMBER(6) CHECK(SAL>0),MGRNO NUMBER(4) REFERENCES EMP4(EMPNO),AGE NUMBER(2) CHECK(AGE>=18 AND AGE<=60),ADDRESS VARCHAR2(10) DEFAULT 'AMMERPET',PHONO NUMBER(10) UNIQUE NOT NULL);
+
+Table created.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                 MCQ'S
+                              ===========
+1.When table is dropped then the status of constraints 
+  on that table is
+
+A. Constraints are in invalid state
+B. Constraints also dropped
+C. No effect on constraints
+D .None
+SOL:
+-------
+B
+
+-------------------------------------------------------------------------------------------------------------------------
+2.Primary key means the following combinations
+
+A. NOT NULL,CHECK 
+
+B. UNIQUE,REFEERENTIAL
+
+C. UNIQUE,NOT NULL     
+ 
+D. CHECK,FOREIGN key
+SOL:
+------
+C
+
+--------------------------------------------------------------------------------------------------------------------------
+3.What is TRUE about DEFAULT constraint?
+A. The value will be first be checked for certain conditions before
+  inserting it into the column when a default constraint applies
+  to a column in the table.
+B.in the event of default constraint being applied to a table's
+  columns without a user specifying the value to be inserted when
+  that constraint was applied ,the default value that was specified
+  when the constraint was applied will be put into that column
+C. An index can be created on the table using the default constraint
+D. None of the above
+SOL:
+-------
+B
+--------------------------------------------------------------------------------------------------------------------------------
+4.When constraints are disabled then these are in which state
+
+A. Constraints are dropped
+
+B. Exist in the metadata but not working
+
+C. Constraints are not disabled
+
+D.1 and 3 
+SOL:
+------
+B
+
+--------------------------------------------------------------------------------------------------------------------------
+5.is it foreign key accepts duplicate values
+
+A. yes           B.no            C. may be         D. none
+SOL:
+-------
+A
+-------------------------------------------------------------------------------------------------------------------------
+6.can we drop parent table if any child records are found
+
+A. Yes 
+      
+B.NO
+
+C.MAY BE 
+      
+D.NONE
+SOL:
+-------
+A
+

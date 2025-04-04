@@ -1,0 +1,128 @@
+17-03-25
+********     
+                             PL/SQL
+                              ============
+
+
+
+1.Write a PL/SQL program to print a message 'WELCOME TO PL/SQL  
+  CLASSES FOR MY DEAR WONDERFULL BATACH39' on screen?
+
+
+NOTE:-To avoid of displaying old and new parametes setverify off as
+      following
+
+SQL>set verify off;
+
+SQL> BEGIN
+  2  DBMS_OUTPUT.PUT_LINE('WELCOME TO PL/SQL CLASSES FOR MY DEAR                         WONDERFULL BATCH42');
+  3  END;
+  4  /
+-----------------------------------------------------------------------------------
+
+2.Write a PL/SQL program to add 2 numbers.and two numbers are 
+  enter from runtime ?
+
+SQL> DECLARE
+  2  A NUMBER(2) := &A;
+  3  B NUMBER(2) := &B;
+  4  BEGIN
+  5  DBMS_OUTPUT.PUT_LINE('SUM OF TWO NUMBERS IS:'||(A+B));
+  6  END;
+  7  /
+Enter value for a: 2
+Enter value for b: 4
+SUM OF TWO NUMBERS IS:6
+-----------------------------------------------------------------------------------
+
+3.Write a PL/SQL program for user entered empno then display name
+  of the employee and his salary from emp table?
+SQL> DECLARE
+  2  E_EMPNO EMP.EMPNO%TYPE := &EMPNO;
+  3  E_ENAME EMP.ENAME%TYPE;
+  4  E_SAL EMP.SAL%TYPE;
+  5  BEGIN
+  6  SELECT ENAME,SAL INTO E_ENAME,E_SAL FROM EMP WHERE EMPNO=E_EMPNO;
+  7  DBMS_OUTPUT.PUT_LINE(E_ENAME||','||E_SAL);
+  8  END;
+  9  /
+Enter value for empno: 7788
+SCOTT,3000
+-----------------------------------------------------------------------------------
+
+4.Write a PL/SQL program which is used to retrive maximum salary
+      from emp table and store it into PL/SQL variable
+              and display maximum salary?
+
+SQL> DECLARE
+  2  MAX_SAL EMP.SAL%TYPE;
+  3  BEGIN
+  4  SELECT MAX(SAL) INTO MAX_SAL FROM EMP;
+  5  DBMS_OUTPUT.PUT_LINE('MAXMIMUM SALARY IS:'||MAX_SAL);
+  6  END;
+  7  /
+MAXMIMUM SALARY IS:5000
+-----------------------------------------------------------------------------------
+
+5.Write a PL/SQL program to find maximum number from 2 numbers
+  and store it into another variable?
+
+note:-in pl/sql expressions we are not allowed to use group 
+=====  functions,decode conversion functions.but we are allowed to use number
+      functions,character functions,date functions in pl/sql 
+      expressions
+
+SQL> DECLARE
+  2  A NUMBER(2) := &A;
+  3  B NUMBER(2) := &B;
+  4  C NUMBER(2);
+  5  BEGIN
+  6  IF(A>B) THEN
+  7  C := A;
+  8  DBMS_OUTPUT.PUT_LINE('A IS MAXMIMUM:'||C);
+  9  ELSE
+ 10  C := B;
+ 11  DBMS_OUTPUT.PUT_LINE('B IS MAXIMUM:'||C);
+ 12  END IF;
+ 13  END;
+ 14  /
+Enter value for a: 5
+Enter value for b: 8
+B IS MAXIMUM:8
+
+-----------------------------------------------------------------------------------
+
+6.Write a PL/SQL program for user entered empno then display 
+      all details of employee from emp table by using 
+               row level attributes?
+
+SQL> DECLARE
+  2  I EMP%ROWTYPE;
+  3  E_EMPNO EMP.EMPNO%TYPE := &EMPNO;
+  4  BEGIN
+  5  SELECT EMPNO,ENAME,SAL,DEPTNO,HIREDATE INTO I.EMPNO,I.ENAME,I.SAL,I.DEPTNO,I.HIREDATE FROM EMP WHERE EMPNO
+=E_EMPNO;
+  6  DBMS_OUTPUT.PUT_LINE('EMPLOYEE DETAILS: '||I.EMPNO||','||I.ENAME||','||I.SAL||','||I.DEPTNO||','||I.HIREDATE);
+  7  END;
+  8  /
+Enter value for empno: 7788
+EMPLOYEE DETAILS: 7788,SCOTT,3000,20,09-DEC-82
+-----------------------------------------------------------------------------------
+
+7.Write a PL/SQL program to calculate the experience of the given employee
+
+enter empno:7902
+experience is:43years
+SQL> DECLARE
+  2  E_EMPNO EMP.EMPNO%TYPE := &EMPNO;
+  3  E_EXPERIENCE NUMBER(5);
+  4  BEGIN
+  5  SELECT TRUNC((SYSDATE-HIREDATE)/365) INTO E_EXPERIENCE FROM EMP WHERE EMPNO = E_EMPNO;
+  6  DBMS_OUTPUT.PUT_LINE('EXPERIENCE IS: '||E_EXPERIENCE||'years');
+  7  END;
+  8  /
+Enter value for empno: 7902
+EXPERIENCE IS: 43years
+-----------------------------------------------------------------------------------
+
+

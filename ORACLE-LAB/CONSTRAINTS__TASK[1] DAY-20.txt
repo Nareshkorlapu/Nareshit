@@ -1,0 +1,162 @@
+                           CONSTRAINTS
+                         ---------------
+
+-----------------------------------------------------------------------------------
+1.Create a student table with constraints based on following
+  conditions.
+
+---->after creating the table insert the records and observe
+     the outputs.
+
+SID     Don't accept nulls and duplicates
+
+SNAME   Don't accept nulls
+
+M1      Marks between 0 to 100
+
+SQL> CREATE TABLE STUDENT2
+(SID NUMBER(4) PRIMARY KEY,SNAME VARCHAR2(10) NOT NULL,M1 NUMBER(3) 
+CHECK(M1 BETWEEN 0 AND 100));
+Testing:
+----------
+SQL> INSERT INTO STUDENT2 VALUES(1001,'SMITH',101);-------->Not allowed
+SQL> INSERT INTO STUDENT2 VALUES(1001,NULL,100);----------->Not allowed
+SQL> INSERT INTO STUDENT2 VALUES(1002,'ALLEN',90);---------->Allowed
+-----------------------------------------------------------------------------------
+2.Create a employee table with constraints based on following
+  conditions.
+
+---->after creating the table insert the records and observe
+     the outputs.
+
+USERID     don't accept nulls and duplicates
+
+USERNAME   don't accept nulls and duplicates
+
+PWD         Password minimum 8 characters
+
+SQL> CREATE TABLE EMPLOYEE1
+(USERID NUMBER(4),USERNAME VARCHAR2(10),
+PWD VARCHAR2(20) CHECK(LENGTH(PWD)>=8),
+PRIMARY KEY(USERID,USERNAME));
+
+Testing:
+-----------
+SQL> INSERT INTO EMPLOYEE1(1005,NULL,'123123@ABC');------------->Not aloowed
+SQL> INSERT INTO EMPLOYEE1(1005,'SMITH,'123123@ABC');----------->Allowed
+-----------------------------------------------------------------------------------
+3.Create the emp3 table with constraints based on following
+  conditions.
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+EMPNO      don't accept nulls and duplicates 
+
+ENAME      don't accept nulls
+
+GENDER     Must be M or F
+
+SAL        Minimum 5000 (means 5000 or above it will accept)
+
+SQL> CREATE TABLE EMP3(
+  2  EMPNO NUMBER(4) PRIMARY KEY,
+  3  ENAME VARCHAR2(10) NOT NULL,
+  4  GENDER CHAR(1) CHECK(GENDER IN('M','F')),
+  5  SAL NUMBER(8,2) CHECK(SAL>=5000))
+  6  ;
+
+Testing:
+----------
+SQL> INSERT INTO EMP3 VALUES(1003,'SONY','F',25000);------------>Allowed
+INSERT INTO EMP3 VALUES(1003,NULL,'F',25000)------------------>Not allowed
+
+----------------------------------------------------------------------------------
+    
+
+4.Create the BANK table with constraints based on following
+  conditions.
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+ACCNO       Should not be duplicate & null
+
+ACCTYPE     Must be 'S' OR 'C'
+
+BAL         Must be min 1000
+
+SQL> CREATE TABLE BANK(
+  2  ACCNO NUMBER(10) PRIMARY KEY,
+  3  ACCTYPE CHAR(1) CHECK(ACCTYPE IN('S','C')),
+  4  BAL NUMBER(6) CHECK(BAL>1000)
+  5  );
+
+Testing:
+-----------
+SQL> INSERT INTO BANK VALUES(1010002548,'S',1200);---------->Allowed
+SQL> INSERT INTO BANK VALUES(NULL,'S',1200);------------>Not allowed
+SQL> INSERT INTO BANK VALUES(1010002548,NULL,1200);----------->Not aloowed
+-----------------------------------------------------------------------------------
+5.Create table PROJECT table with constraints based on following
+  conditions.
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+Projec_tid      should not accept nulls & duplicates
+
+Project_name     don't accept nulls
+
+Price            minimum 20000
+
+SQL> CREATE TABLE PROJECT(
+  2  PROJECT_ID NUMBER(3) PRIMARY KEY,
+  3  PROJECT_NAME VARCHAR2(10) NOT NULL,
+  4  PRICE NUMBER(8,2) CHECK(PRICE>=20000)
+  5  );
+
+Testing:
+-----------
+SQL> INSERT INTO PROJECT VALUES(101,'TESLA',15000);------------->Not allowed
+SQL> INSERT INTO PROJECT VALUES(NULL,'TESLA',20000);---------->Not allowed
+SQL> INSERT INTO PROJECT VALUES(101,NULL,20000);---------------->Not allowed
+SQL> INSERT INTO PROJECT VALUES(101,'TESLA',25000);---------->Allowed
+-----------------------------------------------------------------------------------
+6.Create the vehicle table with constraints based on following
+  conditions.
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+
+vehicle_id         don't accept nulls and duplicates 
+
+owner_name         don't accept null values
+
+license_plate      should not be duplicate
+
+ vehicle_type       vehicle type should be either bike or car              
+
+
+SQL> CREATE TABLE VEHICLE(
+  2  VEHICLE_ID NUMBER(4) PRIMARY KEY,
+  3  OWNER_NAME VARCHAR2(10) NOT NULL,
+  4  LICENSE_PLATE VARCHAR2(10) UNIQUE,
+  5  VEHICLE_TYPE VARCHAR2(5) CHECK(VEHICLE_TYPE IN('BIKE','CAR'))
+  6  );
+
+Testing:
+-----------
+SQL> INSERT INTO VEHICLE VALUES(3205,'NARESH',
+  2  'AP30123254','BIKE');--------------------------------------------------------------->Allowed
+SQL> INSERT INTO VEHICLE VALUES(3205,'NARESH','AP30123254','BIKE');---->Not allowed
+SQL> INSERT INTO VEHICLE VALUES(NULL,'NARESH','AP30123254','BIKE');---->NOt allowed
+SQL> INSERT INTO VEHICLE VALUES(3205,NULL,'AP30123254','BIKE');=----------------->Not allowed
+SQL> INSERT INTO VEHICLE VALUES(3205,'NARESH','AP30123254','SCOOTY');---------->Not allowed
+
+-----------------------------------------------------------------------------------
+
+      
+
+     

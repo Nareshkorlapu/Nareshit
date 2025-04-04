@@ -1,0 +1,130 @@
+14-03-25(holi)
+**************        
+                     INDEX
+                          ==========
+1.What is index ? what are different types of indexes?
+Ans:	
+		It is a database object which is used to retrieve the required 
+row/rows from a table fastly.
+=>Types of indexes:
+	1.B-Tree Index
+	2.Bitmap Index
+-----------------------------------------------------------------
+2.What is the purpose of indexes?
+Ans:	
+	Whenever we want to retrieve the required row/rows from a table then we
+must use INDEXED KEY COLUMN under where clause condition then only indexes are 
+working.
+-----------------------------------------------------------------
+3.Which query is retrieve data very fastly from database ?
+ 
+A)select * from emp where ename='FORD';
+
+B)select * from emp where empno=7902;
+
+ANS:-B
+-----------------------------------------------------------------
+4.Which queries are searching for indexes(retrive the data very fastly from following queries)
+
+A.select * from emp;
+
+B.select * from emp where empno=7902;
+
+C.select empno,count(*) from emp
+   group by empno;
+
+D.select * from emp order by empno asc;
+
+
+ANS:-B
+-----------------------------------------------------------------
+
+5.create index in1 on emp table ename column
+SQL> CREATE INDEX IN1 ON EMP(ENAME);
+-----------------------------------------------------------------
+6.What is the command to drop in1 index
+SQL> DROP INDEX IN1;
+-----------------------------------------------------------------
+7.How to find out a query is searching for indexes or not in oracle
+
+ in oracle if we want to identify whether a query is internally searching for indexes or not then we are using following command.
+
+syntax:-
+=======
+set autotrace explain;
+
+ whenever we are using this command then oracle server display query result and also display internal execution plans.
+
+EG:-(with out using indexes)
+===========================
+SQL>set autotrace on explain;
+
+SQL>select * from emp where ename='FORD';
+
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+Execution Plan
+----------------------------------------------------------
+Plan hash value: 3956160932
+
+--------------------------------------------------------------------------
+| Id  | Operation         | Name | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------
+|   0 | SELECT STATEMENT  |      |     1 |    38 |     3   (0)| 00:00:01 |
+|*  1 |  TABLE ACCESS FULL| EMP  |     1 |    38 |     3   (0)| 00:00:01 |
+--------------------------------------------------------------------------
+       |                                              |
+       |-->this is a full                             |---->CPU cost is very high means performance
+           scan                                                  is very low.
+
+
+EG2:-(with using indexes)
+=========================
+SQL>create index in1 on emp(ename);
+SQL>select * from emp where ename='FORD';
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+Execution Plan
+----------------------------------------------------------
+Plan hash value: 2495761290
+
+--------------------------------------------------------------------------------------------
+| Id  | Operation                           | Name | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                    |      |     1 |    38 |     2   (0)| 00:00:01 |
+|   1 |  TABLE ACCESS BY INDEX ROWID BATCHED| EMP  |     1 |    38 |     2   (0)| 00:00:01 |
+|*  2 |   INDEX RANGE SCAN                  | IN1  |     1 |       |     1   (0)| 00:00:01 |
+--------------------------------------------------------------------------------------------
+
+
+SQL>set autotrace off;
+
+-----------------------------------------------------------------------------------
+
+8.What is normalization ?
+Ans:
+	Normalization is a technique which is used to decompose a table data into 
+multiple tables.
+-----------------------------------------------------------------------------------
+9.What is 1NF?
+Ans:
+For a table to be in 1NF, It should follow the following 4 rules:
+	1.Each column should automic value(Automic = single).
+	2.A column should contain values that are same datatype.
+	3.All the columns in a table should have unique names.
+	4.The order in which data is stored, does not matter.
+
+
+
+
+
